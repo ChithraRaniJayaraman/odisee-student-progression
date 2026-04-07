@@ -1,0 +1,11 @@
+node_modules/
+.vscode/settings.json
+.DS_Store
+Thumbs.db
+*.docx
+*.xlsx
+*.pptx
+__pycache__/
+*.pyc
+.env
+.env.local
