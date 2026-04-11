@@ -10,11 +10,13 @@ const quickLinks = [
 ];
 
 function Home() {
+  const campusImageUrl = `${import.meta.env.BASE_URL}images/odisee-building.jpg`;
+
   return (
     <>
       <section className="relative overflow-hidden">
         <img
-          src="/images/odisee-building.jpg"
+          src={campusImageUrl}
           alt="Odisee Brussels campus building"
           className="h-[75vh] min-h-[530px] w-full object-cover"
         />
@@ -70,7 +72,7 @@ function Home() {
             </p>
           </div>
           <img
-            src="/images/odisee-building.jpg"
+            src={campusImageUrl}
             alt="Campus context at Odisee Brussels"
             className="h-72 w-full rounded-2xl object-cover"
           />
