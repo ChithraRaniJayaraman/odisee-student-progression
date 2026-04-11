@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2400 900" role="img" aria-labelledby="title desc">
+	<title id="title">Odisee Brussels Peer Mentoring Programme Flowchart</title>
+	<desc id="desc">Horizontal programme flow from open call to student success with mentor and mentee pathways.</desc>
+
+	<defs>
+		<linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0%" stop-color="#fbfdff"/>
+			<stop offset="100%" stop-color="#f4f8fc"/>
+		</linearGradient>
+
+		<linearGradient id="orangeGrad" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#fff2e6"/>
+			<stop offset="100%" stop-color="#ffd7b8"/>
+		</linearGradient>
+
+		<linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#eaf5ff"/>
+			<stop offset="100%" stop-color="#c7e4ff"/>
+		</linearGradient>
+
+		<linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#edfff0"/>
+			<stop offset="100%" stop-color="#c7f0cf"/>
+		</linearGradient>
+
+		<linearGradient id="darkBlueGrad" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0%" stop-color="#1f4e89"/>
+			<stop offset="100%" stop-color="#12345d"/>
+		</linearGradient>
+
+		<filter id="softShadow" x="-20%" y="-20%" width="140%" height="160%">
+			<feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#113355" flood-opacity="0.16"/>
+		</filter>
+
+		<marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+			<path d="M0,0 L10,5 L0,10 z" fill="#3c5976"/>
+		</marker>
+
+		<style>
+			.label {
+				font-family: Inter, "Segoe UI", Arial, sans-serif;
+				fill: #0f2b46;
+				font-size: 30px;
+				font-weight: 700;
+			}
+
+			.body {
+				font-family: Inter, "Segoe UI", Arial, sans-serif;
+				fill: #123250;
+				font-size: 23px;
+				font-weight: 500;
+			}
+
+			.body-small {
+				font-family: Inter, "Segoe UI", Arial, sans-serif;
+				fill: #123250;
+				font-size: 21px;
+				font-weight: 500;
+			}
+
+			.body-light {
+				font-family: Inter, "Segoe UI", Arial, sans-serif;
+				fill: #ffffff;
+				font-size: 26px;
+				font-weight: 600;
+			}
+
+			.title-dark {
+				font-family: Inter, "Segoe UI", Arial, sans-serif;
+				fill: #ffffff;
+				font-size: 38px;
+				font-weight: 800;
+			}
+
+			.connector {
+				stroke: #3c5976;
+				stroke-width: 3;
+				fill: none;
+				marker-end: url(#arrow);
+			}
+		</style>
+	</defs>
+
+	<rect x="0" y="0" width="2400" height="900" fill="url(#bgGrad)"/>
+
+	<rect x="80" y="390" width="300" height="120" rx="28" fill="url(#orangeGrad)" stroke="#d89353" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="230" y="435" text-anchor="middle" class="label">OPEN CALL</text>
+	<text x="230" y="468" text-anchor="middle" class="body-small">Odisee Brussels students</text>
+	<text x="230" y="492" text-anchor="middle" class="body-small">invited to participate</text>
+
+	<polygon points="560,380 700,450 560,520 420,450" fill="url(#blueGrad)" stroke="#5c93c2" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="560" y="445" text-anchor="middle" class="label" font-size="24">Need support</text>
+	<text x="560" y="473" text-anchor="middle" class="label" font-size="24">or give it?</text>
+
+	<ellipse cx="880" cy="100" rx="220" ry="42" fill="url(#blueGrad)" stroke="#5c93c2" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="880" y="94" text-anchor="middle" class="body-small">Leadership, strategic thinking,</text>
+	<text x="880" y="118" text-anchor="middle" class="body-small">proven track record</text>
+
+	<rect x="740" y="170" width="280" height="120" rx="26" fill="url(#blueGrad)" stroke="#5c93c2" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="880" y="217" text-anchor="middle" class="label">HEAD MENTOR</text>
+	<text x="880" y="248" text-anchor="middle" class="body-small">Coordinates &amp; oversees team</text>
+
+	<rect x="1070" y="160" width="300" height="150" rx="26" fill="url(#blueGrad)" stroke="#5c93c2" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="1220" y="204" text-anchor="middle" class="label">ONE-DAY TRAINING</text>
+	<text x="1220" y="235" text-anchor="middle" class="body-small">Active listening</text>
+	<text x="1220" y="260" text-anchor="middle" class="body-small">Cultural awareness</text>
+	<text x="1220" y="285" text-anchor="middle" class="body-small">Session structure</text>
+
+	<rect x="740" y="615" width="280" height="120" rx="26" fill="url(#orangeGrad)" stroke="#d89353" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="880" y="662" text-anchor="middle" class="label">MENTOR</text>
+	<text x="880" y="693" text-anchor="middle" class="body-small">Second-year student</text>
+	<text x="880" y="717" text-anchor="middle" class="body-small">guides &amp; supports</text>
+
+	<ellipse cx="880" cy="805" rx="250" ry="42" fill="url(#orangeGrad)" stroke="#d89353" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="880" y="799" text-anchor="middle" class="body-small">Shared background, interpersonal skills,</text>
+	<text x="880" y="823" text-anchor="middle" class="body-small">empathy</text>
+
+	<ellipse cx="970" cy="450" rx="220" ry="52" fill="url(#greenGrad)" stroke="#68a874" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="970" y="445" text-anchor="middle" class="label" font-size="26">Commitment to</text>
+	<text x="970" y="474" text-anchor="middle" class="label" font-size="26">active engagement</text>
+
+	<rect x="1080" y="610" width="290" height="130" rx="26" fill="url(#greenGrad)" stroke="#68a874" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="1225" y="660" text-anchor="middle" class="label">MENTEE</text>
+	<text x="1225" y="692" text-anchor="middle" class="body-small">First-year student</text>
+	<text x="1225" y="716" text-anchor="middle" class="body-small">receives support</text>
+
+	<rect x="1430" y="370" width="320" height="160" rx="28" fill="url(#greenGrad)" stroke="#68a874" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="1590" y="415" text-anchor="middle" class="label">BIWEEKLY SESSIONS</text>
+	<text x="1590" y="445" text-anchor="middle" class="body-small">5-step structure</text>
+	<text x="1590" y="472" text-anchor="middle" class="body-small">Check-in | Rate | Conversation</text>
+	<text x="1590" y="499" text-anchor="middle" class="body-small">Next Step | Close</text>
+
+	<rect x="1800" y="350" width="320" height="200" rx="28" fill="url(#greenGrad)" stroke="#68a874" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="1960" y="396" text-anchor="middle" class="label">OUTCOMES</text>
+	<text x="1960" y="430" text-anchor="middle" class="body">Confident mentees</text>
+	<text x="1960" y="460" text-anchor="middle" class="body">Skilled mentors</text>
+	<text x="1960" y="490" text-anchor="middle" class="body">Reduced dropout</text>
+	<text x="1960" y="520" text-anchor="middle" class="body">Stronger belonging</text>
+
+	<rect x="2170" y="315" width="220" height="270" rx="32" fill="url(#darkBlueGrad)" stroke="#12345d" stroke-width="2" filter="url(#softShadow)"/>
+	<text x="2280" y="385" text-anchor="middle" class="title-dark">ODISEE</text>
+	<text x="2280" y="423" text-anchor="middle" class="title-dark">BRUSSELS</text>
+	<text x="2280" y="461" text-anchor="middle" class="title-dark">STUDENT</text>
+	<text x="2280" y="499" text-anchor="middle" class="title-dark">SUCCESS</text>
+	<text x="2280" y="544" text-anchor="middle" class="body-light">Every student</text>
+	<text x="2280" y="573" text-anchor="middle" class="body-light">belongs here</text>
+
+	<path class="connector" d="M380,450 L420,450"/>
+	<path class="connector" d="M700,450 L750,450"/>
+	<path class="connector" d="M1190,450 L1430,450"/>
+	<path class="connector" d="M1750,450 L1800,450"/>
+	<path class="connector" d="M2120,450 L2170,450"/>
+
+	<path class="connector" d="M560,382 L560,230 L740,230"/>
+	<path class="connector" d="M1020,230 L1070,230"/>
+	<path class="connector" d="M1220,310 L1220,360 L1120,360 L1120,398"/>
+
+	<path class="connector" d="M560,518 L560,675 L740,675"/>
+	<path class="connector" d="M970,502 L970,675 L1080,675"/>
+	<path class="connector" d="M1020,675 L1430,450"/>
+	<path class="connector" d="M1370,675 L1430,500"/>
+</svg>
