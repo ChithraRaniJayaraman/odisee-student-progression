@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../bridge-hero.png.png';
+import bridgeHero from '../../Untitled design (7).png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
@@ -21,20 +21,20 @@ function Home() {
           </h2>
 
           {/* Main Heading - "Bridging the Gap" in large elegant serif */}
-          <h1 className="mt-8 font-display text-7xl sm:text-8xl lg:text-9xl font-black leading-tight text-[#233b74] tracking-tight">
+          <h1 className="mt-8 font-display text-5xl font-black leading-tight text-[#233b74] tracking-tight sm:text-6xl lg:text-7xl">
             Bridging the Gap
           </h1>
 
-          <p className="mx-auto mt-1 max-w-5xl text-xl font-black uppercase tracking-wide text-[#233b74] sm:text-2xl">
+          <p className="mx-auto mt-3 max-w-5xl text-lg font-black uppercase tracking-wide text-[#233b74] sm:text-xl lg:text-2xl">
             Three evidence based tools to support success at Odisee Brussels
           </p>
 
-          <div className="-mt-3 sm:-mt-4 flex justify-center">
-            <div className="w-full max-w-7xl overflow-hidden rounded-2xl">
+          <div className="mt-6 flex justify-center sm:mt-8">
+            <div className="w-full max-w-7xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-[360px] w-full object-cover object-bottom sm:h-[460px] lg:h-[520px]"
+                className="block h-auto w-full object-contain"
               />
             </div>
           </div>
