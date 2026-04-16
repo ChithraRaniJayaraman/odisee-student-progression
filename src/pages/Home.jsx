@@ -29,7 +29,7 @@ function Home() {
             Three evidence based tools to support success at Odisee Brussels
           </p>
 
-          <div className="mt-0 sm:mt-1 flex justify-center">
+          <div className="-mt-3 sm:-mt-4 flex justify-center">
             {/* Use the full image with a soft beige tone to match page palette */}
             <div className="w-full max-w-7xl">
               <img
