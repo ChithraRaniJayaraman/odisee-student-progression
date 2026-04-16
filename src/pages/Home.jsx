@@ -25,13 +25,8 @@ function Home() {
             Bridging the Gap
           </h1>
 
-          {/* Subtitle */}
-          <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[#233b74] leading-relaxed">
-            Supporting student success through connection, timely guidance, and self-directed learning.
-          </p>
-
-          <p className="mx-auto mt-6 max-w-4xl text-base font-bold text-[#233b74] sm:text-lg">
-            Three evidence-based tools to support success at Odisee Brussels
+          <p className="mx-auto mt-8 max-w-5xl text-xl font-black uppercase tracking-wide text-[#233b74] sm:text-2xl">
+            Three evidence based tools to support success at Odisee Brussels
           </p>
 
           <div className="mt-12 sm:mt-16 flex justify-center">
