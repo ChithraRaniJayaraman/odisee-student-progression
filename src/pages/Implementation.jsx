@@ -39,11 +39,11 @@ function Implementation() {
           </p>
         </Card>
 
-        <Card title="Academic Year Timeline" className="bg-gradient-to-br from-[#fcf8f3] to-[#f8f3ed]">
+        <Card title="Academic Year Timeline" className="bg-gradient-to-br from-[#f7cc9c] to-[#dacff4]">
           <div className="relative mt-2 space-y-6 border-l-2 border-lavender/70 pl-6">
             {timeline.map((step) => (
               <div key={step.phase} className="relative">
-                <span className="absolute -left-[34px] top-2 h-4 w-4 rounded-full border-2 border-white bg-emerald" />
+                <span className="absolute -left-[34px] top-2 h-4 w-4 rounded-full border-2 border-[#f7c996] bg-emerald" />
                 <p className="text-sm uppercase tracking-wide text-royal/70">{step.period}</p>
                 <h3 className="font-display text-2xl text-royal">{step.phase}</h3>
                 <p className="text-ink/85">{step.items}</p>

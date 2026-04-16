@@ -3,7 +3,7 @@ import { navItems } from '../data/siteContent';
 
 function Footer() {
   return (
-    <footer className="mt-20 border-t border-royal/10 bg-gradient-to-b from-[#f8f3ed] to-[#fcf8f3] text-royal">
+    <footer className="mt-20 border-t border-royal/10 bg-gradient-to-b from-[#f5c389] to-[#d6cbf2] text-royal">
       <div className="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
           <h2 className="font-display text-2xl">Odisee University of Applied Sciences</h2>

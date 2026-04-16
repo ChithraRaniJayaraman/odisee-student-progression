@@ -8,14 +8,14 @@ export default {
         emerald: '#cc7f14',
         orange: '#e79a2f',
         'orange-hover': '#cc7f14',
-        lavender: '#f3e4d2',
-        ivory: '#fcf8f3',
+        lavender: '#e7c6dc',
+        ivory: '#f7cd9d',
         gold: '#e79a2f',
         ink: '#5e5148',
         body: '#5e5148',
         muted: '#8e7d72',
-        section: '#f8f3ed',
-        main: '#fcf8f3'
+        section: '#efc3bf',
+        main: '#d8cff4'
       },
       fontFamily: {
         display: ['Georgia', 'Times New Roman', 'serif'],
