@@ -8,7 +8,7 @@ This repository contains research and resources for improving programme-level ac
 
 **Institution:** Vrije Universiteit Brussel (VUB)  
 **Programme:** MSc Educational Sciences  
-**Researcher:** Chithra Rani Jayaraman  
+**Researcher:** Project Research Team  
 **Academic Year:** 2025-2026
 
 ## Project Description
@@ -186,7 +186,7 @@ Research outputs from this project will include:
 ## Contact & Support
 
 For inquiries about this research:
-- **Primary Contact:** Chithra Rani Jayaraman
+- **Primary Contact:** Project Research Team
 - **Academic Supervision:** [VUB Supervisor Name]
 - **Institutional Contact:** Odisee Partnership Lead
 
@@ -202,7 +202,7 @@ This research is conducted in collaboration with Odisee University of Applied Sc
 
 When referencing this work, please cite as:
 
-Jayaraman, C. R. (2026). A systems-thinking approach to improving programme-level academic success at Odisee. MSc thesis, Vrije Universiteit Brussel.
+Project Research Team. (2026). A systems-thinking approach to improving programme-level academic success at Odisee. MSc thesis, Vrije Universiteit Brussel.
 
 ---
 
