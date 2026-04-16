@@ -31,11 +31,11 @@ function Home() {
 
           <div className="mt-12 sm:mt-16 flex justify-center">
             {/* Use the full image with a soft beige tone to match page palette */}
-            <div className="w-full max-w-7xl overflow-hidden rounded-2xl">
+            <div className="w-full max-w-7xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-auto w-full object-contain"
+                className="block h-auto w-full object-contain mix-blend-multiply"
               />
             </div>
           </div>
