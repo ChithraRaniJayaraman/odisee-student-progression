@@ -30,11 +30,6 @@ function Home() {
             Supporting student success through connection, timely guidance, and self-directed learning.
           </p>
 
-          {/* Supporting Line */}
-          <p className="mt-4 text-base sm:text-lg text-[#8e7d72]">
-            Three evidence-based tools for Odisee Brussels.
-          </p>
-
           <div className="mt-12 sm:mt-16 flex justify-center">
             {/* Bridge Image - Wider and animated directly */}
             <img

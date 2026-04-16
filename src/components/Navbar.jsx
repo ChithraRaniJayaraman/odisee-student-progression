@@ -6,7 +6,7 @@ function Navbar() {
     <header className="sticky top-0 z-50 border-b border-royal/10 bg-ivory/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="text-xl font-semibold tracking-wide text-royal font-display">
-          Bridging the Gap
+          Odisee Brussels
         </NavLink>
         <nav aria-label="Main navigation" className="flex flex-wrap gap-2 text-sm">
           {navItems.map((item) => (
