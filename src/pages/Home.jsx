@@ -25,11 +25,11 @@ function Home() {
             Bridging the Gap
           </h1>
 
-          <p className="mx-auto mt-3 max-w-5xl text-xl font-black uppercase tracking-wide text-[#233b74] sm:text-2xl">
+          <p className="mx-auto mt-1 max-w-5xl text-xl font-black uppercase tracking-wide text-[#233b74] sm:text-2xl">
             Three evidence based tools to support success at Odisee Brussels
           </p>
 
-          <div className="mt-2 sm:mt-3 flex justify-center">
+          <div className="mt-0 sm:mt-1 flex justify-center">
             {/* Use the full image with a soft beige tone to match page palette */}
             <div className="w-full max-w-7xl">
               <img
