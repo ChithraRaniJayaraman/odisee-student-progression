@@ -14,11 +14,11 @@ function Footer() {
           </p>
         </div>
         <div>
-          <h3 className="font-semibold text-lavender">Navigation</h3>
+          <h3 className="font-semibold text-orange">Navigation</h3>
           <ul className="mt-3 grid grid-cols-2 gap-2 text-sm">
             {navItems.map((item) => (
               <li key={item.path}>
-                <Link to={item.path} className="text-ivory/90 transition hover:text-gold">
+                <Link to={item.path} className="text-ivory/90 transition hover:text-orange">
                   {item.label}
                 </Link>
               </li>
@@ -26,7 +26,7 @@ function Footer() {
           </ul>
         </div>
         <div>
-          <h3 className="font-semibold text-lavender">Contact</h3>
+          <h3 className="font-semibold text-orange">Contact</h3>
           <p className="mt-3 text-sm text-ivory/90">Programme office placeholder</p>
           <p className="text-sm text-ivory/90">Email: student-success@odisee.example</p>
           <p className="text-sm text-ivory/90">Phone: +32 (0)2 000 00 00</p>

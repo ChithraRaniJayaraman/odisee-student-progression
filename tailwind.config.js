@@ -4,25 +4,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        royal: '#173c7a',
-        emerald: '#0f8a6b',
-        orange: '#ea8b3b',
-        lavender: '#b8a2e0',
-        ivory: '#f8f5ee',
-        gold: '#c8a14a',
-        ink: '#1f2a44'
+        royal: '#233b74',
+        emerald: '#cc7f14',
+        orange: '#e79a2f',
+        'orange-hover': '#cc7f14',
+        lavender: '#f3e4d2',
+        ivory: '#fcf8f3',
+        gold: '#e79a2f',
+        ink: '#5e5148',
+        body: '#5e5148',
+        muted: '#8e7d72',
+        section: '#f8f3ed',
+        main: '#fcf8f3'
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
-        body: ['Nunito Sans', 'sans-serif']
+        display: ['Georgia', 'Times New Roman', 'serif'],
+        body: ['Arial', 'Helvetica', 'sans-serif']
       },
       boxShadow: {
-        soft: '0 10px 30px rgba(23, 60, 122, 0.08)',
-        card: '0 10px 26px rgba(31, 42, 68, 0.12)'
+        soft: '0 10px 28px rgba(35, 59, 116, 0.08)',
+        card: '0 12px 32px rgba(94, 81, 72, 0.14)'
       },
       backgroundImage: {
-        'royal-gradient': 'linear-gradient(120deg, #173c7a 0%, #2452a6 45%, #3a6cc4 100%)',
-        'lavender-glow': 'radial-gradient(circle at 20% 20%, rgba(184, 162, 224, 0.28), transparent 55%)'
+        'royal-gradient': 'linear-gradient(120deg, #233b74 0%, #35538f 45%, #4a689f 100%)',
+        'lavender-glow': 'radial-gradient(circle at 20% 20%, rgba(231, 154, 47, 0.2), transparent 55%)'
       }
     }
   },
