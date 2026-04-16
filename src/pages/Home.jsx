@@ -10,31 +10,52 @@ const quickLinks = [
 ];
 
 function Home() {
+  const sparkleDots = [
+    { top: '12%', left: '8%', size: 'h-1.5 w-1.5', delay: '0s' },
+    { top: '18%', left: '22%', size: 'h-2 w-2', delay: '0.4s' },
+    { top: '10%', left: '74%', size: 'h-1.5 w-1.5', delay: '0.7s' },
+    { top: '26%', left: '88%', size: 'h-2 w-2', delay: '0.2s' },
+    { top: '42%', left: '14%', size: 'h-1.5 w-1.5', delay: '0.9s' },
+    { top: '48%', left: '81%', size: 'h-1.5 w-1.5', delay: '0.5s' },
+    { top: '62%', left: '30%', size: 'h-2 w-2', delay: '0.3s' },
+    { top: '68%', left: '67%', size: 'h-1.5 w-1.5', delay: '0.8s' }
+  ];
+
   return (
     <>
       {/* Hero Section - Clean, Open, One Connected Story */}
-      <section className="relative bg-gradient-to-b from-[#f8f3ed] via-[#f3ebe0] to-[#eadfce] px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28">
+      <section className="relative bg-gradient-to-b from-main via-section to-lavender px-4 py-10 text-center sm:px-6 lg:px-8 lg:py-12">
+        <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          {sparkleDots.map((dot, index) => (
+            <span
+              key={`${dot.top}-${dot.left}-${index}`}
+              className={`absolute ${dot.size} animate-pulse rounded-full bg-gold/70 shadow-[0_0_14px_rgba(208,154,97,0.65)]`}
+              style={{ top: dot.top, left: dot.left, animationDelay: dot.delay }}
+            />
+          ))}
+        </div>
+
         <div className="mx-auto max-w-5xl">
           {/* University Tag - Bold and Prominent */}
-          <h2 className="text-base uppercase tracking-[0.3em] text-[#233b74] sm:text-lg font-black letter-spacing-wider">
+          <h2 className="text-base uppercase tracking-[0.3em] text-royal sm:text-lg font-black letter-spacing-wider">
             ODISEE UNIVERSITY OF APPLIED SCIENCES -<br className="hidden sm:block" />BRUSSELS CAMPUS
           </h2>
 
-          {/* Main Heading - "Bridging the Gap" in large elegant serif */}
-          <h1 className="mt-8 font-display text-5xl font-black leading-tight text-[#233b74] tracking-tight sm:text-6xl lg:text-7xl">
-            Bridging the Gap
-          </h1>
+          <div className="mt-1 flex justify-center sm:mt-2">
+            <div className="relative w-full max-w-7xl overflow-hidden rounded-2xl">
+              <div className="absolute inset-x-0 top-0 z-20 px-4 pt-5 sm:pt-7 lg:pt-9">
+                <h1 className="font-display text-4xl font-black leading-tight text-royal tracking-tight sm:text-5xl lg:text-6xl">
+                  Bridging the Gap
+                </h1>
+                <p className="mx-auto mt-3 max-w-5xl text-sm font-black uppercase tracking-wide text-royal sm:text-base lg:text-lg">
+                  Three evidence based tools to support success at Odisee Brussels
+                </p>
+              </div>
 
-          <p className="mx-auto mt-3 max-w-5xl text-lg font-black uppercase tracking-wide text-[#233b74] sm:text-xl lg:text-2xl">
-            Three evidence based tools to support success at Odisee Brussels
-          </p>
-
-          <div className="mt-6 flex justify-center sm:mt-8">
-            <div className="w-full max-w-7xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-auto w-full object-contain"
+                className="block h-[320px] w-full object-cover object-[center_84%] sm:h-[390px] lg:h-[450px]"
               />
             </div>
           </div>
@@ -43,13 +64,13 @@ function Home() {
           <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4">
             <Link
               to="/our-three-tools"
-              className="rounded-full bg-[#e79a2f] px-8 py-3 font-semibold text-white transition hover:bg-[#cc7f14] transform hover:scale-105 duration-300"
+              className="rounded-full bg-orange px-8 py-3 font-semibold text-ivory transition duration-300 hover:scale-105 hover:bg-orange-hover"
             >
               Explore the Tools
             </Link>
             <Link
               to="/implementation-plan"
-              className="rounded-full border-2 border-[#233b74] bg-transparent px-8 py-3 font-semibold text-[#233b74] transition hover:bg-[#233b74] hover:text-white duration-300"
+              className="rounded-full border-2 border-royal bg-transparent px-8 py-3 font-semibold text-royal transition duration-300 hover:bg-royal hover:text-ivory"
             >
               View Implementation Plan
             </Link>
@@ -58,23 +79,23 @@ function Home() {
       </section>
 
       <section className="mx-auto -mt-8 grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <Card className="bg-gradient-to-br from-[#f8f3ed] to-[#f1e7d9]">
+        <Card className="bg-gradient-to-br from-main to-section">
           <h3 className="font-display text-2xl text-royal">Every student belongs here</h3>
           <p className="text-body/90">Support built into study</p>
         </Card>
-        <Card className="bg-gradient-to-br from-[#f3ebe0] to-[#eadfce]">
+        <Card className="bg-gradient-to-br from-section to-lavender">
           <h3 className="font-display text-2xl text-royal">3 Tools</h3>
           <p className="text-body/90">One integrated system</p>
           <p className="text-sm uppercase tracking-wider text-orange">Mentoring - Alert - Learning</p>
         </Card>
-        <Card className="bg-gradient-to-br from-[#f8f3ed] to-[#efe4d4]">
+        <Card className="bg-gradient-to-br from-main to-section">
           <h3 className="font-display text-2xl text-royal">High potential, targeted support</h3>
           <p className="text-body/90">Right help, right time</p>
         </Card>
       </section>
 
       <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-br from-[#f8f3ed] to-[#eee3d2] p-8 shadow-soft">
+        <div className="rounded-3xl bg-gradient-to-br from-main to-section p-8 shadow-soft">
           <h2 className="text-center font-display text-4xl text-royal">Welcome to the Guide</h2>
           <p className="mx-auto mt-4 max-w-5xl text-center text-lg text-body/90">
             This guide is designed for students, lecturers, peer mentors, programme coordinators, and campus leadership.
@@ -91,7 +112,7 @@ function Home() {
             <Link
               key={item.path}
               to={item.path}
-              className="rounded-2xl border border-royal/15 bg-gradient-to-br from-[#f8f3ed] to-[#eee3d2] p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="rounded-2xl border border-lavender/55 bg-gradient-to-br from-main to-section p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
               <h3 className="font-display text-2xl text-royal">{item.title}</h3>
               <p className="mt-2 text-sm text-muted">Open section</p>

@@ -3,7 +3,19 @@
 @tailwind utilities;
 
 body {
-  @apply bg-section text-body antialiased font-body;
+  @apply bg-main text-body antialiased font-body;
+  line-height: 1.65;
+}
+
+#root {
+  @apply min-h-screen bg-main;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply text-royal;
 }
 
 .team-pattern {
@@ -11,9 +23,9 @@ body {
   inset: 0;
   opacity: 0.2;
   background-image:
-    radial-gradient(circle at 12% 20%, rgba(231, 154, 47, 0.55) 2px, transparent 2px),
-    radial-gradient(circle at 42% 68%, rgba(35, 59, 116, 0.3) 2px, transparent 2px),
-    radial-gradient(circle at 70% 26%, rgba(231, 154, 47, 0.55) 2px, transparent 2px);
+    radial-gradient(circle at 12% 20%, rgba(208, 154, 97, 0.5) 2px, transparent 2px),
+    radial-gradient(circle at 42% 68%, rgba(41, 67, 111, 0.22) 2px, transparent 2px),
+    radial-gradient(circle at 70% 26%, rgba(208, 154, 97, 0.5) 2px, transparent 2px);
   background-size: 240px 180px;
   pointer-events: none;
 }
