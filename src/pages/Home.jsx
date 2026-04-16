@@ -32,11 +32,11 @@ function Home() {
 
           <div className="mt-12 sm:mt-16 flex justify-center">
             {/* Crop top text embedded inside the source image */}
-            <div className="w-full max-w-6xl overflow-hidden">
+            <div className="w-full max-w-7xl overflow-hidden rounded-2xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="animate-bridge-image block h-[420px] w-full object-cover object-bottom sm:h-[520px] lg:h-[620px]"
+                className="animate-bridge-image block h-[360px] w-full object-cover object-bottom sm:h-[460px] lg:h-[520px]"
               />
             </div>
           </div>
