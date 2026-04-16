@@ -3,7 +3,7 @@ import { navItems } from '../data/siteContent';
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-royal/10 bg-gradient-to-r from-[#f7c996]/95 to-[#d8cff4]/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-royal/10 bg-gradient-to-r from-[#f8f3ed]/95 to-[#ece0cf]/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-4 sm:px-6 lg:px-8">
         <NavLink to="/" className="text-xl font-semibold tracking-wide text-royal font-display">
           Odisee Brussels
@@ -16,7 +16,7 @@ function Navbar() {
               className={({ isActive }) =>
                 `rounded-full px-3 py-1.5 transition ${
                   isActive
-                    ? 'bg-[#f1b96a] text-royal'
+                    ? 'bg-[#e9dccb] text-royal'
                     : 'text-royal hover:bg-lavender/25 hover:text-royal'
                 }`
               }
