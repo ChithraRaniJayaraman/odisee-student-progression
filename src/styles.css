@@ -66,20 +66,33 @@ h4 {
 
 .gold-star {
   position: absolute;
-  transform: rotate(45deg);
   border-radius: 2px;
-  background: linear-gradient(180deg, rgba(246, 225, 165, 0.95), rgba(208, 154, 97, 0.95));
-  box-shadow: 0 0 12px rgba(208, 154, 97, 0.75);
-  animation: starTwinkle 2.6s ease-in-out infinite;
+  background: linear-gradient(180deg, rgba(255, 243, 196, 0.98), rgba(214, 159, 98, 0.98));
+  clip-path: polygon(50% 0%, 62% 35%, 98% 35%, 68% 56%, 79% 92%, 50% 70%, 21% 92%, 32% 56%, 2% 35%, 38% 35%);
+  box-shadow: 0 0 12px rgba(208, 154, 97, 0.8);
+  animation: starTwinkle 2.6s ease-in-out infinite, starFloat 4.4s ease-in-out infinite;
 }
 
 .gold-star::before {
   content: '';
   position: absolute;
-  inset: 0;
-  transform: rotate(90deg);
-  border-radius: 2px;
-  background: inherit;
+  inset: -35%;
+  background: radial-gradient(circle, rgba(255, 235, 177, 0.75) 0%, rgba(255, 235, 177, 0) 72%);
+  filter: blur(1.4px);
+  animation: starGlowPulse 2.6s ease-in-out infinite;
+}
+
+.gold-star::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 160%;
+  height: 1.5px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: linear-gradient(90deg, rgba(255, 233, 170, 0), rgba(255, 233, 170, 0.95), rgba(255, 233, 170, 0));
+  box-shadow: 0 0 8px rgba(255, 223, 145, 0.65);
+  opacity: 0.75;
 }
 
 @keyframes heroDrift {
@@ -96,12 +109,34 @@ h4 {
 @keyframes starTwinkle {
   0%,
   100% {
-    opacity: 0.35;
-    transform: rotate(45deg) scale(0.75);
+    opacity: 0.4;
+    transform: scale(0.82);
   }
   50% {
     opacity: 1;
-    transform: rotate(45deg) scale(1);
+    transform: scale(1.15);
+  }
+}
+
+@keyframes starFloat {
+  0%,
+  100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -6px;
+  }
+}
+
+@keyframes starGlowPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
   }
 }
 

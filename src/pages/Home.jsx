@@ -22,12 +22,12 @@ function Home() {
   ];
 
   const shineStars = [
-    { top: '14%', left: '18%', delay: '0.15s', size: 10 },
-    { top: '20%', left: '36%', delay: '0.75s', size: 12 },
-    { top: '12%', left: '58%', delay: '0.4s', size: 9 },
-    { top: '18%', left: '78%', delay: '1.05s', size: 11 },
-    { top: '28%', left: '88%', delay: '0.3s', size: 10 },
-    { top: '30%', left: '9%', delay: '0.9s', size: 9 }
+    { top: '14%', left: '18%', delay: '0.15s', size: 16 },
+    { top: '20%', left: '36%', delay: '0.75s', size: 18 },
+    { top: '12%', left: '58%', delay: '0.4s', size: 15 },
+    { top: '18%', left: '78%', delay: '1.05s', size: 17 },
+    { top: '28%', left: '88%', delay: '0.3s', size: 16 },
+    { top: '30%', left: '9%', delay: '0.9s', size: 15 }
   ];
 
   return (
