@@ -26,7 +26,7 @@ function Home() {
           </h1>
 
           {/* Subtitle */}
-          <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[#5e5148] leading-relaxed">
+          <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[#233b74] leading-relaxed">
             Supporting student success through connection, timely guidance, and self-directed learning.
           </p>
 
@@ -35,12 +35,12 @@ function Home() {
             Three evidence-based tools for Odisee Brussels.
           </p>
 
-          <div className="relative mt-12 sm:mt-16 flex justify-center">
+          <div className="mt-12 sm:mt-16 flex justify-center">
             {/* Bridge Image - Wider and animated directly */}
             <img
               src={bridgeHero}
               alt="Bridge illustration with three support pillars and student success tools"
-              className="animate-bridge-image relative z-10 h-auto w-full max-w-6xl object-cover"
+              className="animate-bridge-image block h-auto w-full max-w-6xl"
             />
           </div>
 
