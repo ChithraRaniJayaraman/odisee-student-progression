@@ -5,6 +5,11 @@
 body {
   @apply bg-main text-body antialiased font-body;
   line-height: 1.65;
+  background-image:
+    radial-gradient(circle at 10% 8%, rgba(231, 154, 47, 0.08), transparent 34%),
+    radial-gradient(circle at 88% 14%, rgba(35, 59, 116, 0.06), transparent 32%),
+    linear-gradient(180deg, #fcf8f3 0%, #f9f2e8 100%);
+  background-attachment: fixed;
 }
 
 #root {
@@ -16,6 +21,24 @@ h2,
 h3,
 h4 {
   @apply text-royal;
+}
+
+main > section {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section::before {
+  content: '';
+  position: absolute;
+  inset: 8% 2%;
+  z-index: -1;
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(231, 154, 47, 0.08), transparent 58%),
+    radial-gradient(circle at 78% 72%, rgba(35, 59, 116, 0.05), transparent 62%);
+  filter: blur(2px);
+  pointer-events: none;
 }
 
 .team-pattern {
@@ -43,7 +66,7 @@ h4 {
   left: -4%;
   width: 220px;
   height: 220px;
-  background: radial-gradient(circle, rgba(199, 121, 74, 0.45) 0%, rgba(199, 121, 74, 0) 72%);
+  background: radial-gradient(circle, rgba(231, 154, 47, 0.34) 0%, rgba(231, 154, 47, 0) 72%);
 }
 
 .hero-blob-two {
@@ -51,7 +74,7 @@ h4 {
   right: -6%;
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle, rgba(41, 67, 111, 0.24) 0%, rgba(41, 67, 111, 0) 70%);
+  background: radial-gradient(circle, rgba(35, 59, 116, 0.2) 0%, rgba(35, 59, 116, 0) 70%);
   animation-delay: 0.8s;
 }
 
@@ -60,7 +83,7 @@ h4 {
   left: 40%;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(208, 154, 97, 0.3) 0%, rgba(208, 154, 97, 0) 74%);
+  background: radial-gradient(circle, rgba(214, 163, 101, 0.26) 0%, rgba(214, 163, 101, 0) 74%);
   animation-delay: 1.6s;
 }
 

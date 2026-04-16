@@ -4,30 +4,31 @@ export default {
   theme: {
     extend: {
       colors: {
-        royal: '#29436f',
+        royal: '#233b74',
         emerald: '#b0673d',
-        orange: '#c7794a',
-        'orange-hover': '#ac6439',
-        lavender: '#e6d7c4',
-        ivory: '#f6efe4',
-        gold: '#d09a61',
-        ink: '#6d5c4f',
-        body: '#6d5c4f',
-        muted: '#8d7a69',
-        section: '#efe3d1',
-        main: '#f5ede1'
+        orange: '#e79a2f',
+        'orange-hover': '#d58b24',
+        lavender: '#f3e7d8',
+        ivory: '#fffaf5',
+        gold: '#d6a365',
+        ink: '#5e5148',
+        body: '#5e5148',
+        muted: '#7b6f65',
+        section: '#f7efe4',
+        main: '#fcf8f3',
+        card: '#fffaf5'
       },
       fontFamily: {
         display: ['Georgia', 'Times New Roman', 'serif'],
         body: ['Arial', 'Helvetica', 'sans-serif']
       },
       boxShadow: {
-        soft: '0 12px 30px rgba(109, 92, 79, 0.1)',
-        card: '0 14px 34px rgba(109, 92, 79, 0.16)'
+        soft: '0 14px 36px rgba(94, 81, 72, 0.08)',
+        card: '0 18px 40px rgba(94, 81, 72, 0.12)'
       },
       backgroundImage: {
-        'royal-gradient': 'linear-gradient(120deg, #29436f 0%, #36527d 45%, #476089 100%)',
-        'lavender-glow': 'radial-gradient(circle at 20% 20%, rgba(208, 154, 97, 0.2), transparent 55%)'
+        'royal-gradient': 'linear-gradient(120deg, #233b74 0%, #2f4a85 48%, #3a568f 100%)',
+        'lavender-glow': 'radial-gradient(circle at 20% 20%, rgba(231, 154, 47, 0.14), transparent 58%)'
       },
       animation: {
         'tool-popup': 'toolPopup 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards',

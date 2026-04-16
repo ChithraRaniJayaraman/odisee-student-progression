@@ -1,16 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap");
 
 :root {
-  --primary: #1e5a96;
-  --primary-dark: #14406d;
-  --accent: #d4a574;
-  --bg: #f5f3f0;
-  --surface: #ffffff;
-  --text: #1f2933;
-  --muted: #596777;
-  --border: #d9e0e8;
+  --primary: #233b74;
+  --primary-dark: #1c3164;
+  --accent: #e79a2f;
+  --bg: #fcf8f3;
+  --surface: #fffaf5;
+  --section: #f3e7d8;
+  --text: #5e5148;
+  --muted: #7b6f65;
+  --border: #eadfce;
   --success: #1f8f62;
-  --ink-soft: #4e5d6b;
+  --ink-soft: #5e5148;
 }
 
 * {
@@ -22,9 +23,9 @@ body {
   font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 8% 0%, rgba(212, 165, 116, 0.18), transparent 42%),
-    radial-gradient(circle at 92% 12%, rgba(30, 90, 150, 0.16), transparent 36%),
-    linear-gradient(180deg, #fbf9f6 0%, var(--bg) 100%);
+    radial-gradient(circle at 8% 0%, rgba(231, 154, 47, 0.12), transparent 42%),
+    radial-gradient(circle at 92% 12%, rgba(35, 59, 116, 0.08), transparent 36%),
+    linear-gradient(180deg, #fcf8f3 0%, #f9f2e8 100%);
   line-height: 1.6;
 }
 
@@ -37,7 +38,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(255, 255, 255, 0.96);
+  background: rgba(255, 250, 245, 0.96);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(6px);
 }
@@ -82,17 +83,20 @@ main {
 }
 
 section {
-  background: var(--surface);
+  background:
+    radial-gradient(circle at 14% 12%, rgba(231, 154, 47, 0.05), transparent 56%),
+    radial-gradient(circle at 84% 80%, rgba(35, 59, 116, 0.04), transparent 60%),
+    var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 1.4rem;
   margin-bottom: 1rem;
-  box-shadow: 0 10px 24px rgba(31, 41, 51, 0.05);
+  box-shadow: 0 12px 28px rgba(94, 81, 72, 0.07);
 }
 
 .hero {
   padding: 2rem;
-  background: linear-gradient(135deg, rgba(30, 90, 150, 0.12), rgba(212, 165, 116, 0.14));
+  background: linear-gradient(135deg, rgba(35, 59, 116, 0.08), rgba(231, 154, 47, 0.12));
   position: relative;
   overflow: hidden;
 }
@@ -105,7 +109,7 @@ section {
   right: -60px;
   top: -90px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 165, 116, 0.42) 0%, rgba(212, 165, 116, 0) 68%);
+  background: radial-gradient(circle, rgba(231, 154, 47, 0.34) 0%, rgba(231, 154, 47, 0) 68%);
   pointer-events: none;
 }
 
@@ -120,7 +124,7 @@ h4 {
 
 h1 {
   font-size: clamp(1.8rem, 3vw, 2.6rem);
-  color: var(--primary-dark);
+  color: var(--primary);
 }
 
 h2 {
@@ -152,8 +156,8 @@ p {
 }
 
 .stat-card {
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(20, 64, 109, 0.18);
+  background: rgba(255, 250, 245, 0.9);
+  border: 1px solid rgba(234, 223, 206, 0.9);
   border-radius: 10px;
   padding: 0.8rem;
 }
@@ -180,15 +184,15 @@ p {
 
 .card {
   border: 1px solid var(--border);
-  border-radius: 12px;
-  background: #fff;
+  border-radius: 16px;
+  background: var(--surface);
   padding: 1rem;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(31, 41, 51, 0.08);
+  box-shadow: 0 16px 30px rgba(94, 81, 72, 0.1);
 }
 
 .btn {
@@ -201,18 +205,18 @@ p {
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: var(--accent);
   color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--primary-dark);
+  background: #d58b24;
 }
 
 .btn-secondary {
-  background: #fff;
+  background: var(--surface);
   color: var(--primary);
-  border: 1px solid var(--primary);
+  border: 1px solid var(--border);
 }
 
 .highlight {
@@ -229,8 +233,8 @@ p {
 .phase-item {
   padding: 1rem;
   border-radius: 12px;
-  background: linear-gradient(160deg, rgba(30, 90, 150, 0.06), rgba(212, 165, 116, 0.08));
-  border: 1px solid rgba(30, 90, 150, 0.14);
+  background: linear-gradient(160deg, rgba(35, 59, 116, 0.05), rgba(231, 154, 47, 0.1));
+  border: 1px solid rgba(234, 223, 206, 0.95);
 }
 
 .phase-month {
@@ -243,8 +247,8 @@ p {
 }
 
 .affiliation-panel {
-  background: linear-gradient(145deg, rgba(30, 90, 150, 0.08), rgba(212, 165, 116, 0.1));
-  border-color: rgba(30, 90, 150, 0.22);
+  background: linear-gradient(145deg, rgba(35, 59, 116, 0.05), rgba(231, 154, 47, 0.09));
+  border-color: rgba(234, 223, 206, 0.95);
 }
 
 .badge {
@@ -272,7 +276,7 @@ footer {
   padding: 1.8rem 1rem 2.2rem;
   color: var(--muted);
   border-top: 1px solid var(--border);
-  background: #f1eee8;
+  background: linear-gradient(180deg, #f7efe4 0%, #fcf8f3 100%);
 }
 
 footer a {

@@ -89,13 +89,13 @@ function Home() {
           <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4">
             <Link
               to="/our-three-tools"
-              className="rounded-full bg-orange px-8 py-3 font-semibold text-ivory transition duration-300 hover:scale-105 hover:bg-orange-hover"
+              className="rounded-full bg-orange px-8 py-3 font-semibold text-ivory shadow-soft transition duration-300 hover:scale-105 hover:bg-orange-hover"
             >
               Explore the Tools
             </Link>
             <Link
               to="/implementation-plan"
-              className="rounded-full border-2 border-royal bg-transparent px-8 py-3 font-semibold text-royal transition duration-300 hover:bg-royal hover:text-ivory"
+              className="rounded-full border border-lavender/45 bg-ivory px-8 py-3 font-semibold text-royal shadow-soft transition duration-300 hover:bg-lavender/45"
             >
               View Implementation Plan
             </Link>
@@ -120,7 +120,7 @@ function Home() {
       </section>
 
       <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-br from-main to-section p-8 shadow-soft">
+        <div className="rounded-3xl bg-card p-8 shadow-soft">
           <h2 className="text-center font-display text-4xl text-royal">Welcome to the Guide</h2>
           <p className="mx-auto mt-4 max-w-5xl text-center text-lg text-body/90">
             This guide is designed for students, lecturers, peer mentors, programme coordinators, and campus leadership.
@@ -137,7 +137,7 @@ function Home() {
             <Link
               key={item.path}
               to={item.path}
-              className="rounded-2xl border border-lavender/55 bg-gradient-to-br from-main to-section p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="rounded-3xl border border-lavender/35 bg-card p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card"
             >
               <h3 className="font-display text-2xl text-royal">{item.title}</h3>
               <p className="mt-2 text-sm text-muted">Open section</p>
