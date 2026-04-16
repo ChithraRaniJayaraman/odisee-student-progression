@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../../Untitled design (7).png';
+import bridgeHero from '../bridge-hero.png.png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
@@ -41,21 +41,19 @@ function Home() {
             ODISEE UNIVERSITY OF APPLIED SCIENCES -<br className="hidden sm:block" />BRUSSELS CAMPUS
           </h2>
 
-          <div className="mt-1 flex justify-center sm:mt-2">
-            <div className="relative w-full max-w-7xl overflow-hidden rounded-2xl">
-              <div className="absolute inset-x-0 top-0 z-20 px-4 pt-5 sm:pt-7 lg:pt-9">
-                <h1 className="font-display text-4xl font-black leading-tight text-royal tracking-tight sm:text-5xl lg:text-6xl">
-                  Bridging the Gap
-                </h1>
-                <p className="mx-auto mt-3 max-w-5xl text-sm font-black uppercase tracking-wide text-royal sm:text-base lg:text-lg">
-                  Three evidence based tools to support success at Odisee Brussels
-                </p>
-              </div>
+          <h1 className="mt-8 font-display text-4xl font-black leading-tight text-royal tracking-tight sm:text-5xl lg:text-6xl">
+            Bridging the Gap
+          </h1>
+          <p className="mx-auto mt-3 max-w-5xl text-base font-black uppercase tracking-wide text-royal sm:text-lg lg:text-xl">
+            Three evidence based tools to support success at Odisee Brussels
+          </p>
 
+          <div className="mt-4 flex justify-center sm:mt-6">
+            <div className="w-full max-w-7xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-[320px] w-full object-cover object-[center_84%] sm:h-[390px] lg:h-[450px]"
+                className="block h-auto w-full object-contain"
               />
             </div>
           </div>
