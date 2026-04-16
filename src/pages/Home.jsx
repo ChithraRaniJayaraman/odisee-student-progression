@@ -40,7 +40,7 @@ function Home() {
             <img
               src={bridgeHero}
               alt="Bridge illustration with three support pillars and student success tools"
-              className="animate-bridge-image relative z-10 h-auto w-full max-w-4xl object-cover"
+              className="animate-bridge-image relative z-10 h-auto w-full max-w-6xl object-cover"
             />
           </div>
 
