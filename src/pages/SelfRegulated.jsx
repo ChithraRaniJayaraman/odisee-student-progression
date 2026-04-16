@@ -34,17 +34,17 @@ function SelfRegulated() {
 
         <Card title="The Three Steps in Practice">
           <div className="grid gap-5 md:grid-cols-3">
-            <div className="rounded-2xl border border-royal/15 bg-white p-5">
+            <div className="rounded-2xl border border-royal/15 bg-gradient-to-br from-[#fcf8f3] to-[#f8f3ed] p-5">
               <p className="text-xs uppercase tracking-[0.2em] text-emerald">Step 1</p>
               <h3 className="mt-2 font-display text-3xl text-royal">PLAN</h3>
               <p className="mt-2 text-sm">Set weekly priorities, break tasks into manageable actions, and estimate time realistically.</p>
             </div>
-            <div className="rounded-2xl border border-royal/15 bg-white p-5">
+            <div className="rounded-2xl border border-royal/15 bg-gradient-to-br from-[#fcf8f3] to-[#f8f3ed] p-5">
               <p className="text-xs uppercase tracking-[0.2em] text-emerald">Step 2</p>
               <h3 className="mt-2 font-display text-3xl text-royal">MONITOR</h3>
               <p className="mt-2 text-sm">Track concentration, understanding, and progress. Adjust strategy early when a plan is not working.</p>
             </div>
-            <div className="rounded-2xl border border-royal/15 bg-white p-5">
+            <div className="rounded-2xl border border-royal/15 bg-gradient-to-br from-[#fcf8f3] to-[#f8f3ed] p-5">
               <p className="text-xs uppercase tracking-[0.2em] text-emerald">Step 3</p>
               <h3 className="mt-2 font-display text-3xl text-royal">EVALUATE</h3>
               <p className="mt-2 text-sm">Reflect after each cycle: what worked, what did not, and what to improve next week.</p>

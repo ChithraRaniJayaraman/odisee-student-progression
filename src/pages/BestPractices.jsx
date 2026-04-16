@@ -27,7 +27,7 @@ function BestPractices() {
         subtitle="International evidence translated into practical, inclusive implementation for Odisee Brussels."
       />
       <section className="mx-auto max-w-7xl space-y-8 px-4 py-12 sm:px-6 lg:px-8">
-        <Card title="Evidence at a Glance" className="bg-gradient-to-r from-lavender/25 to-white">
+        <Card title="Evidence at a Glance" className="bg-gradient-to-r from-[#f8f3ed] to-[#fcf8f3]">
           <div className="overflow-x-auto">
             <table className="min-w-full border-separate border-spacing-y-3">
               <thead>
@@ -39,7 +39,7 @@ function BestPractices() {
               </thead>
               <tbody>
                 {rows.map((row) => (
-                  <tr key={row.tool} className="rounded-2xl bg-white shadow-soft">
+                  <tr key={row.tool} className="rounded-2xl bg-gradient-to-r from-[#fcf8f3] to-[#f8f3ed] shadow-soft">
                     <td className="px-4 py-4 font-semibold text-royal">{row.tool}</td>
                     <td className="px-4 py-4 text-ink/85">{row.evidence}</td>
                     <td className="px-4 py-4 text-ink/85">{row.practice}</td>

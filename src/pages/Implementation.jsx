@@ -39,7 +39,7 @@ function Implementation() {
           </p>
         </Card>
 
-        <Card title="Academic Year Timeline" className="bg-white">
+        <Card title="Academic Year Timeline" className="bg-gradient-to-br from-[#fcf8f3] to-[#f8f3ed]">
           <div className="relative mt-2 space-y-6 border-l-2 border-lavender/70 pl-6">
             {timeline.map((step) => (
               <div key={step.phase} className="relative">
