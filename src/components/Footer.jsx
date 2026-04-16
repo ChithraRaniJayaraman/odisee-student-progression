@@ -9,9 +9,6 @@ function Footer() {
           <h2 className="font-display text-2xl">Odisee University of Applied Sciences</h2>
           <p className="mt-2 text-body/90">Brussels Campus</p>
           <p className="mt-3 text-sm text-body/80">Bridging the Gap 2025-2026</p>
-          <p className="mt-1 text-sm text-body/80">
-            Inspired by GO! Scholengroep Brussel Inclusive Education Project (2025)
-          </p>
         </div>
         <div>
           <h3 className="font-semibold text-orange">Navigation</h3>

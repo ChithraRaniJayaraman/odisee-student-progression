@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../untitled-design-7.png';
+import bridgeHero from '../bridge-hero.png.png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
@@ -30,12 +30,11 @@ function Home() {
           </p>
 
           <div className="-mt-3 sm:-mt-4 flex justify-center">
-            {/* Use the full image with a soft beige tone to match page palette */}
-            <div className="w-full max-w-7xl">
+            <div className="w-full max-w-7xl overflow-hidden rounded-2xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-auto w-full object-contain mix-blend-multiply"
+                className="block h-[360px] w-full object-cover object-bottom sm:h-[460px] lg:h-[520px]"
               />
             </div>
           </div>
@@ -101,16 +100,6 @@ function Home() {
         </div>
       </section>
 
-      <section className="mx-auto mt-16 max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-orange/30 bg-gradient-to-br from-[#f3ebe0] to-[#e8dccb] p-8 text-center">
-          <p className="text-sm uppercase tracking-[0.2em] text-muted">Inspired by previous year</p>
-          <h2 className="mt-2 font-display text-3xl text-royal">GO! Scholengroep Brussel Inclusive Education Project (2025)</h2>
-          <p className="mx-auto mt-3 max-w-4xl text-body/90">
-            This website builds forward from the clarity and inclusive spirit of that project while presenting a distinct,
-            Odisee-specific student success platform with coordinated tools for mentoring, proactive alerts, and self-regulated learning.
-          </p>
-        </div>
-      </section>
     </>
   );
 }
