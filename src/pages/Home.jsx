@@ -35,92 +35,12 @@ function Home() {
             Three evidence-based tools for Odisee Brussels.
           </p>
 
-          {/* Animated Tools - Bold Block Elements Above Image */}
-          <div className="mt-12 sm:mt-16 flex justify-center gap-6 sm:gap-8 flex-wrap">
-            {[
-              { label: 'Peer Mentoring', delay: '0s' },
-              { label: 'Early Alert', delay: '0.2s' },
-              { label: 'Self Learning', delay: '0.4s' }
-            ].map((tool, index) => (
-              <div
-                key={tool.label}
-                className="tool-block animate-tool-popup"
-                style={{ animationDelay: tool.delay }}
-              >
-                <div className="flex items-center justify-center w-24 h-24 sm:w-28 sm:h-28 rounded-xl bg-[#233b74] shadow-lg transform transition-all duration-300 hover:scale-110">
-                  <span className="text-4xl sm:text-5xl font-black text-[#e79a2f]">
-                    {index + 1}
-                  </span>
-                </div>
-                <p className="mt-3 font-bold text-[#233b74] text-base sm:text-lg">
-                  {tool.label}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* SVG with Connecting Rays and Sparkles */}
           <div className="relative mt-12 sm:mt-16 flex justify-center">
-            <svg
-              className="absolute inset-0 w-full h-full pointer-events-none"
-              style={{ top: '-2rem', height: '200px' }}
-              viewBox="0 0 1200 300"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              {/* Connecting rays from tools to bridge */}
-              {[
-                { x1: '300', y1: '80', x2: '300', y2: '280' },
-                { x1: '600', y1: '80', x2: '600', y2: '280' },
-                { x1: '900', y1: '80', x2: '900', y2: '280' }
-              ].map((ray, index) => (
-                <line
-                  key={`ray-${index}`}
-                  x1={ray.x1}
-                  y1={ray.y1}
-                  x2={ray.x2}
-                  y2={ray.y2}
-                  stroke="#e79a2f"
-                  strokeWidth="2"
-                  opacity="0.4"
-                  className="animate-ray-glow"
-                  style={{ animationDelay: `${0.3 + index * 0.2}s` }}
-                />
-              ))}
-
-              {/* Sparkles at connection points */}
-              {[
-                { cx: '300', cy: '280' },
-                { cx: '600', cy: '280' },
-                { cx: '900', cy: '280' }
-              ].map((sparkle, index) => (
-                <g key={`sparkle-${index}`}>
-                  <circle
-                    cx={sparkle.cx}
-                    cy={sparkle.cy}
-                    r="3"
-                    fill="#e79a2f"
-                    className="animate-sparkle"
-                    style={{ animationDelay: `${0.6 + index * 0.2}s` }}
-                  />
-                  <circle
-                    cx={sparkle.cx}
-                    cy={sparkle.cy}
-                    r="3"
-                    fill="none"
-                    stroke="#e79a2f"
-                    strokeWidth="1"
-                    className="animate-sparkle-pulse"
-                    style={{ animationDelay: `${0.6 + index * 0.2}s` }}
-                  />
-                </g>
-              ))}
-            </svg>
-
-            {/* Bridge Image - Natural Part of the Section, No Box */}
+            {/* Bridge Image - Wider and animated directly */}
             <img
               src={bridgeHero}
               alt="Bridge illustration with three support pillars and student success tools"
-              className="relative z-10 h-auto w-full max-w-xl sm:max-w-2xl object-cover"
+              className="animate-bridge-image relative z-10 h-auto w-full max-w-4xl object-cover"
             />
           </div>
 
