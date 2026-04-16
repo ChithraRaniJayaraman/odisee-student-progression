@@ -30,3 +30,78 @@ h4 {
   pointer-events: none;
 }
 
+.hero-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(20px);
+  opacity: 0.35;
+  animation: heroDrift 12s ease-in-out infinite alternate;
+}
+
+.hero-blob-one {
+  top: 6%;
+  left: -4%;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(199, 121, 74, 0.45) 0%, rgba(199, 121, 74, 0) 72%);
+}
+
+.hero-blob-two {
+  top: 20%;
+  right: -6%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(41, 67, 111, 0.24) 0%, rgba(41, 67, 111, 0) 70%);
+  animation-delay: 0.8s;
+}
+
+.hero-blob-three {
+  bottom: 8%;
+  left: 40%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(208, 154, 97, 0.3) 0%, rgba(208, 154, 97, 0) 74%);
+  animation-delay: 1.6s;
+}
+
+.gold-star {
+  position: absolute;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  background: linear-gradient(180deg, rgba(246, 225, 165, 0.95), rgba(208, 154, 97, 0.95));
+  box-shadow: 0 0 12px rgba(208, 154, 97, 0.75);
+  animation: starTwinkle 2.6s ease-in-out infinite;
+}
+
+.gold-star::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: rotate(90deg);
+  border-radius: 2px;
+  background: inherit;
+}
+
+@keyframes heroDrift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translate3d(0, -10px, 0) scale(1.06);
+    opacity: 0.42;
+  }
+}
+
+@keyframes starTwinkle {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: rotate(45deg) scale(0.75);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+

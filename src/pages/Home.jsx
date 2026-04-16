@@ -21,11 +21,38 @@ function Home() {
     { top: '68%', left: '67%', size: 'h-1.5 w-1.5', delay: '0.8s' }
   ];
 
+  const shineStars = [
+    { top: '14%', left: '18%', delay: '0.15s', size: 10 },
+    { top: '20%', left: '36%', delay: '0.75s', size: 12 },
+    { top: '12%', left: '58%', delay: '0.4s', size: 9 },
+    { top: '18%', left: '78%', delay: '1.05s', size: 11 },
+    { top: '28%', left: '88%', delay: '0.3s', size: 10 },
+    { top: '30%', left: '9%', delay: '0.9s', size: 9 }
+  ];
+
   return (
     <>
       {/* Hero Section - Clean, Open, One Connected Story */}
       <section className="relative bg-gradient-to-b from-main via-section to-lavender px-4 py-10 text-center sm:px-6 lg:px-8 lg:py-12">
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+          <span className="hero-blob hero-blob-one" />
+          <span className="hero-blob hero-blob-two" />
+          <span className="hero-blob hero-blob-three" />
+
+          {shineStars.map((star, index) => (
+            <span
+              key={`star-${index}`}
+              className="gold-star"
+              style={{
+                top: star.top,
+                left: star.left,
+                width: `${star.size}px`,
+                height: `${star.size}px`,
+                animationDelay: star.delay
+              }}
+            />
+          ))}
+
           {sparkleDots.map((dot, index) => (
             <span
               key={`${dot.top}-${dot.left}-${index}`}
