@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../bridge-hero.png.png';
+import bridgeHero from '../untitled-design-7.png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
@@ -31,12 +31,12 @@ function Home() {
           </p>
 
           <div className="mt-12 sm:mt-16 flex justify-center">
-            {/* Crop top text embedded inside the source image */}
+            {/* Use the full image with a soft beige tone to match page palette */}
             <div className="w-full max-w-7xl overflow-hidden rounded-2xl">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="animate-bridge-image block h-[360px] w-full object-cover object-bottom sm:h-[460px] lg:h-[520px]"
+                className="animate-bridge-image hero-beige-tone block h-auto w-full object-contain"
               />
             </div>
           </div>
