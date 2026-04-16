@@ -28,6 +28,79 @@ export default {
       backgroundImage: {
         'royal-gradient': 'linear-gradient(120deg, #233b74 0%, #35538f 45%, #4a689f 100%)',
         'lavender-glow': 'radial-gradient(circle at 20% 20%, rgba(231, 154, 47, 0.2), transparent 55%)'
+      },
+      animation: {
+        'tool-popup': 'toolPopup 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards',
+        'ray-glow': 'rayGlow 1.2s ease-out forwards',
+        'sparkle': 'sparkle 2s ease-in-out infinite',
+        'sparkle-pulse': 'sparklePulse 2s ease-out infinite'
+      },
+      keyframes: {
+        toolPopup: {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(30px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        rayGlow: {
+          '0%': {
+            opacity: '0',
+            strokeWidth: '2px',
+            filter: 'drop-shadow(0 0 0px rgba(231, 154, 47, 0))'
+          },
+          '50%': {
+            opacity: '0.4',
+            filter: 'drop-shadow(0 0 6px rgba(231, 154, 47, 0.6))'
+          },
+          '100%': {
+            opacity: '0.4',
+            strokeWidth: '2px',
+            filter: 'drop-shadow(0 0 8px rgba(231, 154, 47, 0.4))'
+          }
+        },
+        sparkle: {
+          '0%': {
+            opacity: '0',
+            r: '0',
+            filter: 'drop-shadow(0 0 0px rgba(231, 154, 47, 0))'
+          },
+          '40%': {
+            opacity: '1',
+            r: '3',
+            filter: 'drop-shadow(0 0 6px rgba(231, 154, 47, 0.8))'
+          },
+          '70%': {
+            opacity: '1',
+            r: '3',
+            filter: 'drop-shadow(0 0 8px rgba(231, 154, 47, 0.6))'
+          },
+          '100%': {
+            opacity: '0.6',
+            r: '3',
+            filter: 'drop-shadow(0 0 4px rgba(231, 154, 47, 0.3))'
+          }
+        },
+        sparklePulse: {
+          '0%': {
+            opacity: '0',
+            r: '3',
+            filter: 'drop-shadow(0 0 0px rgba(231, 154, 47, 0))'
+          },
+          '30%': {
+            opacity: '0.8',
+            r: '6',
+            filter: 'drop-shadow(0 0 6px rgba(231, 154, 47, 0.6))'
+          },
+          '100%': {
+            opacity: '0',
+            r: '12',
+            filter: 'drop-shadow(0 0 2px rgba(231, 154, 47, 0))'
+          }
+        }
       }
     }
   },

@@ -12,28 +12,132 @@ const quickLinks = [
 function Home() {
   return (
     <>
-      <section className="bg-section px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-20">
-        <div className="mx-auto max-w-5xl rounded-3xl bg-main px-6 py-10 shadow-soft sm:px-10">
-          <p className="text-xs uppercase tracking-[0.2em] text-muted sm:text-sm">ODISEE UNIVERSITY OF APPLIED SCIENCES - BRUSSELS CAMPUS</p>
-          <h1 className="mt-4 font-display text-5xl font-bold leading-tight text-royal sm:text-6xl lg:text-7xl">Bridging the Gap</h1>
-          <p className="mx-auto mt-5 max-w-3xl text-xl text-body sm:text-2xl">
+      {/* Hero Section - Clean, Open, One Connected Story */}
+      <section className="relative bg-gradient-to-b from-[#f8f3ed] via-[#f8f3ed] to-[#f8f3ed] px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-28">
+        <div className="mx-auto max-w-5xl">
+          {/* University Tag */}
+          <p className="text-xs uppercase tracking-[0.3em] text-[#8e7d72] sm:text-sm font-semibold letter-spacing-wider">
+            Odisee University of Applied Sciences – Brussels Campus
+          </p>
+
+          {/* Main Heading - "Bridging the Gap" in large elegant serif */}
+          <h1 className="mt-8 font-display text-6xl sm:text-7xl lg:text-8xl font-bold leading-tight text-[#233b74] tracking-tight">
+            Bridging the Gap
+          </h1>
+
+          {/* Subtitle */}
+          <p className="mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-[#5e5148] leading-relaxed">
             Supporting student success through connection, timely guidance, and self-directed learning.
           </p>
-          <p className="mt-4 text-lg text-muted">Three evidence-based tools for Odisee Brussels.</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/our-three-tools" className="rounded-full bg-orange px-7 py-3 font-semibold text-white transition hover:bg-orange-hover">
-              Explore the Tools
-            </Link>
-            <Link to="/implementation-plan" className="rounded-full border border-royal/20 bg-white px-7 py-3 font-semibold text-royal transition hover:bg-section">
-              View Implementation Plan
-            </Link>
+
+          {/* Supporting Line */}
+          <p className="mt-4 text-base sm:text-lg text-[#8e7d72]">
+            Three evidence-based tools for Odisee Brussels.
+          </p>
+
+          {/* Animated Tools - Bold Block Elements Above Image */}
+          <div className="mt-12 sm:mt-16 flex justify-center gap-6 sm:gap-8 flex-wrap">
+            {[
+              { label: 'Peer Mentoring', delay: '0s' },
+              { label: 'Early Alert', delay: '0.2s' },
+              { label: 'Self Learning', delay: '0.4s' }
+            ].map((tool, index) => (
+              <div
+                key={tool.label}
+                className="tool-block animate-tool-popup"
+                style={{ animationDelay: tool.delay }}
+              >
+                <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-[#233b74] shadow-md">
+                  <span className="text-2xl sm:text-3xl font-bold text-[#e79a2f]">
+                    {index + 1}
+                  </span>
+                </div>
+                <p className="mt-3 font-semibold text-[#233b74] text-sm sm:text-base">
+                  {tool.label}
+                </p>
+              </div>
+            ))}
           </div>
-          <div className="mt-10 flex justify-center">
+
+          {/* SVG with Connecting Rays and Sparkles */}
+          <div className="relative mt-12 sm:mt-16 flex justify-center">
+            <svg
+              className="absolute inset-0 w-full h-full pointer-events-none"
+              style={{ top: '-2rem', height: '200px' }}
+              viewBox="0 0 1200 300"
+              preserveAspectRatio="xMidYMid meet"
+            >
+              {/* Connecting rays from tools to bridge */}
+              {[
+                { x1: '300', y1: '80', x2: '300', y2: '280' },
+                { x1: '600', y1: '80', x2: '600', y2: '280' },
+                { x1: '900', y1: '80', x2: '900', y2: '280' }
+              ].map((ray, index) => (
+                <line
+                  key={`ray-${index}`}
+                  x1={ray.x1}
+                  y1={ray.y1}
+                  x2={ray.x2}
+                  y2={ray.y2}
+                  stroke="#e79a2f"
+                  strokeWidth="2"
+                  opacity="0.4"
+                  className="animate-ray-glow"
+                  style={{ animationDelay: `${0.3 + index * 0.2}s` }}
+                />
+              ))}
+
+              {/* Sparkles at connection points */}
+              {[
+                { cx: '300', cy: '280' },
+                { cx: '600', cy: '280' },
+                { cx: '900', cy: '280' }
+              ].map((sparkle, index) => (
+                <g key={`sparkle-${index}`}>
+                  <circle
+                    cx={sparkle.cx}
+                    cy={sparkle.cy}
+                    r="3"
+                    fill="#e79a2f"
+                    className="animate-sparkle"
+                    style={{ animationDelay: `${0.6 + index * 0.2}s` }}
+                  />
+                  <circle
+                    cx={sparkle.cx}
+                    cy={sparkle.cy}
+                    r="3"
+                    fill="none"
+                    stroke="#e79a2f"
+                    strokeWidth="1"
+                    className="animate-sparkle-pulse"
+                    style={{ animationDelay: `${0.6 + index * 0.2}s` }}
+                  />
+                </g>
+              ))}
+            </svg>
+
+            {/* Bridge Image - Natural Part of the Section */}
             <img
               src={bridgeHero}
               alt="Bridge illustration with three support pillars and student success tools"
-              className="h-auto w-full max-w-4xl rounded-2xl object-cover shadow-card"
+              className="relative z-10 h-auto w-full max-w-xl sm:max-w-2xl object-cover rounded-lg shadow-soft"
             />
+          </div>
+
+          {/* Call to Action Buttons */}
+          <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/our-three-tools"
+              className="rounded-full bg-[#e79a2f] px-8 py-3 font-semibold text-white transition hover:bg-[#cc7f14] transform hover:scale-105 duration-300"
+            >
+              Explore the Tools
+            </Link>
+            <Link
+              to="/implementation-plan"
+              className="rounded-full border-2 border-[#233b74] bg-transparent px-8 py-3 font-semibold text-[#233b74] transition hover:bg-[#233b74] hover:text-white duration-300"
+            >
+              View Implementation Plan
+            </Link>
           </div>
         </div>
       </section>
@@ -53,6 +157,49 @@ function Home() {
           <p className="text-body/90">Right help, right time</p>
         </Card>
       </section>
+
+      <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="rounded-3xl bg-white p-8 shadow-soft">
+          <h2 className="text-center font-display text-4xl text-royal">Welcome to the Guide</h2>
+          <p className="mx-auto mt-4 max-w-5xl text-center text-lg text-body/90">
+            This guide is designed for students, lecturers, peer mentors, programme coordinators, and campus leadership.
+            Odisee Brussels serves a diverse student community with strong potential, rich multilingual identities, and high
+            motivation. Students deserve the right support at the right moment to sustain progress and belonging.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-center font-display text-4xl text-royal">Quick Navigation</h2>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          {quickLinks.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className="rounded-2xl border border-royal/15 bg-white p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+            >
+              <h3 className="font-display text-2xl text-royal">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted">Open section</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto mt-16 max-w-7xl px-4 pb-8 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-orange/30 bg-section p-8 text-center">
+          <p className="text-sm uppercase tracking-[0.2em] text-muted">Inspired by previous year</p>
+          <h2 className="mt-2 font-display text-3xl text-royal">GO! Scholengroep Brussel Inclusive Education Project (2025)</h2>
+          <p className="mx-auto mt-3 max-w-4xl text-body/90">
+            This website builds forward from the clarity and inclusive spirit of that project while presenting a distinct,
+            Odisee-specific student success platform with coordinated tools for mentoring, proactive alerts, and self-regulated learning.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+}
+
+export default Home;
 
       <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-white p-8 shadow-soft">
