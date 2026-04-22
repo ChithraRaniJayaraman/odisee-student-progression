@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../../designed hero for odisee.png';
+import bridgeHero from '../../Every Student Belongs Here.png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
@@ -33,7 +33,7 @@ function Home() {
   return (
     <>
       {/* Hero Section - Clean, Open, One Connected Story */}
-      <section className="relative bg-gradient-to-b from-main via-section to-lavender px-4 py-10 text-center sm:px-6 lg:px-8 lg:py-12">
+      <section className="relative overflow-hidden bg-gradient-to-b from-main via-section to-lavender px-4 py-12 text-center sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
           <span className="hero-blob hero-blob-one" />
           <span className="hero-blob hero-blob-two" />
@@ -75,12 +75,12 @@ function Home() {
             Three evidence based tools to support success at Odisee Brussels
           </p>
 
-          <div className="mt-4 flex justify-center sm:mt-6">
-            <div className="w-full max-w-7xl">
+          <div className="mt-8 flex justify-center sm:mt-10">
+            <div className="w-full max-w-[1280px] rounded-[2.25rem] border border-white/60 bg-white/30 p-3 shadow-[0_30px_80px_rgba(68,82,60,0.18)] backdrop-blur-2xl sm:p-4">
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-auto w-full object-contain"
+                className="block h-auto w-full rounded-[1.6rem] object-contain"
               />
             </div>
           </div>
@@ -89,13 +89,13 @@ function Home() {
           <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4">
             <Link
               to="/our-three-tools"
-              className="rounded-full bg-orange px-8 py-3 font-semibold text-ivory shadow-soft transition duration-300 hover:scale-105 hover:bg-orange-hover"
+              className="rounded-full border border-gold/45 bg-gold/72 px-8 py-3 font-semibold text-royal shadow-[0_16px_34px_rgba(224,191,106,0.24)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-gold/85"
             >
               Explore the Tools
             </Link>
             <Link
               to="/implementation-plan"
-              className="rounded-full border border-lavender/45 bg-ivory px-8 py-3 font-semibold text-royal shadow-soft transition duration-300 hover:bg-lavender/45"
+              className="rounded-full border border-white/70 bg-white/55 px-8 py-3 font-semibold text-royal shadow-soft backdrop-blur-md transition duration-300 hover:bg-white/75"
             >
               View Implementation Plan
             </Link>
@@ -104,23 +104,23 @@ function Home() {
       </section>
 
       <section className="mx-auto -mt-8 grid max-w-7xl gap-5 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
-        <Card className="bg-gradient-to-br from-main to-section">
+        <Card className="bg-gradient-to-br from-main/85 to-section/85">
           <h3 className="font-display text-2xl text-royal">Every student belongs here</h3>
           <p className="text-body/90">Support built into study</p>
         </Card>
-        <Card className="bg-gradient-to-br from-section to-lavender">
+        <Card className="bg-gradient-to-br from-section/85 to-lavender/85">
           <h3 className="font-display text-2xl text-royal">3 Tools</h3>
           <p className="text-body/90">One integrated system</p>
           <p className="text-sm uppercase tracking-wider text-orange">Mentoring - Alert - Learning</p>
         </Card>
-        <Card className="bg-gradient-to-br from-main to-section">
+        <Card className="bg-gradient-to-br from-main/85 to-section/85">
           <h3 className="font-display text-2xl text-royal">High potential, targeted support</h3>
           <p className="text-body/90">Right help, right time</p>
         </Card>
       </section>
 
       <section className="mx-auto mt-16 max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-card p-8 shadow-soft">
+        <div className="rounded-3xl border border-white/60 bg-white/55 p-8 shadow-soft backdrop-blur-xl">
           <h2 className="text-center font-display text-4xl text-royal">Welcome to the Guide</h2>
           <p className="mx-auto mt-4 max-w-5xl text-center text-lg text-body/90">
             This guide is designed for students, lecturers, peer mentors, programme coordinators, and campus leadership.
@@ -137,7 +137,7 @@ function Home() {
             <Link
               key={item.path}
               to={item.path}
-              className="rounded-3xl border border-lavender/35 bg-card p-6 text-center shadow-soft transition hover:-translate-y-1 hover:shadow-card"
+              className="rounded-3xl border border-white/55 bg-white/55 p-6 text-center shadow-soft backdrop-blur-xl transition hover:-translate-y-1 hover:bg-white/70 hover:shadow-card"
             >
               <h3 className="font-display text-2xl text-royal">{item.title}</h3>
               <p className="mt-2 text-sm text-muted">Open section</p>

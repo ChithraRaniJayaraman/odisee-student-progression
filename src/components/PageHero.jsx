@@ -1,6 +1,6 @@
 function PageHero({ title, subtitle }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-main via-section to-lavender">
+    <section className="relative overflow-hidden bg-gradient-to-r from-main via-section to-lavender border-b border-white/45">
       <div className="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8">
         <p className="text-sm uppercase tracking-[0.2em] text-muted">Bridging the Gap</p>
         <h1 className="mt-2 font-display text-4xl text-royal sm:text-5xl">{title}</h1>

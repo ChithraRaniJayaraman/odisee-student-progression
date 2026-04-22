@@ -6,9 +6,9 @@ body {
   @apply bg-main text-body antialiased font-body;
   line-height: 1.65;
   background-image:
-    radial-gradient(circle at 10% 8%, rgba(231, 154, 47, 0.08), transparent 34%),
-    radial-gradient(circle at 88% 14%, rgba(35, 59, 116, 0.06), transparent 32%),
-    linear-gradient(180deg, #fcf8f3 0%, #f9f2e8 100%);
+    radial-gradient(circle at 10% 8%, rgba(224, 191, 106, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 14%, rgba(126, 159, 123, 0.12), transparent 32%),
+    linear-gradient(180deg, #fcf8ef 0%, #f7f1e4 100%);
   background-attachment: fixed;
 }
 
@@ -35,8 +35,8 @@ main > section::before {
   z-index: -1;
   border-radius: 1.75rem;
   background:
-    radial-gradient(circle at 18% 18%, rgba(231, 154, 47, 0.08), transparent 58%),
-    radial-gradient(circle at 78% 72%, rgba(35, 59, 116, 0.05), transparent 62%);
+    radial-gradient(circle at 18% 18%, rgba(224, 191, 106, 0.10), transparent 58%),
+    radial-gradient(circle at 78% 72%, rgba(126, 159, 123, 0.08), transparent 62%);
   filter: blur(2px);
   pointer-events: none;
 }
@@ -46,9 +46,9 @@ main > section::before {
   inset: 0;
   opacity: 0.2;
   background-image:
-    radial-gradient(circle at 12% 20%, rgba(208, 154, 97, 0.5) 2px, transparent 2px),
-    radial-gradient(circle at 42% 68%, rgba(41, 67, 111, 0.22) 2px, transparent 2px),
-    radial-gradient(circle at 70% 26%, rgba(208, 154, 97, 0.5) 2px, transparent 2px);
+    radial-gradient(circle at 12% 20%, rgba(224, 191, 106, 0.42) 2px, transparent 2px),
+    radial-gradient(circle at 42% 68%, rgba(126, 159, 123, 0.24) 2px, transparent 2px),
+    radial-gradient(circle at 70% 26%, rgba(224, 191, 106, 0.42) 2px, transparent 2px);
   background-size: 240px 180px;
   pointer-events: none;
 }
@@ -56,8 +56,8 @@ main > section::before {
 .hero-blob {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(20px);
-  opacity: 0.35;
+  filter: blur(24px);
+  opacity: 0.3;
   animation: heroDrift 12s ease-in-out infinite alternate;
 }
 
@@ -66,7 +66,7 @@ main > section::before {
   left: -4%;
   width: 220px;
   height: 220px;
-  background: radial-gradient(circle, rgba(231, 154, 47, 0.34) 0%, rgba(231, 154, 47, 0) 72%);
+  background: radial-gradient(circle, rgba(224, 191, 106, 0.28) 0%, rgba(224, 191, 106, 0) 72%);
 }
 
 .hero-blob-two {
@@ -74,7 +74,7 @@ main > section::before {
   right: -6%;
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle, rgba(35, 59, 116, 0.2) 0%, rgba(35, 59, 116, 0) 70%);
+  background: radial-gradient(circle, rgba(126, 159, 123, 0.18) 0%, rgba(126, 159, 123, 0) 70%);
   animation-delay: 0.8s;
 }
 
@@ -83,16 +83,16 @@ main > section::before {
   left: 40%;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(214, 163, 101, 0.26) 0%, rgba(214, 163, 101, 0) 74%);
+  background: radial-gradient(circle, rgba(238, 216, 154, 0.24) 0%, rgba(238, 216, 154, 0) 74%);
   animation-delay: 1.6s;
 }
 
 .gold-star {
   position: absolute;
   border-radius: 2px;
-  background: linear-gradient(180deg, rgba(255, 243, 196, 0.98), rgba(214, 159, 98, 0.98));
+  background: linear-gradient(180deg, rgba(255, 248, 214, 0.98), rgba(224, 191, 106, 0.98));
   clip-path: polygon(50% 0%, 62% 35%, 98% 35%, 68% 56%, 79% 92%, 50% 70%, 21% 92%, 32% 56%, 2% 35%, 38% 35%);
-  box-shadow: 0 0 12px rgba(208, 154, 97, 0.8);
+  box-shadow: 0 0 12px rgba(224, 191, 106, 0.74);
   animation: starTwinkle 2.6s ease-in-out infinite, starFloat 4.4s ease-in-out infinite;
 }
 
@@ -100,7 +100,7 @@ main > section::before {
   content: '';
   position: absolute;
   inset: -35%;
-  background: radial-gradient(circle, rgba(255, 235, 177, 0.75) 0%, rgba(255, 235, 177, 0) 72%);
+  background: radial-gradient(circle, rgba(255, 240, 191, 0.75) 0%, rgba(255, 240, 191, 0) 72%);
   filter: blur(1.4px);
   animation: starGlowPulse 2.6s ease-in-out infinite;
 }
@@ -113,8 +113,8 @@ main > section::before {
   width: 160%;
   height: 1.5px;
   transform: translate(-50%, -50%) rotate(45deg);
-  background: linear-gradient(90deg, rgba(255, 233, 170, 0), rgba(255, 233, 170, 0.95), rgba(255, 233, 170, 0));
-  box-shadow: 0 0 8px rgba(255, 223, 145, 0.65);
+  background: linear-gradient(90deg, rgba(255, 241, 197, 0), rgba(255, 241, 197, 0.95), rgba(255, 241, 197, 0));
+  box-shadow: 0 0 8px rgba(255, 223, 145, 0.52);
   opacity: 0.75;
 }
 

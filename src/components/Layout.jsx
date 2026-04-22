@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 function Layout() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-main via-section to-lavender text-ink font-body">
+    <div className="min-h-screen bg-gradient-to-br from-main via-section to-lavender text-ink font-body selection:bg-gold/30 selection:text-royal">
       <Navbar />
       <main>
         <Outlet />
