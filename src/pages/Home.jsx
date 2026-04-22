@@ -63,18 +63,6 @@ function Home() {
         </div>
 
         <div className="mx-auto max-w-5xl">
-          {/* University Tag - Bold and Prominent */}
-          <h2 className="text-base uppercase tracking-[0.3em] text-royal sm:text-lg font-black letter-spacing-wider">
-            ODISEE UNIVERSITY OF APPLIED SCIENCES -<br className="hidden sm:block" />BRUSSELS CAMPUS
-          </h2>
-
-          <h1 className="mt-8 font-display text-4xl font-black leading-tight text-royal tracking-tight sm:text-5xl lg:text-6xl">
-            Bridging the Gap
-          </h1>
-          <p className="mx-auto mt-3 max-w-5xl text-base font-black uppercase tracking-wide text-royal sm:text-lg lg:text-xl">
-            Three evidence based tools to support success at Odisee Brussels
-          </p>
-
           <div className="mt-8 flex justify-center sm:mt-10">
             <div className="w-full max-w-[1280px] rounded-[2.25rem] border border-white/60 bg-white/30 p-3 shadow-[0_30px_80px_rgba(68,82,60,0.18)] backdrop-blur-2xl sm:p-4">
               <img
