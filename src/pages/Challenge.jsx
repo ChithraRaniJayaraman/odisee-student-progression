@@ -1,6 +1,6 @@
 import PageHero from '../components/PageHero';
 import challengeMindMapVideo from '../Mind map (Presentation).mp4';
-import threeSolutionsImage from '../../mentoring-flowchart-word-ready.png';
+import toolkitImage from '../../TOOL KIT PIC.jpeg';
 
 function Challenge() {
   return (
@@ -31,8 +31,8 @@ function Challenge() {
 
         <div className="mt-8 rounded-3xl border border-white/60 bg-white/50 p-3 shadow-soft backdrop-blur-xl sm:p-4">
           <img
-            src={threeSolutionsImage}
-            alt="Three coordinated solutions: Peer Mentoring Toolkit, Early Alert Protocol, and Self-Regulated Learning Guide"
+            src={toolkitImage}
+            alt="Integrated Solutions: Peer Mentoring Toolkit, Early Alert Protocol, and Self-Regulated Learning working together"
             className="mx-auto block h-auto w-full rounded-2xl object-contain"
           />
         </div>
