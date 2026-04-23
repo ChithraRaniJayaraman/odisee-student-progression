@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../../Every Student Belongs Here.png';
+import bridgeHero from '../../FINAL HERO IMAGE FOR ODISEE.png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
@@ -62,22 +62,42 @@ function Home() {
           ))}
         </div>
 
-        <div className="mx-auto max-w-5xl">
-          <div className="mt-8 flex justify-center sm:mt-10">
-            <div className="w-full max-w-[1280px] rounded-[2.25rem] border border-white/60 bg-white/30 p-3 shadow-[0_30px_80px_rgba(68,82,60,0.18)] backdrop-blur-2xl sm:p-4">
-              <img
-                src={bridgeHero}
-                alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-auto w-full rounded-[1.6rem] object-contain"
-              />
+        <div className="mx-auto max-w-7xl">
+          <div className="mt-6 grid items-center gap-8 lg:mt-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.25fr)] lg:gap-10">
+            <div className="mx-auto max-w-xl text-center lg:mx-0 lg:text-left">
+              <h1 className="font-display text-5xl font-bold leading-[0.95] text-[#2F5D50] sm:text-6xl lg:text-[5.6rem]">
+                Bridging
+                <br />
+                the Gap
+              </h1>
+              <p className="mt-8 text-3xl font-semibold leading-tight text-[#1F2F2A] sm:text-4xl lg:text-[2.8rem]">
+                Every Student
+                <br />
+                Belongs Here
+              </p>
+              <p className="mt-8 text-xl leading-relaxed text-ink/95 sm:text-2xl lg:text-[2rem]">
+                Three evidence-based tools working together to support student success, retention, and progression at Odisee
+                University of Applied Sciences.
+              </p>
+            </div>
+
+            <div className="relative w-full">
+              <div className="pointer-events-none absolute inset-x-[16%] bottom-[8%] h-20 rounded-full bg-gold/35 blur-2xl" />
+              <div className="relative w-full rounded-[2.25rem] border border-white/60 bg-white/22 p-3 shadow-[0_30px_80px_rgba(68,82,60,0.18)] backdrop-blur-2xl sm:p-4">
+                <img
+                  src={bridgeHero}
+                  alt="Bridge illustration with three support pillars and student success tools"
+                  className="block h-auto w-full rounded-[1.6rem] object-contain"
+                />
+              </div>
             </div>
           </div>
 
           {/* Call to Action Buttons */}
-          <div className="mt-12 sm:mt-16 flex flex-wrap justify-center gap-4">
+          <div className="mt-12 flex flex-wrap justify-center gap-4 sm:mt-16 lg:justify-start">
             <Link
               to="/our-three-tools"
-              className="rounded-full border border-gold/45 bg-gold/72 px-8 py-3 font-semibold text-royal shadow-[0_16px_34px_rgba(224,191,106,0.24)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-gold/85"
+              className="rounded-full border border-[#E6C76A]/70 bg-[#E6C76A] px-8 py-3 font-semibold text-royal shadow-[0_16px_34px_rgba(224,191,106,0.24)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-[#dcb957]"
             >
               Explore the Tools
             </Link>
