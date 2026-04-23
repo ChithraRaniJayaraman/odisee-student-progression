@@ -6,14 +6,17 @@
 body {
   @apply antialiased;
   line-height: 1.65;
-  background: linear-gradient(135deg, #EAF3EA, #DCE8D9);
+  background:
+    radial-gradient(circle at 12% 8%, rgba(110, 153, 116, 0.24), transparent 32%),
+    radial-gradient(circle at 86% 18%, rgba(255, 209, 112, 0.20), transparent 30%),
+    linear-gradient(135deg, #deeedc 0%, #c8dfc4 42%, #e8efde 100%);
   font-family: 'Inter', Arial, sans-serif;
   color: #1F3D2B;
   background-attachment: fixed;
 }
 
 #root {
-  @apply min-h-screen bg-main;
+  @apply min-h-screen;
 }
 
 h1,
@@ -28,11 +31,12 @@ h3 {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(244, 251, 242, 0.56);
   backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.65);
   border-radius: 20px;
   padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 14px 38px rgba(43, 73, 48, 0.14);
 }
 
 .gold-glow {
@@ -81,8 +85,9 @@ main > section::before {
   z-index: -1;
   border-radius: 1.75rem;
   background:
-    radial-gradient(circle at 18% 18%, rgba(224, 191, 106, 0.10), transparent 58%),
-    radial-gradient(circle at 78% 72%, rgba(126, 159, 123, 0.08), transparent 62%);
+    radial-gradient(circle at 18% 18%, rgba(224, 191, 106, 0.14), transparent 58%),
+    radial-gradient(circle at 74% 70%, rgba(94, 142, 102, 0.16), transparent 62%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(232, 245, 229, 0.10));
   filter: blur(2px);
   pointer-events: none;
 }
@@ -120,7 +125,7 @@ main > section::before {
   right: -6%;
   width: 260px;
   height: 260px;
-  background: radial-gradient(circle, rgba(126, 159, 123, 0.18) 0%, rgba(126, 159, 123, 0) 70%);
+  background: radial-gradient(circle, rgba(96, 147, 103, 0.30) 0%, rgba(96, 147, 103, 0) 70%);
   animation-delay: 0.8s;
 }
 
