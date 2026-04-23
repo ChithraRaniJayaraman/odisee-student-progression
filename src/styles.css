@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== GLASSY GREEN + GOLD THEME ===== */
 body {
-  @apply bg-main text-body antialiased font-body;
+  @apply antialiased;
   line-height: 1.65;
-  background-image:
-    radial-gradient(circle at 10% 8%, rgba(224, 191, 106, 0.12), transparent 34%),
-    radial-gradient(circle at 88% 14%, rgba(126, 159, 123, 0.12), transparent 32%),
-    linear-gradient(180deg, #fcf8ef 0%, #f7f1e4 100%);
+  background: linear-gradient(135deg, #EAF3EA, #DCE8D9);
+  font-family: 'Inter', Arial, sans-serif;
+  color: #1F3D2B;
   background-attachment: fixed;
 }
 
@@ -18,9 +18,55 @@ body {
 
 h1,
 h2,
-h3,
-h4 {
-  @apply text-royal;
+h3 {
+  color: #1E4D2B;
+  font-weight: 700;
+}
+
+.accent {
+  color: #3A4FD9;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.gold-glow {
+  box-shadow: 0 0 40px rgba(255, 204, 102, 0.4);
+}
+
+button,
+.btn {
+  background: linear-gradient(135deg, #F6D365, #FDBB2D);
+  color: #1F3D2B;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  transform: scale(1.05);
+}
+
+section {
+  padding: 60px 20px;
+}
+
+.center {
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 main > section {
