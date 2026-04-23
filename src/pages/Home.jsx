@@ -70,7 +70,7 @@ function Home() {
               <img
                 src={bridgeHero}
                 alt="Bridge illustration with three support pillars and student success tools"
-                className="block h-[68vh] w-full rounded-[1.8rem] object-cover sm:h-[74vh]"
+                className="block h-auto w-full rounded-[1.8rem] object-contain"
               />
             </div>
           </div>
