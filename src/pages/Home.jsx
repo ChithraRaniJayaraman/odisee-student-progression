@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import Card from '../components/Card';
-import bridgeHero from '../../FINAL HERO IMAGE FOR ODISEE.png';
+import bridgeHero from '../../Every Student Belongs Here.t.png';
 
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
