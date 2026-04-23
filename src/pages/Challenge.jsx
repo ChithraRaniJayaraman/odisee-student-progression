@@ -29,11 +29,11 @@ function Challenge() {
           </p>
         </div>
 
-        <div className="mt-8 rounded-3xl border border-white/60 bg-white/50 p-3 shadow-soft backdrop-blur-xl sm:p-4">
+        <div className="mt-8 rounded-3xl border border-white/60 bg-gradient-to-br from-main/80 via-section/80 to-lavender/70 p-4 shadow-soft backdrop-blur-xl sm:p-5">
           <img
             src={toolkitImage}
             alt="Integrated Solutions: Peer Mentoring Toolkit, Early Alert Protocol, and Self-Regulated Learning working together"
-            className="mx-auto block h-auto w-full rounded-2xl object-contain"
+            className="mx-auto block h-auto w-full max-w-5xl rounded-2xl border border-white/70 bg-white/70 object-contain p-2 shadow-[0_18px_45px_rgba(68,82,60,0.14)] sm:p-3"
           />
         </div>
       </section>
