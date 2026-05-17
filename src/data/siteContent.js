@@ -7,7 +7,8 @@ export const navItems = [
   { label: 'Self-Regulated Learning Guide', path: '/self-regulated-learning-guide' },
   { label: 'Best Practices', path: '/best-practices' },
   { label: 'Implementation Plan', path: '/implementation-plan' },
-  { label: 'Team', path: '/team' }
+  { label: 'Team', path: '/team' },
+  { label: 'References', path: '/references' }
 ];
 
 export const teamMembers = [
@@ -48,3 +49,4 @@ export const teamMembers = [
     focus: 'Monitoring and evaluation'
   }
 ];
+
