@@ -1,9 +1,8 @@
-import { useMemo } from 'react';
 import Card from '../components/Card';
 import PageHero from '../components/PageHero';
 
 function PeerMentoring() {
-  const guideUrl = useMemo(() => `/${encodeURIComponent('Peer_Mentoring_Complete_Guide (1).html')}`, []);
+  const guideUrl = '/Peer_Mentoring_Complete_Guide%20(1).html';
 
   return (
     <>
