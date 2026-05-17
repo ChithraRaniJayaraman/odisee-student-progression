@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peer Mentoring Complete Guide | ODISEE Student Progression</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .guide-nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 252, 246, 0.97);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    .guide-nav .container {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      white-space: nowrap;
+    }
+    .guide-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+    .guide-nav a:hover {
+      color: var(--primary);
+      border-color: rgba(30, 90, 150, 0.18);
+      background: rgba(30, 90, 150, 0.04);
+    }
+    .hero.hero-guide {
+      background: linear-gradient(135deg, rgba(30, 90, 150, 0.08), rgba(212, 165, 116, 0.08));
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 4rem 3rem;
+      margin-bottom: 2rem;
+    }
+    .hero.hero-guide h1 span { color: var(--accent); }
+    .hero-strap {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.8rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--primary);
+      background: rgba(255,255,255,0.75);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      font-size: 0.88rem;
+    }
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .feature {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      min-height: 160px;
+    }
+    .feature .num {
+      font-family: 'Playfair Display', serif;
+      display: block;
+      font-size: 2.1rem;
+      line-height: 1;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .feature .label {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .page-section {
+      margin-bottom: 2rem;
+    }
+    .page-section .section-head {
+      margin-bottom: 1rem;
+    }
+    .section-kicker {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: var(--teal, #0a7c6e);
+      margin-bottom: 0.45rem;
+    }
+    .section-head h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      font-size: 2rem;
+      margin-bottom: 0.4rem;
+    }
+    .section-head p {
+      color: var(--muted);
+      max-width: 72ch;
+    }
+    .callout {
+      border-left: 4px solid var(--primary);
+      background: rgba(30, 90, 150, 0.06);
+      padding: 1rem 1.1rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1rem 0;
+    }
+    .callout.amber { border-left-color: var(--accent); background: rgba(212, 165, 116, 0.1); }
+    .callout.green { border-left-color: #1a6b3a; background: rgba(26, 107, 58, 0.1); }
+    .callout .label {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      font-size: 0.72rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: white;
+    }
+    table.guide-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      font-size: 0.97rem;
+    }
+    .guide-table th {
+      background: var(--primary);
+      color: white;
+      text-align: left;
+      padding: 0.9rem 1rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .guide-table td {
+      padding: 0.95rem 1rem;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .guide-table tr:nth-child(even) td { background: rgba(30, 90, 150, 0.04); }
+    .role-badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(30, 90, 150, 0.12);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.82rem;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .step-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .step-top {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .step-body { padding: 1rem; }
+    .step-body h3 {
+      font-size: 1.2rem;
+      color: var(--primary);
+      margin: 0 0 0.4rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .step-time {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--teal, #0a7c6e);
+      background: rgba(10, 124, 110, 0.1);
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      margin-bottom: 0.75rem;
+    }
+    .swot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .swot-box {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem;
+      min-height: 220px;
+    }
+    .swot-box h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--primary);
+      margin-bottom: 0.7rem;
+    }
+    .swot-box ul { margin-left: 1.2rem; }
+    .swot-box li { margin-bottom: 0.45rem; }
+    .swot-box.s { background: rgba(10,124,110,0.08); }
+    .swot-box.o { background: rgba(26,107,58,0.08); }
+    .swot-box.w { background: rgba(212,165,116,0.12); }
+    .swot-box.t { background: rgba(192,57,43,0.08); }
+    .timeline { display: grid; gap: 1rem; }
+    .phase {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: white;
+    }
+    .phase-label {
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      font-weight: 700;
+    }
+    .phase-label .when {
+      display: block;
+      margin-top: 0.2rem;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .phase-content {
+      padding: 1rem;
+      color: var(--text);
+    }
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .prog-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-top: 5px solid var(--primary);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .prog-card .head {
+      padding: 1rem 1rem 0.75rem;
+      display: flex;
+      gap: 0.9rem;
+      align-items: flex-start;
+    }
+    .prog-card .flag { font-size: 1.8rem; line-height: 1; }
+    .prog-card .title { font-weight: 700; color: var(--primary); font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .prog-card .loc { color: var(--muted); font-size: 0.88rem; }
+    .prog-card .body { padding: 0 1rem 1rem; }
+    .prog-card .results { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0; }
+    .pill {
+      display: inline-block;
+      background: rgba(26, 107, 58, 0.12);
+      color: #1a6b3a;
+      border-radius: 999px;
+      padding: 0.25rem 0.65rem;
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+    .lesson-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .lesson {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .lesson .icon { font-size: 1.3rem; }
+    .lesson .label { text-transform: uppercase; letter-spacing: 2px; color: var(--muted); font-size: 0.72rem; font-weight: 700; margin: 0.45rem 0; }
+    .lesson .title { color: var(--primary); font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.3rem; }
+    .footer-note {
+      background: var(--primary);
+      color: rgba(255,255,255,0.82);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-top: 3rem;
+    }
+    @media (max-width: 1024px) {
+      .feature-strip, .steps-grid, .lesson-grid, .prog-grid, .swot-grid { grid-template-columns: 1fr 1fr; }
+      .phase { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .hero.hero-guide { padding: 2.5rem 1.25rem; }
+      .feature-strip, .steps-grid, .lesson-grid, .prog-grid, .swot-grid { grid-template-columns: 1fr; }
+      .guide-table { min-width: 640px; }
+      .hero.hero-guide h1 { font-size: 2.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">ODISEE Student Progression</div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="problem.html">Problem</a></li>
+            <li><a href="systems.html">Systems Model</a></li>
+            <li><a href="interventions.html">Interventions</a></li>
+            <li><a href="roadmap.html">Roadmap</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="guide-nav">
+    <div class="container">
+      <a href="#what">What Is It</a>
+      <a href="#why">Why Odisee</a>
+      <a href="#who">Who Is It For</a>
+      <a href="#sessions">Sessions</a>
+      <a href="#training">Training</a>
+      <a href="#swot">SWOT</a>
+      <a href="#smart">SMART</a>
+      <a href="#implementation">Implementation</a>
+      <a href="#wellbeing">Wellbeing</a>
+      <a href="#evidence">Real World</a>
+      <a href="#common">Common Factors</a>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero hero-guide">
+      <div class="hero-strap">Odisee Brussels · Student Success Project 2025–2026</div>
+      <h1>Peer Mentoring <span>Complete Guide</span></h1>
+      <p>An evidence-based implementation toolkit combined with independently evaluated real-world programmes — everything Odisee needs to design, launch, and sustain peer mentoring.</p>
+    </section>
+
+    <section class="page-section">
+      <div class="feature-strip">
+        <div class="feature"><span class="num">+2</span><div class="label">months average progress (EEF Mentoring, 2025) — with stronger gains in higher education (Torres et al., 2025; García et al., 2024)</div></div>
+        <div class="feature"><span class="num">3,774</span><div class="label">students studied in the closest comparable study (García et al., 2024)</div></div>
+        <div class="feature"><span class="num">8</span><div class="label">real-world programmes independently evaluated</div></div>
+        <div class="feature"><span class="num">0€</span><div class="label">extra budget required to implement</div></div>
+      </div>
+    </section>
+
+    <section id="what" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 01</div>
+        <h2>What Is Peer Mentoring?</h2>
+        <p>Peer mentoring is one of the most human things a university can offer. It is when a student who has already navigated the hard parts of first year sits with a student who is going through those same hard parts right now — and shows them the way through.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><p>A real, honest relationship between two people — one who knows the terrain, one who is learning it. Helping a student find the right desk, ask the right question, know they are not alone — not as a service, but as a person.</p></div>
+        <div class="card"><p>A mentor who studied in a second language, who was the first in their family at university, who juggled money and deadlines and self-doubt — that mentor is worth more to a matching mentee than any formal support service. Because they already proved it is possible.</p></div>
+      </div>
+      <div class="feature-strip" style="grid-template-columns: repeat(3, minmax(0,1fr)); margin-top:1rem;">
+        <div class="feature"><span class="num">+2</span><div class="label">months average progress (EEF Mentoring Toolkit, 2025)<br>Stronger in HE: Torres et al. (2025) RCT; García et al. (2024)</div></div>
+        <div class="feature"><span class="num">3,774</span><div class="label">students studied — significantly lower dropout for mentees<br>García et al., 2024</div></div>
+        <div class="feature"><span class="num">21</span><div class="label">weeks — one full academic year of structured support<br>Odisee Brussels programme</div></div>
+      </div>
+      <div class="callout amber"><div class="label">Understanding the Evidence — EEF Mentoring vs Higher Education Research</div><p>The EEF Teaching and Learning Toolkit (2025) rates <strong>mentoring at +2 months</strong> of average additional progress. This is distinct from peer tutoring (+5 months), which involves structured academic content delivery. Our programme is <strong>peer mentoring</strong> — focused on belonging, guidance, and support, not course content. The EEF evidence base is drawn primarily from school-age (K-12) populations. In higher education — specifically for first-generation and migrant-background students — the evidence is significantly stronger: Torres et al. (2025) demonstrated sustained gains in belonging and academic performance in a randomised controlled trial; García et al. (2024) found significantly lower dropout rates across 3,774 university students; and Gehreke et al. (2024) confirmed that structured mentoring with trained mentors produces measurably better outcomes than informal peer support across all higher education studies reviewed.</p></div>
+      <div class="callout"><div class="label">Core Definition</div><p>Peer mentoring pairs first-year students with trained senior students who have successfully navigated the same challenges. At Odisee Brussels, this means pairing students from migrant and low-income backgrounds with mentors who understand — from lived experience — what it feels like to arrive at university without a map. <strong>This is not tutoring.</strong> Mentors do not teach course content. They offer something more valuable: connection, practical guidance, and the reassurance that what the mentee is experiencing is normal — and navigable.</p></div>
+    </section>
+
+    <section id="why" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 02</div>
+        <h2>Why Odisee Brussels — Why Now?</h2>
+        <p>The evidence for a peer mentoring programme at Odisee Brussels is not theoretical. It comes from our own institutional data, confirmed by our partner, and validated by 40+ sources in the academic literature.</p>
+      </div>
+      <p>Elien Crois, researcher at Odisee's Service for Innovation, Education and Quality Assurance, was direct in our meeting: students at the Brussels campus — especially those with a migrant background — show significantly lower study efficiency than students at any other Odisee campus. The numbers point to a structural problem, not an individual one.</p>
+      <p>Many of these students arrive without the invisible preparation other students take for granted. They may not know how to ask a lecturer for help, or how to catch themselves before falling behind. When financial stress, language barriers, and a feeling of not belonging pile on together, students do not suddenly decide to quit. They slowly drift away — and often before anyone has noticed.</p>
+      <div class="callout"><div class="label">The Core Challenge — What the Research Confirms</div><p>The biggest predictors of first-year struggle at Odisee Brussels are: <strong>lack of structured study habits</strong> (Van Rooij et al., 2018); <strong>absence of belonging and peer connection</strong> (Gopalan &amp; Brady, 2020); <strong>financial stress impairing working memory</strong> (Almarzouki, 2024); and <strong>first-generation student status</strong> (Barsegyan &amp; Maas, 2024). None of these are fixed characteristics. All of them can be addressed through targeted, proactive support.</p></div>
+    </section>
+
+    <section id="who" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 03</div>
+        <h2>Who Is This Programme For?</h2>
+        <p>Five roles. One integrated system. Every person has a defined responsibility and a defined limit — so no one carries too much alone.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <tr><th>Role</th><th>Who They Are</th><th>What They Do</th><th>What They Gain</th></tr>
+          <tr><td><span class="role-badge">Mentee</span></td><td>First-year student — migrant background, first-generation, facing language or financial pressures</td><td>Attend bi-weekly sessions. Be honest. Try the agreed next step.</td><td>Peer support, practical guidance, sense of belonging, improved study habits</td></tr>
+          <tr><td><span class="role-badge">Mentor</span></td><td>Second-year student. Has lived experience of first year. Selected on CLICK criteria.</td><td>Guide sessions. Complete five-weekly check-in notes. Flag concerns immediately.</td><td>Formal certificate, leadership skills, intercultural competence, professional CV entry</td></tr>
+          <tr><td><span class="role-badge">Head Mentor</span></td><td>Senior student with leadership experience</td><td>Support mentors. Review all check-in notes. Escalate amber/red flags within 48 hours.</td><td>Advanced mentorship experience, coordinator relationship, leadership development</td></tr>
+          <tr><td><span class="role-badge">Coordinator</span></td><td>Existing Odisee staff member — no new hire required</td><td>Train mentors. Match pairs. Oversee programme. Ensure 14-day follow-up on every alert.</td><td>Stronger student retention data; structured oversight system; clearer early warning</td></tr>
+          <tr><td><span class="role-badge">Teaching Staff</span></td><td>Lecturers and module coordinators at Odisee Brussels</td><td>Know the programme. Refer at-risk students. Embed SRL in sessions.</td><td>Reduced reactive burden; clearer referral pathway; stronger student engagement</td></tr>
+        </table>
+      </div>
+      <div class="callout"><div class="label">CLICK — Mentor Selection Criteria</div><p>Mentors are selected on five criteria: <strong>C</strong>ommitment to the programme · <strong>L</strong>aughter (warmth and approachability) · <strong>I</strong>nsight into the first-year experience · <strong>C</strong>onfidence in their own journey · <strong>K</strong>indness as a default mode. Academic performance alone is not a selection criterion. Interpersonal skill and lived experience matter more.</p></div>
+    </section>
+
+    <section id="sessions" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 04</div>
+        <h2>Every Session — The Five-Step Flow</h2>
+        <p>Every bi-weekly meeting follows the same five-step structure. This is not a rigid script — it is a reliable shape. Structure gives mentors confidence and gives mentees the safety of knowing what to expect. Sessions are one hour. Bi-weekly. On campus or online.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><div class="step-top"><span>1</span><span>10 min</span></div><div class="step-body"><h3>Check In — How Are You Really?</h3><div class="step-time">Trust first</div><p>Start with one genuine question about how the person's week went — not about grades, not about assignments. This step builds the trust that makes everything else in the session possible. It signals: I am here for you as a person, not as a student file.</p></div></div>
+        <div class="step-card"><div class="step-top"><span>2</span><span>15 min</span></div><div class="step-body"><h3>The Plate — What's Coming Up?</h3><div class="step-time">Make it manageable</div><p>The mentee shares what is coming up — deadlines, assignments, group work, exams. Together, you turn a wall into a list. Breaking things down is often all it takes to make them feel manageable. You do not do it for them.</p></div></div>
+        <div class="step-card"><div class="step-top"><span>3</span><span>20 min</span></div><div class="step-body"><h3>The Real Conversation — Heart of Every Session</h3><div class="step-time">Experience matters</div><p>Share what actually helped you — not perfect answers, but honest ones. "When I had that module, I found that..." is worth more than any advice sheet. The mentee gets to ask questions they would never ask a lecturer. This is where trust becomes growth.</p></div></div>
+        <div class="step-card"><div class="step-top"><span>4</span><span>10 min</span></div><div class="step-body"><h3>One Small Next Step</h3><div class="step-time">Specific action</div><p>Together agree on one specific action before the next meeting. Not "study harder." Something like: "Go to the student support desk on Tuesday" or "Send that email today." Small and specific means it actually happens.</p></div></div>
+        <div class="step-card"><div class="step-top"><span>5</span><span>5 min</span></div><div class="step-body"><h3>Close and Confirm — Every Single Time</h3><div class="step-time">Commitment</div><p>Confirm the next meeting before you leave. A confirmed next meeting is a commitment — for both of you. It signals: this is a relationship, not a one-off conversation.</p></div></div>
+      </div>
+    </section>
+
+    <section id="training" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 05</div>
+        <h2>Mentor Training — Before Any Session Happens</h2>
+        <p>No mentor simply shows up and figures it out. Every mentor completes a structured one-day training before their first session. The EEF is clear: even the most evidence-backed intervention fails without careful implementation. Training matters. Structure matters. Feedback loops matter.</p>
+      </div>
+      <div class="callout amber"><div class="label">Why Training Is Non-Negotiable</div><p>Gehreke et al. (2024), in a systematic review of peer mentoring programmes, found that the single biggest difference between programmes that reduced dropout and programmes that did not was <strong>structure</strong>. Structured programmes with trained mentors significantly outperformed informal peer support. Training is what turns goodwill into impact.</p></div>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <tr><th>Module</th><th>Content</th><th>Duration</th></tr>
+          <tr><td><strong>The Why</strong></td><td>Why peer mentoring works. What the research says. What Odisee's data shows. Why this student, right now, needs you.</td><td>45 min</td></tr>
+          <tr><td><strong>The Five-Step Session</strong></td><td>Walk through each step. Practice it in pairs. Get feedback from the trainer.</td><td>60 min</td></tr>
+          <tr><td><strong>Active Listening</strong></td><td>How to hold silence. How to ask the question that opens rather than closes. How to stay with discomfort without fixing it prematurely.</td><td>45 min</td></tr>
+          <tr><td><strong>Cultural Awareness</strong></td><td>What "going quiet" means across different cultures. How to match communication style to the mentee's background. How not to assume.</td><td>45 min</td></tr>
+          <tr><td><strong>The Check-In Note</strong></td><td>How to complete it. When to escalate. The difference between amber and red. What happens when you flag a concern.</td><td>30 min</td></tr>
+          <tr><td><strong>Boundaries and Wellbeing</strong></td><td>What mentors can and cannot carry. Who to talk to when a session stays with you. How to protect yourself while protecting your mentee.</td><td>30 min</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="swot" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 06</div>
+        <h2>SWOT Analysis</h2>
+        <p>An honest look at where this programme is strong, where it needs careful management, what opportunities it can build on, and what threats the implementation plan already addresses.</p>
+      </div>
+      <div class="swot-grid">
+        <div class="swot-box s"><h3>Strengths</h3><ul><li>Peer-to-peer trust — more accessible than any formal staff support</li><li>Lived experience addresses cultural and language barriers directly</li><li>Connects all three tools as the primary student relationship</li><li>Low cost — uses existing student community, no new budget</li><li>Mentors gain professional development and a formal certificate</li></ul></div>
+        <div class="swot-box w"><h3>Weaknesses</h3><ul><li>Quality depends on consistent coordinator oversight</li><li>Mentor wellbeing must be actively monitored and protected</li><li>Matching process requires care and cultural sensitivity</li><li>Some students may initially resist or distrust the relationship</li></ul></div>
+        <div class="swot-box o"><h3>Opportunities</h3><ul><li>Directly aligns with Odisee's inclusion goals and policy (2022–2026)</li><li>Scalable across all Brussels campus programmes</li><li>Builds a culture of proactive care across the institution</li><li>Pilot data from Year 1 builds the case for permanent embedding</li></ul></div>
+        <div class="swot-box t"><h3>Threats</h3><ul><li>Mentor dropout if wellbeing is not actively managed</li><li>Stigma risk — students may feel labelled if not handled with care</li><li>Without coordinator follow-through, outreach becomes a gesture</li><li>Informal drift — sessions become social chats without structure</li></ul></div>
+      </div>
+    </section>
+
+    <section id="smart" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 07</div>
+        <h2>SMART Criteria</h2>
+        <p>Is this programme specific enough to implement? Measurable enough to evaluate? Achievable within existing resources? Relevant to the actual challenge? Time-bound enough to hold everyone accountable?</p>
+      </div>
+      <div class="table-wrap">
+        <table class="guide-table">
+          <tr><th>Letter</th><th>Criterion</th><th>How This Guide Meets It</th></tr>
+          <tr><td><strong>S</strong></td><td>Specific</td><td>Bi-weekly one-hour structured sessions between intentionally matched pairs, following the five-step structure, over 21 weeks — with a defined role for every person in the system, and a formal check-in note completed after every session.</td></tr>
+          <tr><td><strong>M</strong></td><td>Measurable</td><td>Five-weekly mentor check-in notes; end-of-year student reflection surveys; concern note logs feeding into the Early Alert Protocol; end-of-year retention and study efficiency data; mentor satisfaction and wellbeing check-ins.</td></tr>
+          <tr><td><strong>A</strong></td><td>Achievable</td><td>Uses existing second-year students, existing campus spaces, existing staff time — no additional budget required beyond one-day training and coordinator hours. No new technology. No new sessions.</td></tr>
+          <tr><td><strong>R</strong></td><td>Relevant</td><td>Directly targets the study efficiency gap for migrant-background and first-generation students at Odisee Brussels, confirmed in institutional data (Elien Crois, 2026) and validated by 40+ peer-reviewed sources.</td></tr>
+          <tr><td><strong>T</strong></td><td>Time-Bound</td><td>Matching complete by Week 1; active programme Weeks 2–21; formal coordinator reviews at Weeks 5, 10, and 19–21; full end-of-year programme evaluation in Weeks 19–21 with documented outcomes for the following year.</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section id="implementation" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 08</div>
+        <h2>Implementation — Phase by Phase</h2>
+        <p>Four phases across one academic year. Every role, every action, every timeline is defined in advance — so that when the year begins, the system runs itself.</p>
+      </div>
+      <div class="timeline">
+        <div class="phase"><div class="phase-label">Phase 1<span class="when">Before Year Begins</span></div><div class="phase-content"><strong>Recruit · Train · Match.</strong> Open call to second-year students. Selection based on CLICK criteria. One-day mentor training programme. Intentional matching by programme, language background and lived experience. All pairs confirmed before induction week.</div></div>
+        <div class="phase"><div class="phase-label">Phase 2<span class="when">Weeks 1–5</span></div><div class="phase-content"><strong>Launch · First sessions.</strong> Mentor introduces the safe space agreement. First five-step session. Mentee shares what they are most nervous about. Mentor shares one thing that actually helped them in first year. First coordinator check-in at Week 5.</div></div>
+        <div class="phase"><div class="phase-label">Phase 3<span class="when">Weeks 6–10</span></div><div class="phase-content"><strong>Active monitoring · Mid-year review.</strong> Head mentor collects all check-in notes. Any amber or red flags escalated within 48 hours. Coordinator reviews overall programme health at Week 10. Refresher session for mentors.</div></div>
+        <div class="phase"><div class="phase-label">Phase 4<span class="when">Weeks 11–21</span></div><div class="phase-content"><strong>Sustained support · End-of-year evaluation.</strong> Continue bi-weekly sessions. Coordinator check-in at Week 15. Full programme evaluation at Weeks 19–21: mentor satisfaction survey, mentee reflection, retention data review. Outcomes documented for Year 2.</div></div>
+      </div>
+    </section>
+
+    <section id="wellbeing" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 09</div>
+        <h2>Mentor Wellbeing — You Matter Too</h2>
+        <p>Mentors are students too. They carry their own academic workload, financial pressures, and personal lives — and then they take on the emotional weight of someone else's struggles. Without care for mentors, the best programmes burn out their best people.</p>
+      </div>
+      <p>Every mentor has a head mentor who checks in every five weeks — not to inspect, but to listen. "How are you finding it?" is a question mentors deserve to be asked too. Mentors are told from Day 1: if something a mentee shares stays with you after the session, that is a signal to talk to your head mentor. Not a failure — a signal.</p>
+      <div class="callout green"><div class="label">The Mentor Wellbeing Protocol — Three Rules</div><p><strong>Rule 1:</strong> No mentor carries a Red-level concern alone. Ever. They flag it immediately. The coordinator manages it from there.<br><br><strong>Rule 2:</strong> Head mentors check in on every mentor every five weeks — not just the ones who seem to be struggling.<br><br><strong>Rule 3:</strong> The coordinator maintains a simple record of mentor check-ins. If a mentor misses two consecutive check-ins without explanation, the coordinator reaches out directly within 48 hours.</p></div>
+      <h3 class="sec" style="margin-top:2rem;">When It Does Not Work — The Mismatch Protocol</h3>
+      <p>Not every pairing works. Sometimes the chemistry is simply not there. This is not a failure — it is a reality that the programme anticipates and manages. A student who stays in a mismatched pairing loses the benefit of the programme entirely. A student who is rematched has a second chance at the relationship that makes the difference.</p>
+      <div class="callout"><div class="label">Mismatch Protocol — Three Steps</div><p><strong>Step 1:</strong> Either mentor or mentee raises concern with head mentor. This is explicitly framed as a normal part of the programme — not a complaint.<br><br><strong>Step 2:</strong> Head mentor has a confidential conversation with both parties separately. If both confirm the pairing is not working, the coordinator is notified within 48 hours.<br><br><strong>Step 3:</strong> Coordinator facilitates rematch within one week. Both parties receive a brief check-in session before the new pairing begins.</p></div>
+    </section>
+
+    <section id="evidence" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 10</div>
+        <h2>Real World Universities — 8 International Examples</h2>
+        <p>Eight independently evaluated peer mentoring programmes from across the world — what they did, how they did it, what happened, and what Odisee can take from each one. Every source links to the original published study or university page.</p>
+      </div>
+      <div class="callout"><div class="label">How to Read This Section</div><p>These are not papers written by your own research group. They are independently run, externally evaluated programmes at real universities. Each card shows: what the programme actually did, the key metrics, the results, and — most importantly — what Odisee can take directly from each case. Every "What Odisee Can Take" note is based on what the researchers themselves found worked or didn't.</p></div>
+      <div class="prog-grid">
+        <div class="prog-card"><div class="head"><div class="flag">🇪🇸</div><div><div class="title">Spanish University Peer Mentoring — García et al. (2024)</div><div class="loc">Spain · 3,774 students · Quasi-experimental design · Published in Revista de Psicología</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>A Spanish university compared 1,887 students who participated in a peer mentoring programme against 1,887 matched students who did not — same courses, same intake year, same background profile. Mentors were trained senior students. Mentees attended structured sessions throughout the year. The researchers measured two things: dropout rates and academic performance. <strong>Mentees had significantly lower dropout rates than the control group — and this held across every subject area studied.</strong> Academic performance was also measurably higher. Critically, the effect existed regardless of discipline — Social Work, Business, Engineering — all showed the same pattern. The relationship is what matters, not the subject.</p><div class="results"><span class="pill">✓ Significantly lower dropout for mentees</span><span class="pill">✓ Higher academic performance across all subjects</span><span class="pill">✓ Effect consistent regardless of discipline</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>This is the study to cite when any Odisee stakeholder asks "does peer mentoring actually reduce dropout?" The answer from 3,774 real students in a Spanish university setting is yes — significantly, consistently, and across all subject areas. The context is very close to Odisee Brussels: public university, mixed student backgrounds, structured programme.</p></div><p><a href="https://journals.copmadrid.org/psed/art/psed2024a5" target="_blank">García et al. (2024) — Revista de Psicología →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🇪🇸</div><div><div class="title">Spanish University — 5 Years Including Pandemic (Alonso-García et al., 2025)</div><div class="loc">Spain · 4,962 students · 5 academic years 2018–2023 · Including COVID-19</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>This is one of the most powerful studies in peer mentoring research — because it tracked 4,962 students over five full academic years, including the COVID-19 pandemic. When campuses closed and every support system was disrupted, peer mentoring continued — and continued to reduce dropout. <strong>The programme worked even through the pandemic.</strong> This is evidence that peer mentoring is not a fair-weather intervention. It is resilient precisely because it is a human relationship, not an institutional service.</p><div class="results"><span class="pill">✓ Dropout reduction held through pandemic</span><span class="pill">✓ Programme resilient across disruption</span><span class="pill">✓ Strongest evidence for long-term effect</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>When someone at Odisee asks "will this still work when things are disrupted?" — this is the answer. Peer mentoring kept reducing dropout even when the institution around it was in crisis. Build the programme to be resilient from the start: train mentors to hold sessions online if needed, confirm the next meeting before leaving every session.</p></div><p><a href="https://www.sciencedirect.com/science/article/pii/S0149718925001430" target="_blank">Alonso-García et al. (2025) — ScienceDirect →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🇳🇱</div><div><div class="title">Utrecht University — Bias-Trained Peer Mentors (Van der Velden et al., 2023)</div><div class="loc">Netherlands · School of Medicine · 25% migrant background · Two-year comparison study</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>Utrecht has a student population where 25% have a migrant background — very similar to Brussels. The School of Medicine assigned every first-year student a peer mentor from Day 1. The critical design choice was mentor training: Utrecht added explicit bias-awareness and cultural competence training to the standard mentor programme. The comparison group had mentors who were not bias-trained. <strong>Students mentored by bias-trained mentors reported significantly higher sense of belonging and lower anxiety about seeking help.</strong> The difference was not the mentoring — it was the cultural competence of the mentor.</p><div class="results"><span class="pill">✓ Higher belonging for mentees of bias-trained mentors</span><span class="pill">✓ Lower anxiety about seeking help</span><span class="pill">✓ Cultural competence was the decisive variable</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>Add a half-day "cultural awareness in mentoring" block to the Odisee mentor training day. Brussels students come from 50+ nationalities. A mentor who knows that a student going quiet may not be disengaged — they may be from a culture where speaking up in a one-to-one feels inappropriate — will run completely different sessions. This single addition is what the Utrecht data shows makes the biggest difference for diverse campuses.</p></div><p><a href="https://bmcmededuc.biomedcentral.com/articles/10.1186/s12909-023-04805-0" target="_blank">Van der Velden et al. (2023) — BMC Medical Education →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🇬🇧</div><div><div class="title">University of Manchester — AMBS Peer Mentoring Scheme</div><div class="loc">Manchester, UK · Alliance Manchester Business School · All first-year students · Running continuously</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>Manchester runs one of the UK's best-documented peer mentoring schemes. Every single first-year student is assigned to a pair of peer mentors before Welcome Week — not after the year has started, before. The scheme is embedded in the programme structure, not offered as an optional extra. The key design choice: Manchester explicitly frames the mentor as "someone to ask things you wouldn't ask a lecturer" — normalising the questions that first-generation and international students are most afraid to ask. <strong>The programme has run continuously for over a decade.</strong> That longevity is the result: it works, so it stays.</p><div class="results"><span class="pill">✓ Universal coverage — no student left unassigned</span><span class="pill">✓ Programme embedded, not optional</span><span class="pill">✓ 10+ years of continuous operation</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>Manchester's framing — "ask what you can't ask a lecturer" — should go on the Odisee mentor card. It removes the shame from the most basic questions: Where do I print? How do I email a professor? What happens if I miss a deadline? These are the questions that first-generation students are most afraid to ask — and a peer mentor is the right person to answer them.</p></div><p><a href="https://www.peersupport.manchester.ac.uk/what-is-peer-support/what-is-peer-mentoring/" target="_blank">University of Manchester AMBS Peer Mentoring →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🌍</div><div><div class="title">Refugee &amp; Migrant Mentoring — Action Research Study (PMC, 2024)</div><div class="loc">International · Refugee and migrant students · 12-week programme · Qualitative evaluation</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>This action research study specifically examined mentoring programmes for refugee and migrant students — the closest published equivalent to Odisee Brussels's student profile. Over a 12-week programme, mentors and mentees worked on practical integration challenges: language, documentation, accessing services, understanding institutional expectations. <strong>Both mentors and mentees reported significant gains.</strong> Mentees reported improved study habits, increased sense of purpose, and reduced isolation. Mentors reported gains in empathy, cultural humility, and leadership confidence. The study validated a key insight: the mentoring relationship benefits both directions simultaneously.</p><div class="results"><span class="pill">✓ Mentees: better study habits, less isolation</span><span class="pill">✓ Mentors: leadership and empathy gains</span><span class="pill">✓ Benefits flow in both directions</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>This study validates two things in the Odisee toolkit simultaneously: the mentee gains (study habits, motivation, sense of purpose) and the mentor gains (leadership, empathy, cultural competence). When pitching the programme to second-year students, lead with what they gain — not just what they give.</p></div><p><a href="https://www.sciencedirect.com/science/article/pii/S2405844024165012" target="_blank">Migrant mentoring action research (ScienceDirect, 2024) →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🇩🇪</div><div><div class="title">University of Augsburg — Digital Peer Mentoring (Drossard &amp; Härtl, 2024)</div><div class="loc">Germany · First-year medical students · Started during COVID · Moved to in-person · Made compulsory</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>A newly founded medical school in Germany launched peer mentoring during COVID — entirely online — because it had no choice. Seventeen trained peer mentors were each assigned to a small group of 6–7 first-year students. Overall satisfaction was high for both mentors and mentees. After COVID, the programme moved to in-person delivery and was formally embedded in the core curriculum — <strong>meaning it became compulsory, not optional.</strong> The lesson: a programme that works online can become stronger in person, and one that works in crisis can become an institution's permanent foundation.</p><div class="results"><span class="pill">✓ High satisfaction for mentors and mentees</span><span class="pill">✓ Online to in-person transition successful</span><span class="pill">✓ Programme made compulsory after pilot</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>Run the Odisee programme as a pilot in Year 1, evaluate it honestly, and build the case for making it a permanent embedded part of the programme — not a voluntary extra. The Augsburg case shows this transition is not only possible — it strengthens the programme. A pilot that works becomes an institution.</p></div><p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10946215/" target="_blank">Drossard &amp; Härtl (2024) — GMS Journal of Medical Education →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🇦🇺</div><div><div class="title">University of Melbourne — Faculty of Medicine, Dentistry &amp; Health Sciences</div><div class="loc">Melbourne, Australia · Melbourne Plus digital credential · Diverse cohort · Ongoing programme</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>Melbourne runs peer mentoring across the Faculty of Medicine, Dentistry and Health Sciences, with a specific focus on cultural diversity. Mentors receive specialised professional development and are awarded a verified digital credential — the Melbourne Plus badge — for completing the programme. This credential is recognised by employers and listed on mentors' official university record. <strong>The digital badge significantly increased mentor recruitment and retention</strong> — because it made the value of participating visible and portable. Mentors no longer had to explain what they had done; the badge did it for them.</p><div class="results"><span class="pill">✓ Digital badge increased mentor recruitment</span><span class="pill">✓ Employer-recognised credential</span><span class="pill">✓ Mentor retention significantly improved</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>Instead of — or in addition to — a paper certificate, give Odisee mentors a verifiable digital badge (via Credly or a similar platform). A credential that mentors can share on LinkedIn and attach to a CV makes participation a professional development asset, not just a volunteer activity. It costs little to implement and significantly increases the quality of mentor applications.</p></div><p><a href="https://mdhs.unimelb.edu.au/study/current-students/student-enrichment/mentoring-programs/peer-mentoring" target="_blank">University of Melbourne Peer Mentoring →</a></p></div></div>
+        <div class="prog-card"><div class="head"><div class="flag">🌐</div><div><div class="title">Gehreke et al. (2024) — Systematic Review of All Peer Mentoring Research</div><div class="loc">Global · Review of Education journal · 17+ studies · What works across ALL programmes</div></div></div><div class="body"><p><strong>What Actually Happened</strong><br>Gehreke and colleagues reviewed all available peer mentoring research in higher education and synthesised what works, what doesn't, and what makes programmes fail. Their finding on structure is the most important for Odisee: <strong>structured programmes with trained mentors significantly outperformed informal peer support in every outcome measured.</strong> Programmes that gave mentors no training, no session format, and no check-in system consistently produced weaker results — or no results at all. The other key finding: programmes that monitored mentor wellbeing had significantly lower mentor dropout rates — and better mentee outcomes as a consequence.</p><div class="results"><span class="pill">✓ Structured > informal in every outcome</span><span class="pill">✓ Training is the decisive factor</span><span class="pill">✓ Mentor wellbeing monitoring = better outcomes</span></div><div class="callout"><div class="label">What Odisee Can Take From This</div><p>This is your answer to anyone who says "can't mentors just chat informally?" No. Structured sessions with a clear five-step format produce measurably better outcomes than informal peer support in every single study Gehreke reviewed. The Odisee toolkit's five-step session structure and one-day training are not bureaucracy — they are what makes the programme work.</p></div><p><a href="https://bera-journals.onlinelibrary.wiley.com/doi/10.1002/rev3.3462" target="_blank">Gehreke et al. (2024) — Review of Education →</a></p></div></div>
+      </div>
+    </section>
+
+    <section id="common" class="page-section">
+      <div class="section-head">
+        <div class="section-kicker">Section 11</div>
+        <h2>What All Eight Programmes Have in Common</h2>
+        <p>Across eight countries, thousands of students, and more than a decade of implementation, the evidence converges on the same conclusions. These are the non-negotiable principles that every successful peer mentoring programme shares.</p>
+      </div>
+      <div class="lesson-grid">
+        <div class="lesson"><div class="icon">🏗️</div><div class="label">Principle 1</div><div class="title">Structure is what makes it work</div><p>Informal "chat with a senior student" produces no measurable effect. A five-step session structure, a check-in note, and a coordinator review system produce significant results.</p></div>
+        <div class="lesson"><div class="icon">🎓</div><div class="label">Principle 2</div><div class="title">Training is non-negotiable</div><p>Every programme that worked trained its mentors before the first session. Every programme that failed or underperformed did not. Training is not overhead — it is the intervention.</p></div>
+        <div class="lesson"><div class="icon">🌍</div><div class="label">Principle 3</div><div class="title">Cultural competence is the variable</div><p>Utrecht showed it clearly: bias-trained mentors produced significantly better outcomes for migrant-background students. Cultural awareness training is not optional at Odisee Brussels.</p></div>
+        <div class="lesson"><div class="icon">❤️</div><div class="label">Principle 4</div><div class="title">Mentor wellbeing drives mentee outcomes</div><p>Programmes that monitored and supported mentor wellbeing had lower mentor dropout — and measurably better mentee outcomes. You cannot give what you do not have.</p></div>
+        <div class="lesson"><div class="icon">🏛️</div><div class="label">Principle 5</div><div class="title">Pilots become permanent when they work</div><p>Augsburg, Melbourne, Manchester — all started as pilots and became embedded institutional programmes. The path from "let's try this" to "this is how we do things here" is one honest evaluation.</p></div>
+        <div class="lesson"><div class="icon">↔️</div><div class="label">Principle 6</div><div class="title">Benefits are mutual</div><p>Mentors gain leadership, cultural competence, and professional credentials. When you recruit mentors, lead with what they gain — not just what they give. Both are real, both matter.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="footer-note">
+    Odisee University of Applied Sciences · Brussels Campus · Peer Mentoring Complete Guide 2025–2026<br>
+    Part of the Bridging the Gap: Inclusive Education &amp; Student Success Project · Built on EEF Teaching and Learning Toolkit (2025)
+  </div>
+</body>
+</html>
