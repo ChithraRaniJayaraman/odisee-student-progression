@@ -1,0 +1,175 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{setspace}
+
+\definecolor{navy}{HTML}{1F3864}
+\definecolor{teal}{HTML}{0A6B5E}
+\definecolor{bg}{HTML}{F8F9FC}
+\definecolor{text}{HTML}{1A1A2E}
+\definecolor{muted}{HTML}{5C6375}
+\definecolor{line}{HTML}{DDE1EA}
+\definecolor{peer}{HTML}{8E44AD}
+\definecolor{alert}{HTML}{E67E22}
+\definecolor{srl}{HTML}{27AE60}
+\definecolor{dropout}{HTML}{C0392B}
+\definecolor{policy}{HTML}{2980B9}
+\definecolor{eef}{HTML}{0A6B5E}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=navy,
+  urlcolor=teal,
+  pdftitle={References and Evidence Base},
+  pdfauthor={Bridging the Gap},
+  pdfsubject={References}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textcolor{navy}{\textbf{References \& Evidence Base}}}
+\rhead{\textcolor{muted}{Bridging the Gap}}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{line}\leaders\hrule height \headrulewidth\hfill}}
+
+\titleformat{\section}{\Large\bfseries\color{navy}}{}{0pt}{}
+\titleformat{\subsection}{\large\bfseries\color{navy}}{}{0pt}{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.7em}
+\setstretch{1.08}
+
+\newtcolorbox{refbox}[2][]{
+  colback=white,
+  colframe=#2,
+  boxrule=0.9pt,
+  arc=3mm,
+  left=3mm,
+  right=3mm,
+  top=2mm,
+  bottom=2mm,
+  #1
+}
+
+\newcommand{\tagchip}[2]{\fcolorbox{#1}{#1!12}{\strut\textcolor{#1}{\textbf{#2}}}}
+\newcommand{\refentry}[6]{%
+\begin{refbox}{#1}
+{\bfseries\color{navy}#2}\par
+#3\par
+{\itshape\color{muted}#4}\par
+\textcolor{muted}{#5}\par
+\href{#6}{\textcolor{teal}{\textbf{View source}}}
+\end{refbox}
+}
+
+\begin{document}
+
+\begin{center}
+{\Huge\bfseries\color{navy}References \& \textcolor{teal}{Evidence Base}}\\[6pt]
+{\large\color{muted}Bridging the Gap · Odisee Brussels}
+\end{center}
+
+\vspace{0.5em}
+\begin{tcolorbox}[colback=navy!4,colframe=navy,boxrule=0.9pt,arc=3mm]
+Every claim in this project is grounded in peer-reviewed research. The sources below are grouped by theme and keep the same color language used across the website: navy for structure and teal for emphasis.
+\end{tcolorbox}
+
+\section*{A. Peer Mentoring}
+
+\refentry{peer}{Flores, G., \& Estudillo, A. G. (2018)}{Effects of a peer-to-peer mentoring program: Supporting first-year college students' academic and social integration on campus.}{Journal of Human Services: Training, Research, and Practice, 3(2), Article 3.}{\tagchip{peer}{Peer Mentoring} \hspace{0.4em} \tagchip{dropout}{Dropout}}{https://scholarworks.sfasu.edu/jhstrp/vol3/iss2/3}
+\refentry{peer}{García et al. (2024)}{Effectiveness of peer mentoring on university dropout and academic performance.}{Psicología Educativa, 30(1), 29--37.}{\tagchip{peer}{Peer Mentoring} \hspace{0.4em} \tagchip{dropout}{Dropout}}{https://doi.org/10.5093/psed2024a5}
+\refentry{peer}{Gehreke, S., et al. (2024)}{Effectiveness of peer mentoring in the study entry phase: A systematic review.}{Review of Education.}{\tagchip{peer}{Peer Mentoring}}{https://doi.org/10.1002/rev3.3462}
+\refentry{peer}{Lapon, E., et al. (2023)}{The impact of peer mentoring in first-year education students.}{International Journal of Mentoring and Coaching in Education.}{\tagchip{peer}{Peer Mentoring}}{https://www.emerald.com/insight/content/doi/10.1108/IJMCE-01-2023-0002/full/html}
+\refentry{peer}{Plaskett, S., Bali, D., Nakkula, M. J., \& Harris, J. (2018)}{Peer mentoring to support first-generation low-income college students.}{Phi Delta Kappan, 99(7), 47--51.}{\tagchip{peer}{Peer Mentoring}}{https://doi.org/10.1177/0031721718767861}
+\refentry{peer}{Torres, J., et al. (2025)}{Effect of peer-mentoring programs on academic motivation and school belonging in first-generation learners.}{KMAN Counseling and Psychology Nexus.}{\tagchip{peer}{Peer Mentoring}}{https://journals.kmanpub.com/index.php/psychnexus/article/download/3931/6730/19228}
+
+\section*{B. Early Alert \& Student Retention}
+
+\refentry{alert}{Arnold, K. E., \& Pistilli, M. D. (2012)}{Course signals at Purdue: Using learning analytics to increase student success.}{Proceedings of the 2nd International Conference on Learning Analytics and Knowledge, 267--270.}{\tagchip{alert}{Early Alert}}{https://doi.org/10.1145/2330601.2330666}
+\refentry{alert}{Carballo-Mendívil, B., et al. (2025)}{Predicting student dropout from day one: XGBoost-based early warning system using pre-enrollment data.}{Applied Sciences, 15(16), 9202.}{\tagchip{alert}{Early Alert} \hspace{0.4em} \tagchip{dropout}{Dropout}}{https://doi.org/10.3390/app15169202}
+\refentry{alert}{Jayaprakash, S. M., et al. (2014)}{Early alert of academically at-risk students: An open source analytics initiative.}{Journal of Learning Analytics, 1(1), 6--47.}{\tagchip{alert}{Early Alert}}{https://doi.org/10.18608/jla.2014.11.3}
+\refentry{alert}{Plak, S., et al. (2021)}{Early warning systems for more effective student counselling in higher education: Evidence from a Dutch field experiment.}{Higher Education Quarterly.}{\tagchip{alert}{Early Alert}}{https://doi.org/10.1111/hequ.12298}
+\refentry{alert}{Villano, R., et al. (2018)}{Linking early alert systems and student retention: A survival analysis approach.}{Higher Education.}{\tagchip{alert}{Early Alert} \hspace{0.4em} \tagchip{dropout}{Dropout}}{https://doi.org/10.1007/s10734-018-0249-y}
+
+\section*{C. Self-Regulated Learning}
+
+\refentry{srl}{Baars, M. A. E., et al. (2015)}{Self-report measures of executive functioning are a determinant of academic performance in first-year students at a university of applied sciences.}{Frontiers in Psychology, 6, Article 1131.}{\tagchip{srl}{SRL}}{https://doi.org/10.3389/fpsyg.2015.011}
+\refentry{srl}{Dignath, C., \& Veenman, M. V. J. (2021)}{The role of direct strategy instruction and indirect activation of self-regulated learning: Evidence from classroom observation studies.}{Educational Psychology Review, 33, 489--533.}{\tagchip{srl}{SRL}}{https://doi.org/10.1007/s10648-020-09534-0}
+\refentry{eef}{Education Endowment Foundation. (2025)}{Teaching and Learning Toolkit: Metacognition and self-regulation.}{EEF Teaching and Learning Toolkit.}{\tagchip{eef}{EEF} \hspace{0.4em} \tagchip{srl}{SRL}}{https://educationendowmentfoundation.org.uk/education-evidence/teaching-learning-toolkit/metacognition-and-self-regulation}
+\refentry{srl}{Fokkens-Bruinsma, M., et al. (2021)}{First-year academic achievement: The role of academic self-efficacy, self-regulated learning and beyond classroom engagement.}{Assessment \& Evaluation in Higher Education, 46(7), 1115--1126.}{\tagchip{srl}{SRL}}{https://doi.org/10.1080/02602938.2020.1845606}
+\refentry{srl}{Jansen, R. S., et al. (2019)}{Self-regulated learning partially mediates the effect of self-regulated learning interventions on achievement in higher education: A meta-analysis.}{Educational Research Review, 28, 100292.}{\tagchip{srl}{SRL}}{https://doi.org/10.1016/j.edurev.2019.100292}
+\refentry{srl}{Koh, J., et al. (2022)}{Self-efficacy and academic success among diverse first-generation college students: The mediating role of self-regulation.}{Social Psychology of Education, 25, 1399--1420.}{\tagchip{srl}{SRL}}{https://doi.org/10.1007/s11218-022-09717-3}
+\refentry{srl}{Simón-Grábalos, D., et al. (2025)}{Systematic review of the literature on interventions to improve self-regulation of learning in first-year university students.}{Education Sciences, 15(3), 372.}{\tagchip{srl}{SRL}}{https://doi.org/10.3390/educsci15030372}
+\refentry{srl}{Van Rooij, E. C. M., Jansen, E. P. W. A., \& van de Grift, W. J. C. M. (2018)}{First-year university students' academic success: The importance of academic adjustment.}{European Journal of Psychology of Education, 33(4), 749--767.}{\tagchip{srl}{SRL} \hspace{0.4em} \tagchip{dropout}{Dropout}}{https://doi.org/10.1007/s10212-017-0347-8}
+
+\section*{D. Dropout \& Student Success Research}
+
+\refentry{dropout}{Allen, K. A., et al. (2024)}{Belonging in higher education: A twenty-year systematic review.}{Journal of University Teaching and Learning Practice.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.53761/s2he6n66}
+\refentry{dropout}{Almarzouki, A. F. (2024)}{Stress, working memory, and academic performance: A neuroscience perspective.}{Stress, 27(1), Article 2364333.}{\tagchip{dropout}{Dropout} \hspace{0.4em} \tagchip{srl}{SRL}}{https://doi.org/10.1080/10253890.2024.2364333}
+\refentry{dropout}{Apumayta, R. Q., et al. (2024)}{University dropout: A systematic review of the main determinant factors (2020--2024).}{F1000Research, 13, 942.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.12688/f1000research.154263.2}
+\refentry{dropout}{Barsegyan, V., \& Maas, I. (2024)}{First-generation students' educational outcomes: The role of parental educational, cultural, and economic capital.}{Research in Social Stratification and Mobility, 91, Article 100939.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.1016/j.rssm.2024.100939}
+\refentry{dropout}{Barragán Moreno, S. P., \& González Támara, L. (2024)}{Complexities of student dropout in higher education: A multidimensional analysis.}{Frontiers in Education, 9, 1461650.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.3389/feduc.2024.1461650}
+\refentry{dropout}{Gopalan, M., \& Brady, S. T. (2020)}{College students' sense of belonging: A national perspective.}{Educational Researcher, 49(2), 134--137.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.3102/0013189X19897622}
+\refentry{dropout}{Hadjar, A., Haas, C., \& Gewinner, I. (2022)}{Refining the Spady--Tinto approach: The roles of individual characteristics and institutional support in students' higher education dropout intentions.}{European Journal of Higher Education, 13, 409--428.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.1080/21568235.2022.2056494}
+\refentry{dropout}{Hjorth, C. F., et al. (2016)}{Mental health and school dropout across educational levels and genders: A 4.8-year follow-up study.}{BMC Public Health, 16, 976.}{\tagchip{dropout}{Dropout}}{https://doi.org/10.1186/s12889-016-3622-8}
+\refentry{dropout}{López, M. J., Santelices, M. V., \& Taveras, C. M. (2023)}{Academic performance and adjustment of first-generation students to higher education: A systematic review.}{Cogent Education, 10(1).}{\tagchip{dropout}{Dropout}}{https://doi.org/10.1080/2331186X.2023.2209484}
+\refentry{dropout}{Naylor, R., \& Mifsud, N. (2019)}{Structural inequality in higher education: Creating institutional cultures that enable all students.}{NCSEHE.}{\tagchip{dropout}{Dropout}}{https://www.acses.edu.au/app/uploads/2019/09/NaylorMifsud-FINAL.pdf}
+\begin{refbox}{dropout}
+{\bfseries\color{navy}Tinto, V. (1987)}\par
+Leaving college: Rethinking the causes and cures of student attrition.\par
+{\itshape\color{muted}University of Chicago Press.}\par
+\tagchip{dropout}{Dropout}\par
+\textcolor{muted}{Classic text -- no DOI}
+\end{refbox}
+
+\begin{refbox}{dropout}
+{\bfseries\color{navy}Tinto, V. (1993)}\par
+Leaving college: Rethinking the causes and cures of student attrition (2nd ed.).\par
+{\itshape\color{muted}University of Chicago Press.}\par
+\tagchip{dropout}{Dropout}\par
+\textcolor{muted}{Classic text -- no DOI}
+\end{refbox}
+\refentry{dropout}{Trappolini, E., Di Patrizio, F., \& Giudici, C. (2026)}{Academic expectations and university enrolment of migrant-origin students in Italy.}{Demographic Research, 54, 309--350.}{\tagchip{dropout}{Dropout}}{https://www.demographic-research.org/volumes/vol54/10/54-10.pdf}
+
+\section*{E. Policy \& Institutional Sources}
+
+\refentry{policy}{Brussels-Capital Region. (n.d.-a)}{Education, teaching, science promotion.}{}{\tagchip{policy}{Policy}}{https://be.brussels/education-and-training/higher-and-university-education}
+\refentry{policy}{Brussels-Capital Region. (n.d.-b)}{Our educational challenges.}{}{\tagchip{policy}{Policy}}{https://be.brussels/en/education-teaching/our-educational-challenges}
+\refentry{policy}{Eurochild. (2024)}{Children's realities in Europe: Progress and gaps.}{}{\tagchip{policy}{Policy}}{https://eurochild.org/resource/childrens-realities-in-europe-progress-gaps/}
+\refentry{policy}{European Commission. (2024)}{Education and training monitor 2024 -- Belgium.}{}{\tagchip{policy}{Policy}}{https://op.europa.eu/webpub/eac/education-and-training-monitor/en/country-reports/belgium.html}
+\refentry{policy}{KU Leuven. (n.d.)}{Welcome international students.}{}{\tagchip{policy}{Policy}}{https://www.kuleuven.be/english/prospective-students}
+\refentry{policy}{Odisee University of Applied Sciences. (n.d.-a)}{Our values, our mission, our vision.}{}{\tagchip{policy}{Policy}}{https://www.odisee.be/en/our-values-our-mission-our-vision}
+\refentry{policy}{Odisee University of Applied Sciences. (n.d.-b)}{Inclusion: Vision and policy goals.}{}{\tagchip{policy}{Policy}}{https://www.odisee.be/en/inclusion-vision-and-policy-goals}
+\refentry{policy}{Statbel. (2024)}{Level of education -- Census 2021.}{Belgian Statistical Office.}{\tagchip{policy}{Policy}}{https://statbel.fgov.be/en/themes/census/education/level-education}
+\begin{refbox}{policy}
+{\bfseries\color{navy}VUB. (2025)}\par
+Responsible use of generative AI: Guidelines for students.\par
+{\itshape\color{muted}Onderwijs \& Studentenzaken, Vrije Universiteit Brussel.}\par
+\tagchip{policy}{Policy}\par
+\textcolor{muted}{Internal VUB document}
+\end{refbox}
+
+\section*{F. Additional Research Sources}
+
+\refentry{dropout}{Caponera, E., \& Losito, B. (2016)}{Context factors and student achievement in the IEA studies: Evidence from TIMSS.}{Large-Scale Assessments in Education, 4(1), 1--24.}{}{https://doi.org/10.1186/s40536-016-0030-6}
+\refentry{dropout}{Chan, D., Cochrane, D. F., \& Gallegos, S. (2008)}{Paving the way: How financial aid awareness affects college access and success.}{Institute for College Access \& Success.}{}{https://files.eric.ed.gov/fulltext/ED540080.pdf}
+\refentry{dropout}{El Hassan, K. (2014)}{Investigating conditions for student success at an American university in the Middle East.}{Higher Education Studies, 4(5), 91--102.}{}{https://doi.org/10.5539/hes.v4n5p62}
+\refentry{dropout}{Sanger, C. (2020)}{Inclusive pedagogy and universal design approaches for diverse learning environments.}{In Diversity and Inclusion in Global Higher Education.}{\tagchip{dropout}{Dropout} \hspace{0.4em} \tagchip{policy}{Policy}}{https://doi.org/10.1007/978-981-15-1628-3_2}
+\refentry{dropout}{Taff, S. D., et al. (2022)}{Inclusion and belonging in higher education: A scoping study of contexts, barriers, and facilitators.}{Higher Education Studies.}{\tagchip{dropout}{Dropout} \hspace{0.4em} \tagchip{policy}{Policy}}{https://ccsenet.org/journal/index.php/hes/article/view/0/47592}
+
+\vfill
+\begin{center}
+\textcolor{muted}{Odisee University of Applied Sciences · Brussels Campus · Bridging the Gap 2025--2026}
+\end{center}
+
+\end{document}
