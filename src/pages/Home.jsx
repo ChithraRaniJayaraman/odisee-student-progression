@@ -5,8 +5,8 @@ import bridgeHero from '../../Every Student Belongs Here.t.png';
 const quickLinks = [
   { title: 'Understanding the Challenge', path: '/understanding-the-challenge' },
   { title: 'Our Three Tools', path: '/our-three-tools' },
-  { title: 'Best Practices', path: '/best-practices' },
-  { title: 'Implementation Plan', path: '/implementation-plan' }
+  { title: 'Peer Mentoring Toolkit', path: '/peer-mentoring-toolkit' },
+  { title: 'Early Alert Protocol', path: '/early-alert-protocol' }
 ];
 
 function Home() {

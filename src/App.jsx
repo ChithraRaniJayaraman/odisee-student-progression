@@ -6,8 +6,6 @@ import Tools from './pages/Tools';
 import PeerMentoring from './pages/PeerMentoring';
 import EarlyAlert from './pages/EarlyAlert';
 import SelfRegulated from './pages/SelfRegulated';
-import BestPractices from './pages/BestPractices';
-import Implementation from './pages/Implementation';
 import Team from './pages/Team';
 import References from './pages/References';
 
@@ -21,8 +19,6 @@ function App() {
         <Route path="/peer-mentoring-toolkit" element={<PeerMentoring />} />
         <Route path="/early-alert-protocol" element={<EarlyAlert />} />
         <Route path="/self-regulated-learning-guide" element={<SelfRegulated />} />
-        <Route path="/best-practices" element={<BestPractices />} />
-        <Route path="/implementation-plan" element={<Implementation />} />
         <Route path="/team" element={<Team />} />
         <Route path="/references" element={<References />} />
         <Route path="*" element={<Navigate to="/" replace />} />

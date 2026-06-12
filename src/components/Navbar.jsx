@@ -16,7 +16,7 @@ function Navbar() {
               className={({ isActive }) =>
                 `rounded-full px-3 py-1.5 transition ${
                   isActive
-                    ? 'bg-gold/18 text-royal shadow-[0_0_0_1px_rgba(224,191,106,0.35)]'
+                    ? 'bg-emerald/20 text-royal shadow-[0_0_0_1px_rgba(142,166,138,0.45)]'
                     : 'text-royal hover:bg-white/55 hover:text-royal'
                 }`
               }

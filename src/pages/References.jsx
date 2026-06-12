@@ -618,7 +618,7 @@ const References = () => {
                       </a>
                     ) : (
                       <span className="inline-block text-xs font-semibold text-slate-400">
-                        Classic text — no DOI
+                        Classic text (no DOI)
                       </span>
                     )}
                   </div>

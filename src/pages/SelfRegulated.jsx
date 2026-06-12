@@ -1,370 +1,415 @@
-import Card from '../components/Card';
 import PageHero from '../components/PageHero';
+import ToolkitAccordion, { Tbl, Note, Template, SubHeading, Flow } from '../components/ToolkitAccordion';
 
-const stats = [
+const sections = [
   {
-    eyebrow: '+7 to +8 months',
-    title: 'extra learning progress',
-    body: 'EEF Toolkit 2025 — highest-impact, lowest-cost',
-    className: 'from-emerald/20 to-emerald/35 border-emerald/40 text-emerald-dark',
+    id: 'glance',
+    title: 'Guide at a Glance',
+    content: (
+      <>
+        <Flow
+          steps={[
+            'Plan study routine',
+            'Monitor difficulty',
+            'Review support needed',
+            'Prepare help-seeking message',
+            'Contact support',
+            'Follow up or adjust'
+          ]}
+        />
+        <Tbl
+          head={['Step', 'Simple logic', 'Main user']}
+          rows={[
+            ['1', 'A student recognises a difficulty or receives a support suggestion.', 'First-year student / peer mentor / lecturer'],
+            ['2', 'The difficulty is linked to a support need: belonging, academic adjustment, study routine, practical pressure, wellbeing or urgent concern.', 'Student / peer mentor / staff'],
+            ['3', 'The student uses the pathway map or decision tree to identify the most appropriate support route.', 'Student / peer mentor'],
+            ['4', 'The student prepares a short help-seeking message using one of the templates.', 'Student'],
+            ['5', 'The student contacts the chosen support route, or a peer mentor or staff member helps with referral where needed.', 'Student / peer mentor / coordinator'],
+            ['6', 'The next step is followed up, adjusted or referred to another support actor if the first route does not fit.', 'Student / peer mentor / support actor']
+          ]}
+        />
+        <SubHeading>Intended users</SubHeading>
+        <p>
+          First-year students, peer mentors or buddy actors, lecturers, student coaches, learning coaches, programme
+          coordinators or designated implementation leads, trajectory counsellors, language coaches and student support
+          services involved in first-year student support at Odisee Brussels.
+        </p>
+        <SubHeading>When it is used</SubHeading>
+        <p>
+          During orientation, the first weeks of study, preparation for assessments, moments of workload pressure,
+          after a peer mentoring conversation, after an early concern signal, or whenever a student is unsure where to
+          seek help.
+        </p>
+        <Note title="This guide is not">
+          A replacement for Odisee student support services; a separate self-regulated learning programme; a new peer
+          mentoring programme; a diagnostic or counselling tool; a monitoring or disciplinary system; a fixed map of all
+          Odisee procedures, because local contacts must be added by the selected programme.
+        </Note>
+      </>
+    )
   },
   {
-    eyebrow: 'r = .71',
-    title: 'correlation',
-    body: 'SRL and academic adjustment (Van Rooij et al., 2018)',
-    className: 'from-royal/15 to-royal/25 border-royal/25 text-royal',
+    id: 'purpose',
+    title: 'Purpose, Scope and Safeguards',
+    content: (
+      <>
+        <p>
+          The purpose of this guide is to make support easier to understand and easier to approach for first-year
+          students. Students may experience academic, practical, social or personal difficulties but still delay asking
+          for help because they are unsure whether their difficulty is serious enough, whom to contact, or how to start
+          the conversation. The guide reduces this uncertainty by connecting common first-year difficulties to clear
+          support routes and simple help-seeking templates.
+        </p>
+        <p>
+          It focuses on practical navigation and habit-building guidance. It helps students recognise difficulties and
+          take one small next step, but it does not provide therapy, case management or full academic coaching.
+        </p>
+        <Tbl
+          head={['Safeguard', 'How it is applied']}
+          rows={[
+            ['Accessible language', 'Clear, short and non-judgemental language, with Dutch, French or English adaptations where appropriate.'],
+            ['Student autonomy', 'Students choose whether to use a support route. Asking for help is framed as a normal part of first-year transition, not as a failure.'],
+            ['No sensitive data collection', 'Students are not required to disclose personal details. Templates only ask for information needed to direct the student to support.'],
+            ['Role boundaries', 'Peer mentors and lecturers guide students toward support routes, but are not expected to solve specialised concerns alone.'],
+            ['Low-burden use', 'Pathway maps, checklists and message templates allow quick use during a pilot.'],
+            ['Adaptability', 'Contact details, support names and internal procedures are added by the selected programme before the pilot begins.']
+          ]}
+        />
+      </>
+    )
   },
   {
-    eyebrow: '3 habits',
-    title: 'Plan · Monitor · Evaluate',
-    body: 'EEF Recommendation 2 (2025)',
-    className: 'from-gold/25 to-gold/40 border-gold/35 text-royal',
-  },
-];
-
-const eefRows = [
-  ['Rec. 1: Teachers acquire professional understanding of SRL', 'Teaching staff briefed in induction week on all three steps. This guide is their reference document.'],
-  ['Rec. 2: Explicitly teach students to plan, monitor and evaluate', 'Students receive this guide in Week 1. All three steps are introduced and briefly practised in a teaching session.'],
-  ['Rec. 3: Model metacognitive thinking out loud', 'Lecturers verbalise their own thinking during sessions — pausing to check understanding, adjusting approach — showing what self-regulation looks like in practice.'],
-  ['Rec. 4: Set appropriate challenge and support', 'Peer mentor adjusts support level to each student\'s stage of habit formation. Coordinator provides proactive support at five-weekly check-ins.'],
-  ['Rec. 6: Teach students to manage their own learning', 'Tools A, B and C give students practical independence without requiring ongoing instruction from staff.'],
-  ['Rec. 7: Sustain and develop practice across the institution', 'Year-end reflection session. Outcomes feed into next year\'s intake planning. Embedded in both teaching and mentoring — not a one-off event.'],
-];
-
-const implementationRows = [
-  ['Induction Week', 'Teaching session', 'Students receive this guide. Three steps introduced and briefly practised.', 'Rec. 1: Build professional understanding of SRL'],
-  ['Every Teaching Session', 'Classroom', 'Lecturer asks one opening question (Plan) and one closing question (Evaluate). Thinks out loud during session.', 'Rec. 2 and 3: Teach and model plan, monitor, evaluate'],
-  ['Every Mentoring Session', 'On campus or online', 'Mentor opens with goal-setting (Plan). Mentor closes with reflection question (Evaluate).', 'Rec. 6: Teach students to manage learning independently'],
-  ['Every 5 Weeks', 'Coordinator check-in', 'Mentor flags if SRL habits are not forming. Coordinator offers proactive warm support.', 'Rec. 4: Set appropriate challenge and support'],
-  ['End of Year', 'Reflection session', 'Students reflect on how study habits changed across 21 weeks. Anonymised reflections inform next year.', 'Rec. 7: Sustain and embed practice across the institution'],
-];
-
-const evidenceRows = [
-  ['Baars et al. (2015 and 2024) University of Applied Sciences Netherlands', '315 first-year students. SRL and executive function explained 39.8% of variance in credits in Year 1. Students with stronger self-monitoring earned significantly more credits.', 'Directly comparable to Odisee Brussels. Proved teaching SRL measurably increases credits passed.'],
-  ['Erasmus University Rotterdam Ace Your Self-Study App Netherlands', 'Mobile app built on Plan Monitor Evaluate framework. Results: significant increases in autonomous motivation and metacognition.', 'Same three-step framework as this guide. Proved it works in Dutch higher education — same culture, directly comparable to Brussels.'],
-  ['Dignath and Veenman (2021) Europe', 'Two teacher questions per session — one at start, one at end — sufficient to build SRL habits. No extra workshops needed.', 'Odisee lecturers need only two questions per session. That is the entire workload change required.'],
-  ['Simon-Grabalos et al. (2025) Spanish Universities', 'SRL embedded in normal teaching achieved 71% success rate. Standalone workshops significantly less effective.', 'Embedding works. Workshops do not. This guide is embedded by design.'],
-  ['Koh et al. (2022) 3316 First-Generation Students International', 'Self-regulation was the bridge between believing you can succeed and staying enrolled into second year.', 'For first-generation students specifically — SRL converts confidence into persistence and persistence into completion.'],
-  ['EEF Teaching and Learning Toolkit (2025) 30+ country evidence base', 'Metacognition and self-regulation: +7 to +8 months additional learning progress for disadvantaged students. Highest-impact, lowest-cost strategy.', 'The anchor for every SRL conversation at Odisee. Zero extra cost, grounded in the largest evidence base in European education research.'],
-];
-
-const swot = {
-  strengths: [
-    'Evidence-based — grounded in EEF (+7 to +8 months proven impact)',
-    'No extra sessions or budget required',
-    'Fits into existing teaching and mentoring without adding workload',
-    'Directly addresses the study efficiency gap at Brussels campus',
-    'Gives students autonomy and builds long-term academic confidence',
-  ],
-  opportunities: [
-    'Scalable across all Odisee Brussels programmes at zero extra cost',
-    'Strengthens peer mentoring and early alert — all three tools reinforce each other',
-    'Builds lifelong student independence beyond the first year',
-    'Aligns directly with Odisee\'s inclusion vision and policy',
-  ],
-  weaknesses: [
-    'Habit formation takes time — not instant results',
-    'Requires consistent reinforcement from staff and mentors to embed',
-    'Students may initially resist or underestimate the reflection step',
-  ],
-  threats: [
-    'High student stress undermines self-regulation (Almarzouki, 2024)',
-    'Language barriers may affect the quality of written reflections',
-    'Without peer mentor or staff reinforcement, habits may not form and persist',
-  ],
-};
-
-const smartRows = [
-  ['S', 'Specific', 'Three explicitly defined strategies — Plan, Monitor, Evaluate — with three practical student tools, embedded in teaching sessions and peer mentoring meetings at Odisee Brussels.'],
-  ['M', 'Measurable', 'Progress tracked through mentor check-in notes every five weeks; year-end student reflections; connection to Early Alert Protocol data (Tool 2).'],
-  ['A', 'Achievable', 'No new sessions, no new budget, no extra staff. Two questions per teaching session. Embedded in what already happens. Zero extra workload for anyone.'],
-  ['R', 'Relevant', 'Directly addresses the study efficiency gap for first-generation and migrant-background students at the Brussels campus, confirmed in institutional data.'],
-  ['T', 'Time-Bound', 'Introduced in induction week. Embedded across 21 weeks. Formally reviewed at end of year. Outcomes inform next year\'s intake support.'],
-];
-
-const toolRows = [
-  {
-    title: 'TOOL A — 2-Minute Planner',
-    note: 'use BEFORE every session',
-    rows: [
-      'What is my goal for this session?',
-      'How will I study? (read / practise / write / discuss)',
-      'How long do I have?',
-    ],
+    id: 'rationale',
+    title: 'Design Rationale: Evidence to Design',
+    content: (
+      <Tbl
+        head={['Evidence source', 'Key insight', 'Design response']}
+        rows={[
+          ["Tinto's student retention perspective", 'Persistence is shaped by academic and social integration. Students may disengage when they do not feel connected to academic expectations or support routes.', 'The guide helps students recognise academic difficulties early, strengthen study routines and connect to support before difficulties deepen.'],
+          ['Help-seeking literature (Karabenick & Knapp, 1991)', 'Uncertainty, embarrassment or not knowing where to go can delay help-seeking.', 'A pathway map, decision tree and help-seeking message templates make the first contact easier.'],
+          ['Academic adjustment literature (van Rooij et al., 2018)', 'First-year success is linked to adapting to new academic expectations, workload and independent learning.', 'Study routine guidance links common academic adjustment problems to support routes.'],
+          ['Self-regulated learning literature (Zimmerman, 2002; Panadero, 2017)', 'Students often need explicit support to plan, monitor and evaluate their learning strategies.', 'Simple Plan-Monitor-Review habit prompts without creating a separate SRL programme.'],
+          ['Odisee partner brief and stakeholder input', 'Improve first-year study efficiency and prevent unnecessary dropout while keeping support feasible.', 'The guide organises existing support resources with adaptable placeholders for local contact points.'],
+          ['Limited informal student input', 'Language barriers, commuting or financial pressure, part-time work, unfamiliar content, workload and uncertainty about visible support.', 'Common difficulty categories, practical support routes and templates for asking for help early.'],
+          ['Field visit and feasibility considerations', 'Support tools need to be visible, low-threshold and realistic within existing capacity.', 'A simple pilot-ready SRL and support navigation aid usable by students, peer mentors and staff.']
+        ]}
+      />
+    )
   },
   {
-    title: 'TOOL B — 20-Minute Monitor Pause',
-    note: 'use DURING every session',
-    rows: [
-      'Am I genuinely understanding this — or am I just moving through the words?',
-    ],
+    id: 'pathway',
+    title: 'Student Support Pathway Map',
+    content: (
+      <>
+        <p>
+          The pathway map helps students and support actors decide where to start. Exact names, links and contact
+          details should be added by the selected programme before the pilot.
+        </p>
+        <Tbl
+          head={['Student situation', 'Possible first route', 'When to move to another route']}
+          rows={[
+            ['I feel unsure, disconnected or do not know how things work.', 'Peer mentor, buddy or programme orientation contact.', 'If the concern becomes repeated, serious or difficult to handle through peer support, involve the student coach or programme coordinator.'],
+            ['I am confused about deadlines, assignments, course expectations or study planning.', 'Peer mentor for first guidance; lecturer for course-content questions; learning coach or study support for study strategies.', 'If missed deadlines or non-response become repeated visible signals, the Early Alert Protocol may be used by staff.'],
+            ['I am struggling with workload, procrastination or independent study routines.', 'Learning coach, study support, peer mentor check-in, student coach for route uncertainty, or the habit-building section of this guide.', 'If the student cannot keep up despite support, connect to the student coach for intake, or use the Early Alert Protocol if repeated signals appear.'],
+            ['I do not know which support service fits my problem.', 'Use the decision tree or ask a peer mentor, student coach or programme contact.', 'If the problem is specialised, move to student support services.'],
+            ['I have financial, commuting, housing, language-related or practical pressure.', 'Student support services, language coach for language barriers, or local programme support contact.', 'If pressure affects attendance or coursework repeatedly, the student coach or coordinator may help coordinate support.'],
+            ['I feel stressed, overwhelmed or worried about wellbeing.', 'Student support services, wellbeing support or local support contact.', 'If there is urgent distress, crisis disclosure or safety concern, follow Odisee internal urgent support procedures.'],
+            ['I have stopped responding, missed several sessions or feel close to dropping out.', 'Student coach, programme coordinator, student support services, or staff-led warm follow-up through the Early Alert Protocol.', 'Do not rely only on peer support. A designated support actor should coordinate follow-up.']
+          ]}
+        />
+        <Note title="Simple map">
+          Peer question &rarr; peer mentor. Course-content question &rarr; lecturer. Study routine or learning strategy
+          question &rarr; learning coach or study support. Support route uncertainty &rarr; student coach or this
+          guide. Repeated concern signal &rarr; Early Alert Protocol. Urgent or specialised concern &rarr; student
+          support services or internal procedure.
+        </Note>
+      </>
+    )
   },
   {
-    title: 'TOOL C — 3-Minute Reflection',
-    note: 'use AFTER every session',
-    rows: [
-      'What went well in this session?',
-      'What was difficult or unclear?',
-      'What will I do differently next time?',
-    ],
+    id: 'decision',
+    title: '"Who Should I Contact?" Decision Tree',
+    content: (
+      <>
+        <Tbl
+          head={['Question', 'If yes: suggested route']}
+          rows={[
+            ['Do I mainly need another student to explain how things work or help me feel less alone?', 'Contact a peer mentor or buddy.'],
+            ['Do I need help understanding deadlines, assignments, exams or academic expectations?', 'Contact the lecturer for course content, the learning coach or study support for study strategies, or peer mentoring for first guidance.'],
+            ['Do I need help planning study time, catching up, monitoring progress or building a weekly routine?', 'Use the study routine guide and contact the learning coach or study support; contact the student coach if unsure where to go.'],
+            ['Do I need help choosing which support service fits my problem?', 'Ask a peer mentor, student coach, programme coordinator or student support contact.'],
+            ['Is the issue about finances, commuting, housing, language barriers, work-study balance or practical pressure?', 'Contact student support services, the language coach for language barriers, or the relevant local contact.'],
+            ['Is the issue personal, wellbeing-related, urgent or too serious for peer support?', 'Contact student support services or follow the internal urgent support route.'],
+            ['Have I missed several classes, deadlines or messages and do not know how to restart?', 'Contact the student coach, coordinator, lecturer or student support route. Staff may use the Early Alert Protocol to coordinate follow-up.']
+          ]}
+        />
+        <Note>
+          If a student is unsure, the safest first step is to contact one approachable support route and ask:
+          &quot;I am not sure who to contact. Could you help me find the right person?&quot;
+        </Note>
+        <SubHeading>Odisee role routing summary</SubHeading>
+        <ul className="list-disc space-y-1.5 pl-5">
+          <li>Course-content difficulty &rarr; lecturer</li>
+          <li>Study habits, learning strategies and academic integration &rarr; learning coach</li>
+          <li>Uncertainty about where to go &rarr; student coach for intake and redirection</li>
+          <li>Individual study-path questions &rarr; trajectory counsellor</li>
+          <li>Language-related barriers &rarr; language coach</li>
+          <li>Belonging or ordinary first-year questions &rarr; buddy or peer mentor</li>
+          <li>Repeated concern signals &rarr; Early Alert and Follow-Up Protocol</li>
+        </ul>
+      </>
+    )
   },
+  {
+    id: 'srl',
+    title: 'Study Routine and Habit-Building (Plan-Monitor-Review)',
+    content: (
+      <>
+        <p>
+          This section is the core of the guide. It gives first-year students simple SRL-based habit prompts to plan,
+          monitor and review study routines, recognise common difficulties and connect to support routes early.
+        </p>
+        <SubHeading>Plan-Monitor-Review routine</SubHeading>
+        <Tbl
+          head={['Step', 'Student question', 'Small action']}
+          rows={[
+            ['Plan', 'What do I need to do this week?', 'List deadlines, classes, readings, group work and personal obligations in one weekly overview.'],
+            ['Prioritise', 'What matters most before the next deadline or class?', 'Choose one to three priority tasks instead of trying to solve everything at once.'],
+            ['Start small', 'What is the first action I can take today?', 'Choose a 20–30 minute task, such as opening the assignment brief, drafting an outline or reviewing notes.'],
+            ['Monitor', 'Am I keeping up or falling behind?', 'Check after two or three days whether tasks are moving forward. If not, ask for help early.'],
+            ['Review', 'What should I adjust next week?', 'Identify one habit to keep, one obstacle and one support route if needed.']
+          ]}
+        />
+        <SubHeading>Common difficulties and support routes</SubHeading>
+        <Tbl
+          head={['Common first-year difficulty', 'Possible meaning', 'Helpful next step']}
+          rows={[
+            ['I keep postponing assignments.', 'The task may feel unclear, too large or difficult to start.', 'Break the task into one small next step and contact the learning coach, study support or a peer mentor if the pattern continues.'],
+            ['I do not understand what is expected.', 'Academic expectations may be unfamiliar.', 'Ask the lecturer to clarify course content or assessment criteria; contact the learning coach, study support or a peer mentor for study approach.'],
+            ['I am attending but not keeping up.', 'Workload or study routines may not yet match higher education expectations.', 'Use the weekly plan and contact the learning coach or study support before the backlog becomes unmanageable.'],
+            ['I miss classes because of commuting, work or finances.', 'Practical pressure is affecting study routines.', 'Contact student support services, the student coach or programme coordinator to explore feasible support routes.'],
+            ['I feel isolated or unsure whether support is meant for me.', 'Belonging and help-seeking may be barriers.', 'Contact a peer mentor or buddy as a low-threshold first step.'],
+            ['I have language or internship-related language concerns.', 'Language may affect confidence, social connection or opportunity navigation.', 'Ask the language coach, programme contact or student support route about relevant language or internship support options.'],
+            ['I feel overwhelmed or close to stopping.', 'The concern may require more than study advice.', 'Contact student support services, the student coach or programme coordinator promptly; peer mentors should not handle this alone.']
+          ]}
+        />
+        <Note title="One small next step card">
+          When a student feels stuck: name the difficulty, choose one support route, write one short message and set
+          one follow-up moment.
+        </Note>
+      </>
+    )
+  },
+  {
+    id: 'templates',
+    title: 'Help-Seeking Message Templates',
+    content: (
+      <>
+        <p>
+          These templates can be adapted to Odisee Brussels&apos; communication channels and local contact points.
+          Students do not need to explain everything in the first message.
+        </p>
+        <Template title="To a peer mentor">
+          {`Hi [Name], I am finding the first weeks a bit difficult and I am not sure where to start. Could we have a short check-in about study routines, deadlines or where to find support? Best, [Name]`}
+        </Template>
+        <Template title="To a lecturer">
+          {`Dear [Name], I am having difficulty understanding [assignment / deadline / course expectation]. Could you please clarify what I should focus on first or where I can find the relevant guidance? Best, [Name]`}
+        </Template>
+        <Template title="To a student coach / programme coordinator">
+          {`Dear [Name], I am not sure which support route fits my situation. I am struggling with [brief issue]. Could you advise me who I should contact? Best, [Name]`}
+        </Template>
+        <Template title="To a learning coach / study support">
+          {`Dear [Name], I would like support with planning, workload or study routines. I am finding it difficult to [brief issue]. Could you let me know what support is available? Best, [Name]`}
+        </Template>
+        <Template title="To student support services">
+          {`Dear [Name], I am experiencing [financial / commuting / wellbeing / practical / language-related] pressure that is affecting my study routine. Could you advise me on possible support options? Best, [Name]`}
+        </Template>
+        <Template title="Follow-up message">
+          {`Hi [Name], I am following up on my previous message about [brief issue]. Could you let me know whether I should contact you or another support route? Best, [Name]`}
+        </Template>
+        <Template title="If unsure who to contact">
+          {`Hello, I am not sure who the right contact person is. I am a first-year student and need help with [brief issue]. Could you please direct me to the right support route? Best, [Name]`}
+        </Template>
+        <Note title="Template rule">
+          Keep the message short, name the difficulty, ask for the next route, and do not wait until the problem
+          becomes urgent.
+        </Note>
+      </>
+    )
+  },
+  {
+    id: 'referral',
+    title: 'Referral Checklist for Peer Mentors and Staff',
+    content: (
+      <>
+        <Tbl
+          head={['Checklist question', 'Yes / No / Unsure']}
+          rows={[
+            ['Is the student asking an ordinary first-year question that can be handled through peer support?', ' '],
+            ['Is the student unsure which support service to contact?', ' '],
+            ['Is the concern mainly about study planning, workload or academic adjustment?', ' '],
+            ['Is the concern connected to financial, commuting, housing, language or practical pressure?', ' '],
+            ['Is the concern repeated, combined with other signals or affecting attendance/deadlines?', ' '],
+            ['Does the concern go beyond ordinary peer support?', ' '],
+            ['Is there any urgent, specialised, wellbeing or safety-related concern?', ' '],
+            ['Has the student been given one clear support route or next step?', ' '],
+            ['Is only necessary, factual information being shared for referral?', ' '],
+            ['Should the Early Alert Protocol be used by the student coach or programme coordinator?', ' ']
+          ]}
+        />
+        <SubHeading>Referral guidance</SubHeading>
+        <ul className="list-disc space-y-1.5 pl-5">
+          <li>Ordinary first-year uncertainty &rarr; stay within peer support and help the student identify one small next step.</li>
+          <li>Help choosing a support route &rarr; use the pathway map and decision tree.</li>
+          <li>Repeated or combined concern signals &rarr; involve the student coach or coordinator and consider the Early Alert Protocol.</li>
+          <li>Urgent or specialised issue &rarr; refer promptly to student support services or the relevant internal procedure.</li>
+          <li>Do not collect or share sensitive details unless necessary for safety or referral.</li>
+        </ul>
+      </>
+    )
+  },
+  {
+    id: 'faq',
+    title: 'First-Year Support FAQ',
+    content: (
+      <Tbl
+        head={['Question', 'Suggested answer']}
+        rows={[
+          ['Is asking for help a problem?', 'No. Asking for help is a normal part of the first-year transition. The aim is to find the right route early.'],
+          ['What if I do not know what kind of help I need?', 'Start with the decision tree or contact a peer mentor, student coach or support contact and ask them to help you choose the route.'],
+          ['Can a peer mentor solve every problem?', 'No. Peer mentors can listen, share experience and guide you, but specialised concerns should go to the relevant support actor or student support services.'],
+          ['Will I be punished for asking for help?', 'No. This guide is a support tool, not a disciplinary tool.'],
+          ['Do I need to explain personal details?', 'No. You can keep the first message short and only share what is needed to find the right support route.'],
+          ['What if I decline support?', 'You can decline support and return later if you decide support would be useful.'],
+          ['What if the issue feels urgent?', 'Do not wait. Contact student support services, the student coach, programme coordinator or the relevant internal urgent support route.'],
+          ['What if the first route is not right?', 'Ask that contact person to help redirect you. Support navigation can be adjusted.']
+        ]}
+      />
+    )
+  },
+  {
+    id: 'connection',
+    title: 'Connection to the Other Deliverables',
+    content: (
+      <>
+        <Tbl
+          head={['Deliverable', 'Role in the support chain', 'Connection to this guide']}
+          rows={[
+            ['D1: Peer Mentoring Toolkit', 'Builds connection, trust and low-threshold peer support.', 'Peer mentors can use this guide to help students identify support routes, prepare messages and recognise when referral is needed.'],
+            ['D2: Early Alert and Follow-Up Protocol', 'Makes repeated or serious concern signals visible and guides warm follow-up.', 'If visible concern signals are repeated or combined, staff can use the protocol while this guide provides student-facing support navigation.'],
+            ['D3: First-Year Self-Regulated Learning Guide', 'Helps students build manageable study routines, practise help-seeking and identify appropriate support routes.', 'This guide completes the support chain by turning SRL principles and existing support into a clearer pathway for first-year students.']
+          ]}
+        />
+        <Note title="Simple decision logic">
+          Belonging or first-year question &rarr; peer mentor. Course-content question &rarr; lecturer. Study routine
+          or academic adjustment question &rarr; learning coach or study support. Unclear support route &rarr; student
+          coach or this guide. Repeated visible concern &rarr; Early Alert Protocol. Urgent or specialised concern
+          &rarr; student support services or internal procedure.
+        </Note>
+      </>
+    )
+  },
+  {
+    id: 'pilot',
+    title: 'Pilot Use and Local Adaptation',
+    content: (
+      <>
+        <SubHeading>Suggested pilot steps</SubHeading>
+        <Tbl
+          head={['Step', 'Action']}
+          rows={[
+            ['1. Adapt the pathway map', 'Add local programme contacts, support service names, links and internal procedures.'],
+            ['2. Align with existing resources', 'Identify which buddy, peer-support, study support and student support resources should be linked in the guide.'],
+            ['3. Brief peer mentors and staff', 'Explain how to use the decision tree, templates and referral checklist.'],
+            ['4. Introduce the guide to first-year students', 'Present it as a self-regulated learning and support navigation guide, not a monitoring system.'],
+            ['5. Use during key transition moments', 'Share the guide during orientation, before first assessments, after early feedback and during workload pressure periods.'],
+            ['6. Connect with Deliverables 1 and 2', 'Peer mentors use the guide during check-ins; staff use it alongside the Early Alert Protocol where needed.'],
+            ['7. Collect feedback', 'Gather short feedback from students, peer mentors, lecturers, coaches, coordinators and support services.'],
+            ['8. Refine before wider use', 'Update study habit prompts, contact routes, wording, FAQ items and templates based on pilot feedback.']
+          ]}
+        />
+        <SubHeading>Local adaptation fields</SubHeading>
+        <Tbl
+          head={['Field to add before pilot', 'Local information needed']}
+          rows={[
+            ['Student coach / programme contact', 'Name or role of programme coordinator / designated implementation lead.'],
+            ['Peer support route', 'Buddy system, peer mentor contact or programme peer-support channel.'],
+            ['Learning coach / study support route', 'Study support contact, webpage, office or appointment route.'],
+            ['Student support services', 'Relevant support services for wellbeing, finances, language, practical issues or additional support needs.'],
+            ['Urgent concern route', 'Internal procedure for urgent wellbeing or safety concerns.'],
+            ['Communication channel', 'Where students receive the guide: orientation, learning platform, email, programme page or mentor check-in.']
+          ]}
+        />
+      </>
+    )
+  },
+  {
+    id: 'evaluation',
+    title: 'Pilot Evaluation Indicators',
+    content: (
+      <>
+        <Tbl
+          head={['Evaluation focus', 'Possible indicator', 'Data source']}
+          rows={[
+            ['Support clarity', 'Students report that they know where, when and how to seek support.', 'Short student feedback form'],
+            ['Use of navigation materials', 'Students, mentors or staff use the pathway map, decision tree or templates during the pilot.', 'Student feedback / mentor reflection / staff feedback'],
+            ['Help-seeking confidence', 'Students report feeling more confident contacting a support route.', 'Short student feedback form'],
+            ['Study routine guidance', 'Students find the Plan-Monitor-Review prompts useful for organising workload.', 'Student feedback / peer mentor reflection'],
+            ['Referral route clarity', 'Peer mentors and staff report that the checklist helps decide when and where to refer.', 'Peer mentor and staff feedback'],
+            ['Connection to other deliverables', 'Peer mentors use the guide during check-ins and staff use it alongside early alert follow-up when needed.', 'Coordinator review'],
+            ['Workload feasibility', 'Peer mentors, lecturers, coaches and coordinators perceive the guide as manageable.', 'Short staff/mentor feedback form'],
+            ['Guide improvement', 'Feedback leads to concrete changes in contact routes, wording, templates or FAQ items.', 'End-of-pilot review']
+          ]}
+        />
+        <Note title="End-of-pilot review">
+          Odisee reviews anonymised feedback from all involved actors: did the guide help students build clearer study
+          routines, ask for help earlier, connect study difficulties to appropriate support routes and remain feasible
+          for staff and peer mentors? If useful, it can be refined and adapted for other programmes or campuses.
+        </Note>
+      </>
+    )
+  },
+  {
+    id: 'references',
+    title: 'References',
+    content: (
+      <ul className="list-disc space-y-2 pl-5 text-sm">
+        <li>Karabenick, S. A., &amp; Knapp, J. R. (1991). Relationship of academic help seeking to the use of learning strategies. <em>Journal of Educational Psychology, 83</em>(2), 221–230.</li>
+        <li>Odisee. (2026). <em>Odisee – Students&apos; academic success</em> [Partner challenge brief]. Case Studies Change and Innovation, Vrije Universiteit Brussel.</li>
+        <li>Panadero, E. (2017). A review of self-regulated learning: Six models and four directions for research. <em>Frontiers in Psychology, 8</em>, Article 422.</li>
+        <li>Tinto, V. (1975). Dropout from higher education: A theoretical synthesis of recent research. <em>Review of Educational Research, 45</em>(1), 89–125.</li>
+        <li>van Rooij, E. C. M., Jansen, E. P. W. A., &amp; van de Grift, W. J. C. M. (2018). First-year university students&apos; academic success: The importance of academic adjustment. <em>European Journal of Psychology of Education, 33</em>(4), 749–767.</li>
+        <li>Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. <em>Theory Into Practice, 41</em>(2), 64–70.</li>
+      </ul>
+    )
+  }
 ];
 
-function Table({ headers, rows, className = '' }) {
+export default function SelfRegulated() {
   return (
-    <div className={`overflow-hidden rounded-3xl border border-white/55 bg-card/72 shadow-soft backdrop-blur-xl ${className}`}>
-      <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-white/35 text-left">
-          <thead className="bg-white/35">
-            <tr>
-              {headers.map((header) => (
-                <th key={header} className="px-4 py-3 text-sm font-semibold text-royal">
-                  {header}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-white/30">
-            {rows.map((row, index) => (
-              <tr key={index} className="align-top">
-                {row.map((cell, cellIndex) => (
-                  <td key={cellIndex} className="px-4 py-4 text-sm text-ink/90">
-                    {cell}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="pb-16">
+      <PageHero
+        title="First-Year Self-Regulated Learning Guide"
+        subtitle="Deliverable 3 of 3: pilot-ready guidance for learning habits, help-seeking and support navigation within Odisee Brussels' first-year support pathway"
+      />
+
+      <div className="mx-auto max-w-5xl px-4 pt-10 sm:px-6 lg:px-8">
+        <div className="mb-10 rounded-3xl border border-white/55 bg-card/72 p-6 shadow-soft backdrop-blur-xl sm:p-8">
+          <p className="text-sm uppercase tracking-[0.2em] text-muted">Positioning note</p>
+          <p className="mt-3 leading-relaxed text-body">
+            This guide translates the third deliverable described in the case study into a practical student-facing
+            guide for learning habits, help-seeking and support navigation at Odisee Brussels. It adapts self-regulated
+            learning principles into Plan-Monitor-Review routines, common first-year difficulty guidance, message
+            templates and clear support routes. It does not replace Odisee&apos;s existing support services, buddy
+            practices or programme-level procedures. Instead, it connects students to the right support route when
+            self-management alone is not enough. It responds most directly to difficulties with academic adjustment,
+            study habits and competing pressures, and works alongside the Peer Mentoring Toolkit (D1) and the Early
+            Alert and Follow-Up Protocol (D2).
+          </p>
+        </div>
+
+        <ToolkitAccordion sections={sections} navLabel="Self-Regulated Learning Guide sections" />
       </div>
     </div>
   );
 }
-
-function SelfRegulated() {
-  return (
-    <>
-      <PageHero
-        title="Self-Regulated Learning Guide"
-        subtitle="Odisee Brussels · Student Success Project 2025–2026 · Tool 3 of 3 · Part of the Bridging the Gap Project"
-      />
-
-      <section className="mx-auto max-w-7xl space-y-8 px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
-          {stats.map((item) => (
-            <div
-              key={item.eyebrow}
-              className={`rounded-3xl border bg-gradient-to-br p-5 shadow-soft backdrop-blur-xl ${item.className}`}
-            >
-              <p className="text-xs uppercase tracking-[0.24em] text-royal/70">{item.eyebrow}</p>
-              <h2 className="mt-2 font-display text-2xl text-royal">{item.title}</h2>
-              <p className="mt-2 text-sm text-ink/80">{item.body}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <Card title="What Is Self-Regulated Learning?">
-            <p>
-              Self-regulated learning (SRL) is the ability to take ownership of your own studying. It means setting a goal before you
-              begin, checking your understanding while you work, and reflecting honestly on what helped and what did not after you
-              finish.
-            </p>
-            <p>
-              The Education Endowment Foundation defines it as students ability to monitor, direct and review their own learning —
-              usually by setting goals, and monitoring and evaluating their own academic progress (EEF, 2025). Research confirms that
-              self-regulated learners apply these strategies consistently, and that this promotes genuine learner independence.
-            </p>
-          </Card>
-
-          <Card title="Why Does This Matter at Odisee Brussels?">
-            <p>
-              Odisee aims to reduce unnecessary dropout by removing barriers related to access, services, and institutional support
-              (Odisee, n.d.-b). The Brussels campus presents a particular challenge: institutional data confirm that students with a
-              migrant background show significantly lower study efficiency at Brussels compared to all other campuses.
-            </p>
-            <p>
-              Many of these students arrive without structured study habits — not because of a lack of ability or motivation, but
-              because effective study strategies are rarely taught explicitly before university entry (Van Rooij et al., 2018;
-              Fokkens-Bruinsma et al., 2021). Almarzouki (2024) found that prolonged stress from financial insecurity and language
-              difficulty directly impairs working memory — SRL skills help students recover and refocus even under pressure.
-            </p>
-            <p>
-              Van Rooij et al. (2018): correlation of .71 between self-regulated study behaviour and academic adjustment — the strongest
-              predictor, above motivation and prior grades. Koh et al. (2022) followed 3,316 first-generation students and found
-              self-regulation was the bridge between believing you can succeed and actually staying enrolled into second year.
-            </p>
-          </Card>
-        </div>
-
-        <Card title="The Three Steps — Plan · Monitor · Evaluate">
-          <p className="max-w-5xl text-body/90">
-            Three steps. Six minutes total — two minutes to plan, one minute to monitor every 20-minute study block, three minutes to
-            reflect. Built into what already happens. No extra sessions. No extra budget.
-          </p>
-          <div className="mt-6 grid gap-5 md:grid-cols-3">
-            {[
-              {
-                step: 'PLAN',
-                when: 'Before every session',
-                questions: ['What is my specific goal for this session?', 'How will I approach this — reading, practising, writing, or discussing?', 'How much time do I have and what can I realistically achieve?'],
-                evidence: 'Fokkens-Bruinsma et al. (2021): time management and goal-setting are the two strongest predictors of first-year academic success. EEF Rec. 2: activating prior knowledge before a task significantly improves learning outcomes.',
-                tone: 'from-emerald/15 to-emerald/30',
-              },
-              {
-                step: 'MONITOR',
-                when: 'During — every 20 minutes (1 minute pause — ask 3 quick questions)',
-                questions: ['Am I genuinely understanding this, or just moving through the material?', 'Am I still working towards the goal I set at the start?', 'Is my current approach working — or should I try a different strategy?'],
-                evidence: 'Van Rooij et al. (2018): correlation of .71 between self-regulated study behaviour and academic adjustment — the single strongest predictor, above motivation and prior grades. EEF Rec. 3: modelling metacognitive thinking out loud during sessions.',
-                tone: 'from-royal/15 to-section/50',
-              },
-              {
-                step: 'EVALUATE',
-                when: 'After every session',
-                questions: ['What went well in this session? Name it specifically so it can be repeated.', 'What was difficult or unclear? Name it honestly so it can be addressed.', 'What is one thing I will do differently next time?'],
-                evidence: 'Jansen et al. (2019): meta-analysis of 126 higher education studies — teaching reflection after completing work consistently improves both grades and study habits. EEF Rec. 2: evaluating and monitoring own learning is a core metacognitive strategy.',
-                tone: 'from-gold/20 to-gold/35',
-              },
-            ].map((step) => (
-              <article key={step.step} className={`rounded-3xl border border-white/55 bg-gradient-to-br ${step.tone} p-5 shadow-soft`}>
-                <p className="text-xs uppercase tracking-[0.22em] text-royal/70">{step.when}</p>
-                <h3 className="mt-2 font-display text-3xl text-royal">{step.step}</h3>
-                <div className="mt-4 space-y-3 text-sm text-ink/85">
-                  <div>
-                    <p className="font-semibold text-royal">What You Do:</p>
-                    <ul className="mt-2 list-disc space-y-1 pl-5">
-                      {step.questions.map((question) => (
-                        <li key={question}>{question}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <p>
-                    <span className="font-semibold text-royal">Evidence:</span> {step.evidence}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Card>
-
-        <Card title="EEF Recommendations — How They Are Applied">
-          <Table headers={["EEF Recommendation", "How Applied at Odisee Brussels"]} rows={eefRows} />
-        </Card>
-
-        <Card title="The Three Student Tools">
-          <p className="max-w-5xl text-body/90">
-            These three tools take six minutes total. Not assessed. Not submitted. Just habits students build for themselves.
-          </p>
-          <div className="mt-6 grid gap-6 lg:grid-cols-3">
-            {toolRows.map((tool) => (
-              <article key={tool.title} className="rounded-3xl border border-white/55 bg-white/55 p-5 shadow-soft">
-                <p className="text-xs uppercase tracking-[0.22em] text-emerald-dark">{tool.note}</p>
-                <h3 className="mt-2 font-display text-2xl text-royal">{tool.title}</h3>
-                <div className="mt-4 rounded-2xl border border-white/50 bg-main/45 p-4">
-                  <table className="w-full text-sm">
-                    <tbody className="space-y-2">
-                      {tool.rows.map((row) => (
-                        <tr key={row} className="border-b border-white/35 last:border-b-0">
-                          <td className="py-3 text-ink/90">{row}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  {tool.title.includes('Monitor') ? (
-                    <p className="mt-4 rounded-2xl border border-royal/15 bg-section/60 p-4 text-sm text-ink/90">
-                      If the answer is the second one, go back to the point where you last understood. Find the gap. That moment is where
-                      learning actually happens.
-                    </p>
-                  ) : null}
-                </div>
-              </article>
-            ))}
-          </div>
-          <p className="mt-5 text-sm text-ink/80">
-            EEF Recommendation 2 (2025) confirms that monitoring and adjusting during a task is the key metacognitive strategy that improves outcomes.
-          </p>
-        </Card>
-
-        <Card title="Implementation Workflow">
-          <Table headers={["When", "Where", "What Happens", "EEF Recommendation"]} rows={implementationRows} />
-        </Card>
-
-        <Card title="International Evidence">
-          <Table headers={["University/Study", "What They Did and Results", "What Odisee Can Take"]} rows={evidenceRows} />
-        </Card>
-
-        <Card title="SWOT Analysis">
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="rounded-3xl border border-emerald-200 bg-emerald-50/70 p-5">
-              <h3 className="font-display text-2xl text-emerald-dark">Strengths</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink/90">
-                {swot.strengths.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-blue-200 bg-sky-50/80 p-5">
-              <h3 className="font-display text-2xl text-royal">Opportunities</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink/90">
-                {swot.opportunities.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-amber-200 bg-amber-50/80 p-5">
-              <h3 className="font-display text-2xl text-amber-700">Weaknesses</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink/90">
-                {swot.weaknesses.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-            <div className="rounded-3xl border border-rose-200 bg-rose-50/80 p-5">
-              <h3 className="font-display text-2xl text-rose-700">Threats</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-ink/90">
-                {swot.threats.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-          </div>
-          <p className="mt-5 rounded-2xl border border-white/55 bg-white/60 p-4 text-sm text-ink/85">
-            The weaknesses and threats are not reasons to avoid the approach — they are areas where the implementation plan already has responses built in. Stress is addressed through peer mentoring (Tool 1). Language barriers are acknowledged by allowing reflection in any language. The risk of habits not forming is mitigated by systematic mentor check-ins and early alert follow-up (Tool 2).
-          </p>
-        </Card>
-
-        <Card title="SMART Criteria">
-          <Table headers={["Letter", "Criterion", "How This Guide Meets It"]} rows={smartRows} />
-        </Card>
-
-        <Card title="Full Evidence Base">
-          <Table
-            headers={["Source", "Contribution to This Guide"]}
-            rows={[
-              ['EEF Teaching and Learning Toolkit (2025)', 'Metacognition and self-regulation: +7 to +8 months additional learning progress. Highest-impact, lowest-cost strategy. Seven recommendations form the backbone of the implementation plan.'],
-              ['Van Rooij et al. (2018)', 'Correlation of .71 between self-regulated study behaviour and academic adjustment — the strongest predictor, above motivation and prior grades.'],
-              ['Jansen et al. (2019)', 'Meta-analysis of 126 higher education studies: teaching SRL consistently improves both grades and study habits across all disciplines.'],
-              ['Fokkens-Bruinsma et al. (2021)', 'Time management and autonomous motivation are the two strongest predictors of first-year academic success. Both developed through the Plan step.'],
-              ['Koh et al. (2022)', 'For 3,316 first-generation students: self-regulation was the bridge between believing you can succeed and staying enrolled into second year.'],
-              ['Baars et al. (2015 and 2024)', 'At a University of Applied Sciences Netherlands: stronger self-monitoring directly predicted more credits in first year. SRL explained 39.8% of variance in credits.'],
-              ['Dignath and Veenman (2021)', 'Two teacher questions per session are sufficient to build SRL habits. No extra workshops needed.'],
-              ['Simon-Grabalos et al. (2025)', 'SRL embedded in normal teaching achieved 71% success rate. Standalone workshops significantly less effective.'],
-              ['Almarzouki (2024)', 'Financial stress and language difficulty directly impair working memory. SRL habits help students recover and refocus.'],
-              ['Odisee University of Applied Sciences (n.d.-a, n.d.-b)', 'Odisee aims to reduce unnecessary dropout and provide inclusive learning environments. This guide is a direct implementation of that commitment.'],
-            ]}
-          />
-        </Card>
-
-        <Card title="Closing Note" className="border-gold/40 bg-gold/15">
-          <p className="text-sm text-ink/90">
-            A note to teaching staff and programme coordinators: This guide is not a reflection on what has or has not been done before.
-            It is a response to a well-documented challenge — the study efficiency gap for first-generation and migrant-background
-            students at Odisee Brussels. The three steps in this guide are low-cost, evidence-based, and designed to complement what
-            already happens in your sessions. Your role is not to add more to your workload, but to use two questions — one at the
-            start, one at the end — to help students develop habits that will serve them throughout their degree.
-          </p>
-        </Card>
-
-        <footer className="rounded-3xl border border-white/55 bg-card/72 px-6 py-5 text-center text-sm text-ink/80 shadow-soft backdrop-blur-xl">
-          Odisee University of Applied Sciences · Brussels Campus · Self-Regulated Learning Guide 2025–2026
-          <br />
-          Part of the Bridging the Gap: Inclusive Education and Student Success Project · Built on the EEF Teaching and Learning Toolkit (2025)
-        </footer>
-      </section>
-    </>
-  );
-}
-
-export default SelfRegulated;
