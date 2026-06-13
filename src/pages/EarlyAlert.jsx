@@ -1,5 +1,8 @@
 import PageHero from '../components/PageHero';
 import ToolkitAccordion, { Tbl, Note, Template, SubHeading, Flow } from '../components/ToolkitAccordion';
+import decisionDiagram from '../../diagram-early-alert-decision.png';
+import banner from '../../banner-early-alert.png';
+import alertIcon from '../../icon-early-alert.png';
 
 const sections = [
   {
@@ -147,6 +150,13 @@ const sections = [
           manual guide for deciding whether to monitor, check in, or refer. No automated or colour-coded digital system
           is required.
         </p>
+        <figure className="my-2">
+          <img
+            src={decisionDiagram}
+            alt="Early alert decision flow: a visible concern signal is sorted into Green (monitor), Amber (warm check-in within one week) or Red (urgent referral), then followed up in 7 to 14 days and closed, monitored or handed over."
+            className="mx-auto block h-auto w-full max-w-4xl rounded-2xl border border-white/70 bg-card/70 p-3 shadow-soft"
+          />
+        </figure>
         <div className="grid gap-4 sm:grid-cols-3">
           <div className="rounded-2xl border border-royal/20 bg-lavender/70 p-5">
             <p className="font-display text-lg text-royal">Green: Monitor</p>
@@ -348,11 +358,19 @@ export default function EarlyAlert() {
   return (
     <div className="pb-16">
       <PageHero
+        iconImg={alertIcon}
         title="Early Alert and Follow-Up Protocol"
         subtitle="Deliverable 2 of 3: pilot-ready guidance for early concern signals, warm outreach and referral within Odisee Brussels' first-year support pathway"
       />
 
       <div className="mx-auto max-w-5xl px-4 pt-10 sm:px-6 lg:px-8">
+        <figure className="mb-10">
+          <img
+            src={banner}
+            alt="Illustration of a supportive hand reaching toward a student, with green, amber and red status dots representing early concern levels."
+            className="block h-auto w-full rounded-3xl border border-white/60 shadow-soft"
+          />
+        </figure>
         <div className="mb-10 rounded-3xl border border-white/55 bg-card/72 p-6 shadow-soft backdrop-blur-xl sm:p-8">
           <p className="text-sm uppercase tracking-[0.2em] text-muted">Positioning note</p>
           <p className="mt-3 leading-relaxed text-body">

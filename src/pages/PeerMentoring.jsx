@@ -1,5 +1,7 @@
 import PageHero from '../components/PageHero';
 import ToolkitAccordion, { Tbl, Note, Template, SubHeading, Flow } from '../components/ToolkitAccordion';
+import flowDiagram from '../../diagram-peer-mentoring-flow.png';
+import banner from '../../banner-peer-mentoring.png';
 
 const sections = [
   {
@@ -7,16 +9,13 @@ const sections = [
     title: 'Toolkit at a Glance',
     content: (
       <>
-        <Flow
-          steps={[
-            'Peer connection',
-            'Check-in',
-            'Support conversation',
-            'One small next step',
-            'Navigation or referral',
-            'Follow-up'
-          ]}
-        />
+        <figure className="my-2">
+          <img
+            src={flowDiagram}
+            alt="Peer mentoring support flow in six steps: peer connection, check-in, support conversation, one small next step, navigation or referral, and follow-up."
+            className="mx-auto block h-auto w-full max-w-3xl rounded-2xl border border-white/70 bg-card/70 p-3 shadow-soft"
+          />
+        </figure>
         <Tbl
           head={['Step', 'Simple logic', 'Main actor']}
           rows={[
@@ -426,11 +425,19 @@ export default function PeerMentoring() {
   return (
     <div className="pb-16">
       <PageHero
+        icon="users"
         title="Peer Mentoring Toolkit"
         subtitle="Deliverable 1 of 3: pilot-ready guidance for first-year belonging, low-threshold peer support and referral within Odisee Brussels' first-year support pathway"
       />
 
       <div className="mx-auto max-w-5xl px-4 pt-10 sm:px-6 lg:px-8">
+        <figure className="mb-10">
+          <img
+            src={banner}
+            alt="Illustration of two students talking warmly at a table with a speech bubble, representing peer mentoring and belonging."
+            className="block h-auto w-full rounded-3xl border border-white/60 shadow-soft"
+          />
+        </figure>
         <div className="mb-10 rounded-3xl border border-white/55 bg-card/72 p-6 shadow-soft backdrop-blur-xl sm:p-8">
           <p className="text-sm uppercase tracking-[0.2em] text-muted">Positioning note</p>
           <p className="mt-3 leading-relaxed text-body">

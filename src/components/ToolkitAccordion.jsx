@@ -48,7 +48,15 @@ export function Template({ title, children }) {
 }
 
 export function SubHeading({ children }) {
-  return <h4 className="font-display text-lg text-royal">{children}</h4>;
+  return (
+    <h4 className="flex items-center gap-2.5 font-display text-lg text-royal sm:text-xl">
+      <span
+        className="inline-block h-4 w-1.5 shrink-0 rounded-full bg-gradient-to-b from-emerald to-royal"
+        aria-hidden="true"
+      />
+      {children}
+    </h4>
+  );
 }
 
 export function Flow({ steps }) {
@@ -74,7 +82,13 @@ function Chevron({ open }) {
       fill="none"
       aria-hidden="true"
     >
-      <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M5 7.5 10 12.5 15 7.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -117,7 +131,9 @@ export default function ToolkitAccordion({ sections, navLabel = 'Toolkit section
             <article
               id={`section-${s.id}`}
               key={s.id}
-              className="scroll-mt-28 overflow-hidden rounded-3xl border border-white/55 bg-card/72 shadow-soft backdrop-blur-xl"
+              className={`scroll-mt-28 overflow-hidden rounded-3xl border bg-card/72 shadow-soft backdrop-blur-xl transition-all duration-300 ${
+                open ? 'border-emerald/45 shadow-card' : 'border-white/55 hover:border-emerald/35 hover:shadow-card'
+              }`}
             >
               <button
                 type="button"
@@ -131,11 +147,8 @@ export default function ToolkitAccordion({ sections, navLabel = 'Toolkit section
                 <span className="flex-1 font-display text-xl text-royal sm:text-2xl">{s.title}</span>
                 <Chevron open={open} />
               </button>
-              {open ? (
-                <div className="space-y-5 px-5 pb-7 pt-1 text-[15px] leading-relaxed text-body sm:px-8">
-                  {s.content}
-                </div>
-              ) : null}
+
+              {open ? <div className="border-t border-emerald/15 px-5 py-5 sm:px-7">{s.content}</div> : null}
             </article>
           );
         })}
@@ -143,3 +156,4 @@ export default function ToolkitAccordion({ sections, navLabel = 'Toolkit section
     </div>
   );
 }
+          

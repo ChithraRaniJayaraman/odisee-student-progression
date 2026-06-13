@@ -1,5 +1,9 @@
 import PageHero from '../components/PageHero';
 import ToolkitAccordion, { Tbl, Note, Template, SubHeading, Flow } from '../components/ToolkitAccordion';
+import cycleDiagram from '../../diagram-srl-plan-monitor-review.png';
+import contactDiagram from '../../diagram-srl-who-to-contact.png';
+import banner from '../../banner-self-regulated.png';
+import srlIcon from '../../icon-self-regulated.png';
 
 const sections = [
   {
@@ -131,6 +135,13 @@ const sections = [
     title: '"Who Should I Contact?" Decision Tree',
     content: (
       <>
+        <figure className="my-2">
+          <img
+            src={contactDiagram}
+            alt="Who should I contact: routes from a student to a peer mentor or buddy for belonging, a lecturer for course content, a learning coach for study strategies, a student coach when unsure where to go, a language coach for language barriers, and student support services for wellbeing or urgent issues."
+            className="mx-auto block h-auto w-full max-w-4xl rounded-2xl border border-white/70 bg-card/70 p-3 shadow-soft"
+          />
+        </figure>
         <Tbl
           head={['Question', 'If yes: suggested route']}
           rows={[
@@ -169,6 +180,13 @@ const sections = [
           This section is the core of the guide. It gives first-year students simple SRL-based habit prompts to plan,
           monitor and review study routines, recognise common difficulties and connect to support routes early.
         </p>
+        <figure className="my-2">
+          <img
+            src={cycleDiagram}
+            alt="Plan-Monitor-Review cycle: plan study routine, monitor difficulty, and review support needed, repeated one small step at a time."
+            className="mx-auto block h-auto w-full max-w-md rounded-2xl border border-white/70 bg-card/70 p-3 shadow-soft"
+          />
+        </figure>
         <SubHeading>Plan-Monitor-Review routine</SubHeading>
         <Tbl
           head={['Step', 'Student question', 'Small action']}
@@ -389,11 +407,19 @@ export default function SelfRegulated() {
   return (
     <div className="pb-16">
       <PageHero
+        iconImg={srlIcon}
         title="First-Year Self-Regulated Learning Guide"
         subtitle="Deliverable 3 of 3: pilot-ready guidance for learning habits, help-seeking and support navigation within Odisee Brussels' first-year support pathway"
       />
 
       <div className="mx-auto max-w-5xl px-4 pt-10 sm:px-6 lg:px-8">
+        <figure className="mb-10">
+          <img
+            src={banner}
+            alt="Illustration of a focused student with a planner, checklist, clock and a looping arrow, representing plan, monitor and review study habits."
+            className="block h-auto w-full rounded-3xl border border-white/60 shadow-soft"
+          />
+        </figure>
         <div className="mb-10 rounded-3xl border border-white/55 bg-card/72 p-6 shadow-soft backdrop-blur-xl sm:p-8">
           <p className="text-sm uppercase tracking-[0.2em] text-muted">Positioning note</p>
           <p className="mt-3 leading-relaxed text-body">
@@ -413,3 +439,4 @@ export default function SelfRegulated() {
     </div>
   );
 }
+        

@@ -526,7 +526,8 @@ const References = () => {
 
   return (
     <>
-      <PageHero 
+      <PageHero
+        icon="book"
         title="References & Evidence Base"
         subtitle="Every claim in this project is grounded in peer-reviewed research. All 44 sources are listed below with direct links to the original publications."
       />

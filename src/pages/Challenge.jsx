@@ -1,15 +1,24 @@
 import PageHero from '../components/PageHero';
 import challengeMindMapVideo from '../Mind map (Presentation).mp4';
 import toolkitImage from '../../TOOL KIT PIC.jpeg';
+import banner from '../../banner-challenge.png';
 
 function Challenge() {
   return (
     <>
       <PageHero
+        icon="target"
         title="Understanding the Challenge"
         subtitle="A visual overview of the challenge and the coordinated response we designed for student progression."
       />
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <figure className="mb-10">
+          <img
+            src={banner}
+            alt="Illustration of students crossing a bridge between two cliffs, symbolising bridging the gap into first-year study."
+            className="block h-auto w-full rounded-3xl border border-white/60 shadow-soft"
+          />
+        </figure>
         <div className="rounded-3xl border border-white/60 bg-white/45 p-3 shadow-soft backdrop-blur-xl sm:p-4">
           <video
             className="block w-full rounded-2xl object-contain"
